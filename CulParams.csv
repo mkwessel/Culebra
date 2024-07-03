@@ -1,0 +1,52 @@
+Param,Units,Parameter,SampleDepth
+Bot.CDOM,pcu,CDOM,Bottom
+CDOM,pcu,CDOM,N/A
+Surf.CDOM,pcu,CDOM,Surface
+Bot.Chl.red,rfu,Chl.red,Bottom
+Surf.Chl.red,rfu,Chl.red,Surface
+Bot.Chla,rfu,Chla,Bottom
+Surf.Chla,rfu,Chla,Surface
+Chla.blue,rfu,Chla.blue,N/A
+Chla.phor,rfu,Chla.phor,N/A
+Chla.red,rfu,Chla.red,N/A
+Bottom.Conductivity,uS/cm,Conductivity,Bottom
+Conductivity,uS/cm,Conductivity,N/A
+Surface.Conductivity,uS/cm,Conductivity,Surface
+Bot.DO,mg/L,DO,Bottom
+Bot.DO.sat,%sat,DO,Bottom
+DO.mgl,mg/L,DO,N/A
+DO.sat,%sat,DO,N/A
+Surf.DO,mg/L,DO,Surface
+Surf.DO.Sat,%sat,DO,Surface
+Ecoli.100ml,1/100ml,E. coli,N/A
+Entero,col/100ml,Entero,N/A
+Fcoli.100ml,1/100ml,F. coli,N/A
+Bot.Lower.Apogee,par,Lower Apogee,Bottom
+Surf.Lower.Apogee,par,Lower Apogee,Surface
+Monochlorine.mgl,mg/L,Monochlorine,N/A
+NH3.mgl,mg/L,NH3,N/A
+NH3_field,mg/L,NH3,N/A
+NH4.mgl,mg/L,NH4,N/A
+NO2.mgl,mg/L,NO2,N/A
+NO3.mgl,mg/L,NO3,N/A
+Normalized_KdPAR,1/meter,Normalized KdPAR,N/A
+OP.mgl,mg/L,OP,N/A
+Optical.Brightness,rfu,Optical Brightness,N/A
+Bot.pH,SU,pH,Bottom
+pH,SU,pH,N/A
+Surf.pH,SU,pH,Surface
+Bot.Sal,psu,Salinity,Bottom
+Sal.psu,psu,Salinity,N/A
+Salinty.hand,psu,Salinity,N/A
+Surf.Sal,psu,Salinity,Surface
+Bot.Temp,C,Temperature,Bottom
+Temp.c,C,Temperature,N/A
+Surf.Temp,C,Temperature,Surface
+TKN.mgl,mg/L,TKN,N/A
+TN.mgl,mg/L,TN,N/A
+Bot.Turb,ntu,Turbidity,Bottom
+Turb.hach,ntu,Turbidity,N/A
+Turb.ntu,ntu,Turbidity,N/A
+Surf.Turb,ntu,Turbidity,Surface
+Bot.Upper.Apogee,par,Upper Apogee,Bottom
+Surf.Upper.Apogee,par,Upper Apogee,Surface
