@@ -20,16 +20,14 @@ library(dplyr)
 library(ggplot2)
 library(conflicted)
 library(lubridate)
-#devtools::install_github('rstudio/leaflet') 
 library(leaflet)
 library(RColorBrewer)
 
-conflicts_prefer(dplyr::filter,dplyr::lag)
-#getwd()
+conflicts_prefer(dplyr::filter, dplyr::lag)
 
 #### Grab the data
 
-dat<-readRDS("CulWQ_clean-2024-04-08.rds")%>%arrange(Location,Site.ID,Date,Param)
+dat<-readRDS("CulWQ_clean-2024-05-18.rds")%>%arrange(Location,Site.ID,Date,Param)
 points<-readRDS("Cul_wqpoints.rds")%>%arrange(Location,Site.ID)
 
 # Join location and wq file
@@ -51,10 +49,10 @@ meddat<-bubbles%>%
 plotit <- function(Locc,Params,datin){
   mod <- dat%>%
     filter(Location %in% Locc &  Param %in% Params)
- 
+  
   mn<-min(mod$Result)-5
   mx=max(mod$Result)+5
-
+  
   P <- ggplot(mod, aes(x = Date, y = Result,group=Site.ID, color = Site.ID)) + geom_point()+
     geom_smooth(method = "loess", fill = NA)+ ylim(mn,mx)+
     labs(
@@ -88,31 +86,31 @@ wsparam<-unique(pullit$Param)
 # Shiny UI
 ui <- fluidPage(
   titlePanel("Culebra Water Quality Dashboard"),
-   tabsetPanel(
-     tabPanel("Timeseries Plots", fluid = TRUE,
-               sidebarLayout(
-                 sidebarPanel(
-                  selectInput(inputId = 'Locsel', label = 'Select Location', choices = Loc,
-                               selected = 'Nearshore'),
-                   selectInput(inputId = 'Parmsel', label = 'Select Parameter', choices = Parms,
-                               selected = 'Surf.Turb')),         
-                 mainPanel( plotOutput('plo'))
-               )
-      ),
-     
+  tabsetPanel(
+    tabPanel("Timeseries Plots", fluid = TRUE,
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput(inputId = 'Locsel', label = 'Select Location', choices = Loc,
+                             selected = 'Nearshore'),
+                 selectInput(inputId = 'Parmsel', label = 'Select Parameter', choices = Parms,
+                             selected = 'Surf.Turb')),         
+               mainPanel( plotOutput('plo'))
+             )
+    ),
+    
     tabPanel("Map Plots", fluid = TRUE,
              sidebarLayout(
                sidebarPanel(
-                  selectInput(inputId = 'Parmsel2', label = 'Select Parameter', choices = Parms,
+                 selectInput(inputId = 'Parmsel2', label = 'Select Parameter', choices = Parms,
                              selected = 'Surf.Turb')
-              ),         
+               ),         
                mainPanel(leafletOutput(outputId = 'map'))
-            )
-           )
-         )
-        )
+             )
+    )
+  )
+)
 
- 
+
 # Shiny server
 server <- function(input, output,session){
   output$plo <- renderPlot({
@@ -121,62 +119,54 @@ server <- function(input, output,session){
       Params = input$Parmsel,
       datin = dat)
   })
-
-#should be a function to pass based on selection of location  
-#  observe({
-#    updateSelectInput(session, "Parmsel", choices = nsparam)
-#  }) 
-
- 
- # reactive to pull the selected input parameter 
+  
+  #should be a function to pass based on selection of location  
+  #  observe({
+  #    updateSelectInput(session, "Parmsel", choices = nsparam)
+  #  }) 
+  
+  
+  # reactive to pull the selected input parameter 
   filteredData <- reactive({
     meddat[meddat$Param==input$Parmsel2,]
   })
   
- mypalette <- reactive({
+  mypalette <- reactive({
     colorBin(palette = "YlOrBr", domain =filteredData()$med_value , bins = 6)
   })
   
   basemap <- reactive(
-        leaflet() %>%
-         addTiles()%>%
-         addProviderTiles("Esri.WorldImagery")%>%
-          setView(lat=18.313,lng=-65.273,zoom=13)%>%
-          addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
-                     fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="white", radius=120, stroke=FALSE, 
-                     label = filteredData()$Site.ID,
-                     labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
-                                                 style = list(
-                                                   "color" = "white")))%>%
-    addLegend("topright", pal = mypalette(), values = filteredData()$med_value,bins=6, title = "Median Value")  
+    leaflet() %>%
+      addTiles()%>%
+      addProviderTiles("Esri.WorldImagery")%>%
+      setView(lat=18.313,lng=-65.273,zoom=13)%>%
+      addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
+                 fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="white", radius=120, stroke=FALSE, 
+                 label = filteredData()$Site.ID,
+                 labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
+                                             style = list(
+                                               "color" = "white")))%>%
+      addLegend("topright", pal = mypalette(), values = filteredData()$med_value,bins=6, title = "Median Value")  
   )
-
+  
   
   output$map <- renderLeaflet({basemap()})
   
-
-    observeEvent(
-       filteredData(),
-        leafletProxy("map")%>%
-         clearShapes()%>%
-        addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
-                        fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="black", radius=120, stroke=FALSE,
-                   labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
-                                               style = list(
-                                                 "color" = "white")))
-#       } 
-)
+  
+  observeEvent(
+    filteredData(),
+    leafletProxy("map")%>%
+      clearShapes()%>%
+      addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
+                 fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="black", radius=120, stroke=FALSE,
+                 labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
+                                             style = list(
+                                               "color" = "white")))
+  )
 }
-
-    
-#  session$onSessionEnded(function() {
-#    stopApp()
-#  } 
-
 
 # run app
 ggplot2::theme_set(ggplot2::theme_bw())
-#thematic_shiny()
 shinyApp(ui = ui, server = server)  
 
 #library(rsconnect)
