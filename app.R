@@ -27,7 +27,8 @@ conflicts_prefer(dplyr::filter, dplyr::lag)
 
 #### Grab the data
 
-params = read.csv("CulParams.csv")
+params = read.csv("CulParams.csv") |> 
+  mutate(ParameterUnits = paste0(Parameter, " (", Units, ")"))
 
 dat <- readRDS("CulWQ_clean-2024-05-18.rds") %>%
   # μ character wasn't read correctly from CulParams.csv so removed it
@@ -35,8 +36,7 @@ dat <- readRDS("CulWQ_clean-2024-05-18.rds") %>%
                         ifelse(Param == "Bottom.Conductivity..μS.cm.", "Bottom.Conductivity", Param))) %>% 
   select(-Units) %>%
   arrange(Location, Site.ID, Date, Param) %>%
-  left_join(params) |> 
-  mutate(ParameterUnits = paste0(Parameter, " (", Units, ")"))
+  left_join(params)
 
 points <- readRDS("Cul_wqpoints.rds") %>% 
   arrange(Location, Site.ID)
@@ -59,7 +59,7 @@ meddat <- bubbles %>%
 # plotting function which takes tidied data and filters based on ui selections
 plotit <- function(Locc,Params,datin){
   mod <- dat%>%
-    filter(Location %in% Locc &  Param %in% Params)
+    filter(Location == Locc &  ParameterUnits == Params)
   
   mn<-min(mod$Result)-5
   mx=max(mod$Result)+5
@@ -79,18 +79,18 @@ plotit <- function(Locc,Params,datin){
 
 # List of unique values for input selection
 
-Stat <- unique(dat$Site.ID)
-Loc <-unique(dat$Location)
-Parms <-unique(dat$Param)
-
-# test secondary selection 
-pullit<-dat%>%
-  filter(Location=="Nearshore")
-nsparam<-unique(pullit$Param)
-
-pullit<-dat%>%
-  filter(Location=="Watershed")
-wsparam<-unique(pullit$Param)
+# Stat <- unique(dat$Site.ID)
+# Loc <- unique(dat$Location)
+# Parms <-unique(dat$Param)
+# 
+# # test secondary selection 
+# pullit<-dat%>%
+#   filter(Location=="Nearshore")
+# nsparam<-unique(pullit$Param)
+# 
+# pullit<-dat%>%
+#   filter(Location=="Watershed")
+# wsparam<-unique(pullit$Param)
 
 
 
@@ -101,19 +101,21 @@ ui <- fluidPage(
     tabPanel("Timeseries Plots", fluid = TRUE,
              sidebarLayout(
                sidebarPanel(
-                 selectInput(inputId = 'Locsel', label = 'Select Location', choices = Loc,
+                 selectInput(inputId = 'Locsel', label = 'Location', choices = c('Nearshore', 'Watershed'),
                              selected = 'Nearshore'),
-                 selectInput(inputId = 'Parmsel', label = 'Select Parameter', choices = Parms,
-                             selected = 'Surf.Turb')),         
-               mainPanel( plotOutput('plo'))
+                 selectInput(inputId = 'Levelsel', label = 'Sample Level', choices = 'Surface',
+                             selected = 'Surface'),
+                 selectInput(inputId = 'Parmsel', label = 'Parameter', choices = 'Turbidity (ntu)',
+                             selected = 'Turbidity (ntu)')),         
+               mainPanel(plotOutput('plo'))
              )
     ),
     
     tabPanel("Map Plots", fluid = TRUE,
              sidebarLayout(
                sidebarPanel(
-                 selectInput(inputId = 'Parmsel2', label = 'Select Parameter', choices = Parms,
-                             selected = 'Surf.Turb')
+                 selectInput(inputId = 'Parmsel2', label = 'Select Parameter', choices = 'Turbidity (ntu)',
+                             selected = 'Turbidity (ntu)')
                ),         
                mainPanel(leafletOutput(outputId = 'map'))
              )
@@ -123,7 +125,30 @@ ui <- fluidPage(
 
 
 # Shiny server
-server <- function(input, output,session){
+server <- function(input, output, session){
+  
+  datSub1 <- reactive({
+    filter(dat, Location == input$Locsel)
+  })
+  
+  observe({
+    sl = sort(unique(datSub1()$SampleLevel), decreasing = TRUE)
+    updateSelectInput(session, 'Levelsel', choices = sl)
+  })
+  
+  datSub2 <- reactive({
+    filter(datSub1(), SampleLevel == input$Levelsel)
+  })
+  
+  observe({
+    parms = sort(unique(datSub2()$ParameterUnits))
+    updateSelectInput(session, 'Parmsel', choices = parms)
+  })
+  
+  datSub3 <- reactive({
+    filter(datSub2(), SampleLevel == input$Levelsel)
+  })
+  
   output$plo <- renderPlot({
     plotit(
       Locc = input$Locsel,
