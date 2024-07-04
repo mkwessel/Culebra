@@ -27,16 +27,27 @@ conflicts_prefer(dplyr::filter, dplyr::lag)
 
 #### Grab the data
 
-dat<-readRDS("CulWQ_clean-2024-05-18.rds")%>%arrange(Location,Site.ID,Date,Param)
-points<-readRDS("Cul_wqpoints.rds")%>%arrange(Location,Site.ID)
+params = read.csv("CulParams.csv")
+
+dat <- readRDS("CulWQ_clean-2024-05-18.rds") %>%
+  # μ character wasn't read correctly from CulParams.csv so removed it
+  mutate(Param = ifelse(Param == "Surface.Conductivity..μS.cm.", "Surface.Conductivity",
+                        ifelse(Param == "Bottom.Conductivity..μS.cm.", "Bottom.Conductivity", Param))) %>% 
+  select(-Units) %>%
+  arrange(Location, Site.ID, Date, Param) %>%
+  left_join(params) |> 
+  mutate(ParameterUnits = paste0(Parameter, " (", Units, ")"))
+
+points <- readRDS("Cul_wqpoints.rds") %>% 
+  arrange(Location, Site.ID)
 
 # Join location and wq file
-bubbles<-full_join(dat,points,by=c("Location","Site.ID"))   
+bubbles <- left_join(dat, points, by = c("Location", "Site.ID"))   
 
 # Generate medians for map bubble plots
-meddat<-bubbles%>%
-  group_by(Location,Site.ID,Param,Latitude,Longitude)%>%
-  summarize(med_value=median(Result,na.rm=TRUE),.groups='drop')
+meddat <- bubbles %>%
+  group_by(Location, Site.ID, Param, ParameterUnits, Latitude, Longitude) %>%
+  summarize(med_value = median(Result,na.rm=TRUE), .groups = 'drop')
 
 
 #########################################
