@@ -15,13 +15,12 @@
 
 library(shinyWidgets)
 library(shiny) 
-library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(conflicted)
 library(lubridate)
 library(leaflet)
-library(RColorBrewer)
+library(plotly)
 
 conflicts_prefer(dplyr::filter, dplyr::lag)
 
@@ -49,51 +48,6 @@ meddat <- bubbles %>%
   group_by(Location, Site.ID, Param, ParameterUnits, Latitude, Longitude) %>%
   summarize(med_value = median(Result,na.rm=TRUE), .groups = 'drop')
 
-
-#########################################
-# Functions
-#########################################
-# timeseries plot function
-#########################################
-
-# plotting function which takes tidied data and filters based on ui selections
-plotit <- function(Locc,Params,datin){
-  mod <- dat%>%
-    filter(Location == Locc &  ParameterUnits == Params)
-  
-  mn<-min(mod$Result)-5
-  mx=max(mod$Result)+5
-  
-  P <- ggplot(mod, aes(x = Date, y = Result,group=Site.ID, color = Site.ID)) + geom_point()+
-    geom_smooth(method = "loess", fill = NA)+ ylim(mn,mx)+
-    labs(
-      title = "Trend in Water Quality over Time",
-      x = "Date",
-      y = "Value"
-    ) 
-  
-  P + theme_bw()
-  P
-  
-}
-
-# List of unique values for input selection
-
-# Stat <- unique(dat$Site.ID)
-# Loc <- unique(dat$Location)
-# Parms <-unique(dat$Param)
-# 
-# # test secondary selection 
-# pullit<-dat%>%
-#   filter(Location=="Nearshore")
-# nsparam<-unique(pullit$Param)
-# 
-# pullit<-dat%>%
-#   filter(Location=="Watershed")
-# wsparam<-unique(pullit$Param)
-
-
-
 # Shiny UI
 ui <- fluidPage(
   titlePanel("Culebra Water Quality Dashboard"),
@@ -107,7 +61,7 @@ ui <- fluidPage(
                              selected = 'Surface'),
                  selectInput(inputId = 'Parmsel', label = 'Parameter', choices = 'Turbidity (ntu)',
                              selected = 'Turbidity (ntu)')),         
-               mainPanel(plotOutput('plo'))
+               mainPanel(plotlyOutput('plo'))
              )
     ),
     
@@ -146,21 +100,19 @@ server <- function(input, output, session){
   })
   
   datSub3 <- reactive({
-    filter(datSub2(), SampleLevel == input$Levelsel)
+    filter(datSub2(), ParameterUnits == input$Parmsel)
   })
   
-  output$plo <- renderPlot({
-    plotit(
-      Locc = input$Locsel,
-      Params = input$Parmsel,
-      datin = dat)
+  output$plo <- renderPlotly({
+    p = ggplot(datSub3(), aes(x = Date, y = Result, color = Site.ID)) + 
+      geom_point() +
+      geom_smooth(method = "loess", fill = NA) + 
+      # ylim(mn, mx) +
+      labs(title = "Trend in Water Quality over Time", x = "", y = input$Parmsel, color = "Site") +
+      theme_bw()
+    
+    ggplotly(p)
   })
-  
-  #should be a function to pass based on selection of location  
-  #  observe({
-  #    updateSelectInput(session, "Parmsel", choices = nsparam)
-  #  }) 
-  
   
   # reactive to pull the selected input parameter 
   filteredData <- reactive({
@@ -202,7 +154,6 @@ server <- function(input, output, session){
 }
 
 # run app
-ggplot2::theme_set(ggplot2::theme_bw())
 shinyApp(ui = ui, server = server)  
 
 #library(rsconnect)
