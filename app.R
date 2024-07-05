@@ -37,10 +37,12 @@ dat <- readRDS("CulWQ_clean-2024-05-18.rds") %>%
   select(-Units) %>%
   arrange(Location, Site.ID, Date) %>%
   left_join(params) %>%
+  rename(Site = Site.ID) %>%
   filter(Parameter != "Turbidity hach") # no non missing values
 
 points <- readRDS("Cul_wqpoints.rds") %>% 
-  arrange(Location, Site.ID)
+  rename(Site = Site.ID) %>%
+  arrange(Location, Site)
 
 # Shiny UI
 ui <- page_fillable(
@@ -107,18 +109,19 @@ server <- function(input, output, session){
   })
   
   output$plo <- renderPlotly({
-    p = ggplot(datSub3(), aes(x = Date, y = Result, color = Site.ID)) + 
+    p = ggplot(datSub3(), aes(x = Date, y = Result, color = Site)) + 
       geom_point() +
-      geom_smooth(method = "loess", fill = NA) + 
-      labs(x = "", y = input$Parmsel, color = "Site") +
+      geom_line() +
+      # geom_smooth(method = "loess", fill = NA) + 
+      labs(x = "", y = input$Parmsel) +
       theme_bw()
     
     ggplotly(p)
   })
   
   datBubble <- reactive({
-    left_join(datSub3(), points, by = c("Location", "Site.ID")) %>% 
-      group_by(Site.ID, Latitude, Longitude, Parameter, Units) %>%
+    left_join(datSub3(), points, by = c("Location", "Site")) %>% 
+      group_by(Site, Latitude, Longitude, Parameter, Units) %>%
       summarize(MedValue = median(Result, na.rm = TRUE), .groups = 'drop') %>%
       mutate(Popup = paste(Parameter, "<br>", MedValue, Units))
   })
@@ -136,9 +139,9 @@ server <- function(input, output, session){
   
   observe({
     leafletProxy("map")%>%
-      clearShapes() %>%
+      clearMarkers() %>%
       clearControls() %>%
-      addCircleMarkers(data = datBubble(), lng = ~Longitude, lat = ~Latitude, label = ~Site.ID, popup = ~Popup,
+      addCircleMarkers(data = datBubble(), lng = ~Longitude, lat = ~Latitude, label = ~Site, popup = ~Popup,
                        fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) %>%
       addLegend("bottomright", pal = mypalette(), values = datBubble()$MedValue, title = paste("Median<br>", input$Parmsel))  
   })
