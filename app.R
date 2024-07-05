@@ -21,6 +21,7 @@ library(conflicted)
 library(lubridate)
 library(leaflet)
 library(plotly)
+library(bslib)
 
 conflicts_prefer(dplyr::filter, dplyr::lag)
 
@@ -34,49 +35,32 @@ dat <- readRDS("CulWQ_clean-2024-05-18.rds") %>%
   mutate(Param = ifelse(Param == "Surface.Conductivity..μS.cm.", "Surface.Conductivity",
                         ifelse(Param == "Bottom.Conductivity..μS.cm.", "Bottom.Conductivity", Param))) %>% 
   select(-Units) %>%
-  arrange(Location, Site.ID, Date, Param) %>%
-  left_join(params)
+  arrange(Location, Site.ID, Date) %>%
+  left_join(params) %>%
+  filter(Parameter != "Turbidity hach") # no non missing values
 
 points <- readRDS("Cul_wqpoints.rds") %>% 
   arrange(Location, Site.ID)
 
-# Join location and wq file
-bubbles <- left_join(dat, points, by = c("Location", "Site.ID"))   
-
-# Generate medians for map bubble plots
-meddat <- bubbles %>%
-  group_by(Location, Site.ID, Param, ParameterUnits, Latitude, Longitude) %>%
-  summarize(med_value = median(Result,na.rm=TRUE), .groups = 'drop')
-
 # Shiny UI
-ui <- fluidPage(
-  titlePanel("Culebra Water Quality Dashboard"),
-  tabsetPanel(
-    tabPanel("Timeseries Plots", fluid = TRUE,
-             sidebarLayout(
-               sidebarPanel(
-                 selectInput(inputId = 'Locsel', label = 'Location', choices = c('Nearshore', 'Watershed'),
-                             selected = 'Nearshore'),
-                 selectInput(inputId = 'Levelsel', label = 'Sample Level', choices = 'Surface',
-                             selected = 'Surface'),
-                 selectInput(inputId = 'Parmsel', label = 'Parameter', choices = 'Turbidity (ntu)',
-                             selected = 'Turbidity (ntu)')),         
-               mainPanel(plotlyOutput('plo'))
-             )
-    ),
-    
-    tabPanel("Map Plots", fluid = TRUE,
-             sidebarLayout(
-               sidebarPanel(
-                 selectInput(inputId = 'Parmsel2', label = 'Select Parameter', choices = 'Turbidity (ntu)',
-                             selected = 'Turbidity (ntu)')
-               ),         
-               mainPanel(leafletOutput(outputId = 'map'))
-             )
-    )
+ui <- page_fillable(
+  title = "Culebra WQ",
+  layout_columns(
+    h4("Culebra Water Quality Dashboard"),
+    h4(" "),
+    actionButton("DTshow", "Show Filtered Data"),
+    col_widths = c(6, 4, 2)
+  ),
+  layout_columns(
+    selectInput(inputId = 'Locsel', label = 'Location', choices = c('Nearshore', 'Watershed'), selected = 'Nearshore'),
+    selectInput(inputId = 'Levelsel', label = 'Sample Level', choices = NULL),
+    selectInput(inputId = 'Parmsel', label = 'Parameter', choices = NULL)
+  ),
+  layout_columns(
+    card(full_screen = TRUE, leafletOutput('map')),
+    card(full_screen = TRUE, plotlyOutput('plo'))
   )
 )
-
 
 # Shiny server
 server <- function(input, output, session){
@@ -85,72 +69,80 @@ server <- function(input, output, session){
     filter(dat, Location == input$Locsel)
   })
   
-  observe({
+  observeEvent(input$Locsel, {
     sl = sort(unique(datSub1()$SampleLevel), decreasing = TRUE)
+    freezeReactiveValue(input, "Levelsel")
     updateSelectInput(session, 'Levelsel', choices = sl)
   })
   
   datSub2 <- reactive({
+    req(input$Levelsel)
     filter(datSub1(), SampleLevel == input$Levelsel)
   })
   
   observe({
     parms = sort(unique(datSub2()$ParameterUnits))
+    freezeReactiveValue(input, "Parmsel")
     updateSelectInput(session, 'Parmsel', choices = parms)
   })
   
   datSub3 <- reactive({
+    req(input$Parmsel)
     filter(datSub2(), ParameterUnits == input$Parmsel)
+  })
+  
+  output$table <- DT::renderDataTable({
+    datSub3()
+  }, extensions = "Buttons",
+  options = list(searching = TRUE, bPaginate = FALSE, info = TRUE, scrollX = TRUE,
+                 dom = "Bfrtip", buttons = c("copy", "csv", "excel")))
+  
+  observeEvent(input$DTshow, {
+    showModal(modalDialog(
+      DT::dataTableOutput("table"),
+      easyClose = TRUE,
+      footer = NULL, 
+      size = "l"
+    ))
   })
   
   output$plo <- renderPlotly({
     p = ggplot(datSub3(), aes(x = Date, y = Result, color = Site.ID)) + 
       geom_point() +
       geom_smooth(method = "loess", fill = NA) + 
-      # ylim(mn, mx) +
-      labs(title = "Trend in Water Quality over Time", x = "", y = input$Parmsel, color = "Site") +
+      labs(x = "", y = input$Parmsel, color = "Site") +
       theme_bw()
     
     ggplotly(p)
   })
   
-  # reactive to pull the selected input parameter 
-  filteredData <- reactive({
-    meddat[meddat$Param==input$Parmsel2,]
+  datBubble <- reactive({
+    left_join(datSub3(), points, by = c("Location", "Site.ID")) %>% 
+      group_by(Site.ID, Latitude, Longitude, Parameter, Units) %>%
+      summarize(MedValue = median(Result, na.rm = TRUE), .groups = 'drop') %>%
+      mutate(Popup = paste(Parameter, "<br>", MedValue, Units))
   })
   
   mypalette <- reactive({
-    colorBin(palette = "YlOrBr", domain =filteredData()$med_value , bins = 6)
+    colorNumeric(palette = "YlOrBr", domain = datBubble()$MedValue)
   })
   
-  basemap <- reactive(
-    leaflet() %>%
-      addTiles()%>%
-      addProviderTiles("Esri.WorldImagery")%>%
-      setView(lat=18.313,lng=-65.273,zoom=13)%>%
-      addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
-                 fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="white", radius=120, stroke=FALSE, 
-                 label = filteredData()$Site.ID,
-                 labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
-                                             style = list(
-                                               "color" = "white")))%>%
-      addLegend("topright", pal = mypalette(), values = filteredData()$med_value,bins=6, title = "Median Value")  
-  )
+  output$map <- renderLeaflet({
+    leaflet(options = leafletOptions(attributionControl = FALSE)) %>%
+      addTiles() %>%
+      addProviderTiles(providers$Esri.WorldImagery) %>%
+      setView(lat=18.313, lng=-65.273, zoom=13)
+  })
   
-  
-  output$map <- renderLeaflet({basemap()})
-  
-  
-  observeEvent(
-    filteredData(),
+  observe({
     leafletProxy("map")%>%
-      clearShapes()%>%
-      addCircles(data=filteredData(),lng = ~ Longitude, lat = ~ Latitude,popup=~paste(as.character(filteredData()$Site.ID),"<br>",as.character(filteredData()$med_value),sep=" "),
-                 fillColor = ~mypalette()(med_value), fillOpacity = 0.7, color="black", radius=120, stroke=FALSE,
-                 labelOptions = labelOptions(noHide = T, textOnly=TRUE, textsize = "15px",direction = "top",
-                                             style = list(
-                                               "color" = "white")))
-  )
+      clearShapes() %>%
+      clearControls() %>%
+      addCircleMarkers(data = datBubble(), lng = ~Longitude, lat = ~Latitude, label = ~Site.ID, popup = ~Popup,
+                       fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) %>%
+      addLegend("bottomright", pal = mypalette(), values = datBubble()$MedValue, title = paste("Median<br>", input$Parmsel))  
+  })
+  
 }
 
 # run app
