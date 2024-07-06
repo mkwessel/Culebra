@@ -4,30 +4,28 @@ shinyServer(function(input, output, session) {
     filter(dat, Location == input$Locsel)
   })
   
-  observeEvent(input$Locsel, {
-    sl = sort(unique(datSub1()$SampleLevel), decreasing = TRUE)
-    freezeReactiveValue(input, "Levelsel")
-    updateSelectInput(session, 'Levelsel', choices = sl)
-  })
-  
-  datSub2 <- reactive({
-    req(input$Levelsel)
-    filter(datSub1(), SampleLevel == input$Levelsel)
+  datSub1 <- reactive({
+    if (input$Locsel == "Watershed"){
+      ws
+    } else {
+      filter(ns, SampleLevel == input$Levelsel)
+    }
+    
   })
   
   observe({
-    parms = sort(unique(datSub2()$ParameterUnits))
+    parms = sort(unique(datSub1()$Parameter))
     freezeReactiveValue(input, "Parmsel")
     updateSelectInput(session, 'Parmsel', choices = parms)
   })
   
-  datSub3 <- reactive({
+  datSub2 <- reactive({
     req(input$Parmsel)
-    filter(datSub2(), ParameterUnits == input$Parmsel)
+    filter(datSub1(), Parameter == input$Parmsel)
   })
   
   output$table <- DT::renderDataTable({
-    datSub3()
+    select(datSub2(), -Qual)
   }, extensions = "Buttons",
   options = list(searching = TRUE, bPaginate = FALSE, info = TRUE, scrollX = TRUE,
                  dom = "Bfrtip", buttons = c("copy", "csv", "excel")))
@@ -42,10 +40,9 @@ shinyServer(function(input, output, session) {
   })
   
   output$plo <- renderPlotly({
-    p = ggplot(datSub3(), aes(x = Date, y = Result, color = Site)) + 
+    p = ggplot(datSub2(), aes(x = Date, y = Value, color = Site)) + 
       geom_point() +
       geom_line() +
-      # geom_smooth(method = "loess", fill = NA) + 
       labs(x = "", y = input$Parmsel) +
       theme_bw()
     
@@ -53,10 +50,10 @@ shinyServer(function(input, output, session) {
   })
   
   datBubble <- reactive({
-    left_join(datSub3(), points, by = c("Location", "Site")) %>% 
-      group_by(Site, Latitude, Longitude, Parameter, Units) %>%
-      summarize(MedValue = median(Result, na.rm = TRUE), .groups = 'drop') %>%
-      mutate(Popup = paste(Parameter, "<br>", MedValue, Units))
+    left_join(datSub2(), points, by = join_by(Site)) |> 
+      group_by(Site, Latitude, Longitude, Parameter) |>
+      summarize(MedValue = median(Value, na.rm = TRUE), .groups = 'drop') |>
+      mutate(Popup = paste(Parameter, "<br>", MedValue))
   })
   
   mypalette <- reactive({
@@ -64,18 +61,18 @@ shinyServer(function(input, output, session) {
   })
   
   output$map <- renderLeaflet({
-    leaflet(options = leafletOptions(attributionControl = FALSE)) %>%
-      addTiles() %>%
-      addProviderTiles(providers$Esri.WorldImagery) %>%
+    leaflet(options = leafletOptions(attributionControl = FALSE)) |>
+      addTiles() |>
+      addProviderTiles(providers$Esri.WorldImagery) |>
       setView(lat=18.313, lng=-65.273, zoom=13)
   })
   
   observe({
-    leafletProxy("map")%>%
-      clearMarkers() %>%
-      clearControls() %>%
+    leafletProxy("map")|>
+      clearMarkers() |>
+      clearControls() |>
       addCircleMarkers(data = datBubble(), lng = ~Longitude, lat = ~Latitude, label = ~Site, popup = ~Popup,
-                       fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) %>%
+                       fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) |>
       addLegend("bottomright", pal = mypalette(), values = datBubble()$MedValue, title = paste("Median<br>", input$Parmsel))  
   })
   
