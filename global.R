@@ -31,26 +31,24 @@ points <- readRDS("Cul_wqpoints.rds") %>%
   rename(Site = Site.ID) %>%
   arrange(Location, Site)
 
-process_qualifiers = function(data){
+process_chars = function(data){
   data |>
-    mutate(Qual = gsub('\\d|\\.|-', "", Value),                # assign quals as any non digit using regex
-           Value = as.numeric(gsub('<|>|!|?|,', "", Value)))   # remove qualifying characters from Value column
+    mutate(Chars = gsub('\\d|\\.', "", Value),                   # assign chars as any non digit using regex
+           Value = as.numeric(gsub('<|>|!|?|,', "", Value)))     # remove characters from Value column
 }
 
 calc_kdpar <- function(surf_lwr, surf_upr, bot_lwr, bot_upr){
   abs(log((surf_lwr/surf_upr)/(bot_lwr/bot_upr)))
 }
 
-wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg",
-                       col_types = "c", na = c("", ".", "NA", "N/A", "Error"))
+wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg", col_types = "c")
 
 wslab = wslab_raw |>
   select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Time")) |>
   rename(Date = `Date of Monitoring`, Site = `Sample ID`) |>
   pivot_longer(cols = !c(Date, Site), names_to = "Parameter", values_to = "Value")
 
-wsfield_raw = read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/",
-                         col_types = "c", na = c("", ".", "NA", "N/A", "Error"))
+wsfield_raw = read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/", col_types = "c")
 
 wsfield = wsfield_raw |>
   select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Sample Time")) |>
@@ -59,12 +57,11 @@ wsfield = wsfield_raw |>
          `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
   pivot_longer(cols = !c(Date, Site), names_to = "Parameter", values_to = "Value")
 
-ws = process_qualifiers(bind_rows(wslab, wsfield)) |>
+ws = process_chars(bind_rows(wslab, wsfield)) |>
   filter(!is.na(Value)) |>
   mutate(Date = mdy(Date))
 
-ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/",
-                    col_types = "c", na = c("", ".", "NA", "N/A", "Error"))
+ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
 ns_tmp = ns_raw |>
   select(!c("Timestamp", "Time", "Data recorded by:", "Data entered by:", "Measurements completed and samples collected?",
@@ -81,7 +78,7 @@ ns_tmp = ns_raw |>
          Site = ifelse(Site == "Fulladosa  Ramp", "Fulladosa Ramp", Site),
          Parameter = gsub("Bottom |Bottom -|Bottom - |Surface |Surface -|Surface - ", "", ParameterRaw),
          Parameter = gsub("µ|μ", "u", Parameter)) |>
-  process_qualifiers() |>
+  process_chars() |>
   select(-ParameterRaw)
 
 kdpar = ns_tmp |>
