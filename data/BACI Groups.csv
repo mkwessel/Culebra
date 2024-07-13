@@ -1,0 +1,15 @@
+Id,Name,Descriptor,Data_type,Waterbody,Y° 4674,X° 4674,Y 4674,X 4674
+"0",Fulladosa Bay,Treatment,Water quality,Ensenada Honda,"18° 17' 44.048""","-65° 17' 16.306""",18.295569011933612,-65.287862847643410
+"0",Fulladosa Point,Control,Water quality,Ensenada Honda,"18° 17' 51.356""","-65° 17' 10.131""",18.297598975355037,-65.286147522042967
+"0",Fulladosa Ramp,Treatment,Water quality,Ensenada Honda,"18° 17' 57.898""","-65° 17' 17.884""",18.299416138082893,-65.288301004525763
+"0",Casa Azul,Control,Water quality,Ensenada Honda,"18° 18' 4.781""","-65° 17' 33.299""",18.301328168020255,-65.292583042604690
+"0",Villa Terruno,Treatment,Water quality,Ensenada Honda,"18° 18' 4.736""","-65° 17' 37.114""",18.301315591029194,-65.293642652334981
+"0",Coronel,Treatment,Water quality,Ensenada Honda,"18° 18' 30.971""","-65° 17' 27.834""",18.308603057412402,-65.291065038914468
+"0",Cabra,Treatment,Water quality,Ensenada Honda,"18° 18' 21.777""","-65° 16' 51.811""",18.306049188694992,-65.281058664925524
+"0",Little Cabra,Control,Water quality,Ensenada Honda,"18° 18' 8.965""","-65° 16' 48.765""",18.302490359378325,-65.280212518577500
+"0",Mosquito,Positive Control,Water quality,Ensenada Honda,"18° 17' 30.636""","-65° 15' 47.255""",18.291843389124271,-65.263126304905811
+"0",Puerto Manglar_1,Treatment,Water quality,Puerto Manglar,"18° 18' 21.086""","-65° 15' 5.609""",18.305857185833126,-65.251558025770777
+"0",Puerto Manglar_2,Treatment,Water quality,Puerto Manglar,"18° 18' 31.052""","-65° 15' 27.418""",18.308625596449733,-65.257616057922036
+"0",Puerto Manglar_Impaired,Control,Water quality,Puerto Manglar,"18° 18' 24.212""","-65° 15' 31.203""",18.306725608712540,-65.258667480773013
+"0",Tamarindo,Citizen Science Priority?,Water quality,Luis Pena,"18° 19' 3.92""","-65° 19' 3.636""",18.317755623310681,-65.317676587591606
+"0",Aeropuerto,Negative Control,Water quality,Ensenada Honda,"18° 18' 19.765""","-65° 18' 6.675""",18.305490312956518,-65.301854157287750
