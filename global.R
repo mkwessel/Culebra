@@ -27,8 +27,8 @@ gs4_auth(token = gargle::secret_read_rds(
   ".secrets/gs4-token.rds",
   key = "GARGLE_KEY"))
 
-points <- readRDS("Cul_wqpoints.rds") %>% 
-  rename(Site = Site.ID) %>%
+points <- readRDS("Cul_wqpoints.rds") |>
+  rename(Site = Site.ID) |>
   arrange(Location, Site)
 
 process_chars = function(data){
@@ -45,7 +45,7 @@ wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJIN
 
 wslab = wslab_raw |>
   select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Time")) |>
-  rename(Date = `Date of Monitoring`, Site = `Sample ID`) |>
+  rename(Date = `Date of Monitoring`, Site = `Sample ID`, `Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
   pivot_longer(cols = !c(Date, Site), names_to = "Parameter", values_to = "Value")
 
 wsfield_raw = read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/", col_types = "c")
@@ -96,3 +96,52 @@ ns = bind_rows(kdpar, ns_tmp) |>
   filter(!is.na(Value))
 
 
+
+# # For Bernardo Vargas-Angel
+# 
+# wslab_bva = wslab_raw |>
+#   rename(`Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
+#   pivot_longer(cols = !c("Timestamp", "Date of Monitoring", "Time", "Samples collected by:", "Data entered by:", "Notes:", "Sample ID"), 
+#                names_to = "Parameter", values_to = "Value") |> 
+#   process_chars() |> 
+#   mutate(Timestamp = as.character(mdy_hms(Timestamp)),
+#          `Date of Monitoring` = as.character(mdy(`Date of Monitoring`))) |> 
+#   select(c("Timestamp", "Date of Monitoring", "Time", "Samples collected by:", "Data entered by:", 
+#            "Sample ID", "Parameter", "Value", "Chars", "Notes:"))
+# 
+# wsfield_bva = wsfield_raw |>
+#   rename(`DO (mg/l)` = `DO  mg/l`, `Chl-a red (ug/l)` = `Chla Red (ug/l)`, `Chl-a blue (ug/l)` = `Chl a  blue (ug/l)`,
+#          `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
+#   pivot_longer(cols = !c("Timestamp", "Date of Monitoring", "Sample Time", "Samples collected by:", "Data entered by:", "Notes:", "Sample ID"), 
+#                names_to = "Parameter", values_to = "Value") |> 
+#   process_chars() |> 
+#   mutate(Timestamp = as.character(mdy_hms(Timestamp)),
+#          `Date of Monitoring` = as.character(mdy(`Date of Monitoring`))) |> 
+#   select(c("Timestamp", "Date of Monitoring", "Sample Time", "Samples collected by:", "Data entered by:", 
+#            "Sample ID", "Parameter", "Value", "Chars", "Notes:"))
+# 
+# ns_bva = ns_raw |>
+#   select(!c("Measurements completed and samples collected?", "Sea State", "Wind Direction", "Wind Speed", "Cloud Cover (%) 0 - 100",)) |>
+#   rename(`Bottom Chl-a Fluorescence (ug/L)` = `Bottom Chl-a  Fluorescence (µg/L)`,
+#          `Enterococci (MPN/100ml)` = `Enterococci MPN/100ml (be sure to convert)`) |>
+#   pivot_longer(cols = !c("Timestamp", "Date of Monitoring", "Time", "Surface Sample Time", "Bottom Sample Time", 
+#                          "Data recorded by:", "Data entered by:", "Notes (if applicable)", "Site ID"), 
+#                names_to = "ParameterRaw", values_to = "Value") |>
+#   mutate(Timestamp = as.character(mdy_hms(Timestamp)),
+#          `Date of Monitoring` = as.character(mdy(`Date of Monitoring`)),
+#          `Sample Level` = case_when(
+#            grepl("Surface", ParameterRaw) ~ "Surface",
+#            grepl("Bottom", ParameterRaw) ~ "Bottom",
+#            .default = "N/A"),
+#          `Site ID` = ifelse(`Site ID` == "Fulladosa  Ramp", "Fulladosa Ramp", `Site ID`),
+#          Parameter = gsub("Bottom |Bottom -|Bottom - |Surface |Surface -|Surface - ", "", ParameterRaw),
+#          Parameter = gsub("µ|μ", "u", Parameter)) |>
+#   process_chars() |>
+#   select(c("Timestamp", "Date of Monitoring", "Time", "Surface Sample Time", "Bottom Sample Time", 
+#            "Data recorded by:", "Data entered by:", "Site ID", "Sample Level", "Parameter", "Value", 
+#            "Chars", "Notes (if applicable)"))
+# 
+# writexl::write_xlsx(list("Watershed (lab)" = wslab_bva,
+#                          "Watershed (field)" = wsfield_bva,
+#                          "Nearshore" = ns_bva),
+#                     paste0("Culebra-WQData-", Sys.Date(), ".xlsx"))
