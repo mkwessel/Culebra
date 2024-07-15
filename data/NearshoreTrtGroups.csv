@@ -1,13 +1,14 @@
-Site,Group
-Aeropuerto,Negative Control
-Cabra,Treatment
-Casa Azul,Control
-Coronel,Treatment
-Fulladosa Bay,Treatment
-Fulladosa Point,Control
-Fulladosa Ramp,Treatment
-Little Cabra,Control
-Mosquito,Positive Control
-Puerto Manglar Treatment,Treatment
-Puerto Manglar Reference,Reference
-Puerto Manglar Control,Control
+Station,Code,Subwatershed,TrtGroup
+Aeropuerto,AP,Aeropuerto,Negative Reference
+Cabra,CA,Cabra,LBSP Restoration
+Little Cabra,LC,Cabra,LBSP Control
+Cementerio,CM,Cementerio,LBSP Control
+Coronel,CO,Coronel,LBSP Restoration
+Casa Azul,CAZ,Culebra,LBSP Control
+Fulladosa Ramp,FDR,Culebra,LBSP Restoration
+Fulladosa Bay,FDB,Fulladosa,LBSP Restoration
+Fulladosa Point,FDP,Fulladosa,LBSP Control
+Mosquito,MQ,Mosquito,Positive Reference
+Puerto Manglar Control,PMC,Puerto Manglar,LBSP Control
+Puerto Manglar Reference,PMD,Puerto Manglar,Positive Reference
+Puerto Manglar Treatment,PMT,Puerto Manglar,LBSP Restoration
