@@ -1,17 +1,3 @@
-##########################################################################
-# Project: Culebra Water Quality Dashboard
-# 
-# Code Development by: Mike Wessel, Inferential Consulting,LLC
-# Inferential.consulting@gmail.com
-
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button in the upper right.
-#
-
-# Github Repo: https://github.com/mikewessel/NOAA-Culebra-LBSP/analysis
-#
-##########################################################################
-
 library(shinyWidgets)
 library(shiny) 
 library(dplyr)
@@ -27,9 +13,15 @@ gs4_auth(token = gargle::secret_read_rds(
   ".secrets/gs4-token.rds",
   key = "GARGLE_KEY"))
 
-points <- readRDS("Cul_wqpoints.rds") |>
-  rename(Site = Site.ID) |>
-  arrange(Location, Site)
+points <- readRDS(file.path("data", "Cul_wqpoints.rds")) |>
+  rename(Station = Site.ID) |>
+  arrange(Location, Station)
+
+ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv"))
+ns_grp_colors = c("Negative Reference" = "#e41a1c", 
+                  "Positive Reference" = "#4daf4a",
+                  "LBSP Restoration" = "#377eb8",
+                  "LBSP Control" = "#ffff33") # alternatively, "#ff7f00"
 
 process_chars = function(data){
   data |>
@@ -45,17 +37,17 @@ wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJIN
 
 wslab = wslab_raw |>
   select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Time")) |>
-  rename(Date = `Date of Monitoring`, Site = `Sample ID`, `Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
-  pivot_longer(cols = !c(Date, Site), names_to = "Parameter", values_to = "Value")
+  rename(Date = `Date of Monitoring`, Station = `Sample ID`, `Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
+  pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
 
 wsfield_raw = read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/", col_types = "c")
 
 wsfield = wsfield_raw |>
   select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Sample Time")) |>
-  rename(Date = `Date of Monitoring`, Site = `Sample ID`, `DO (mg/l)` = `DO  mg/l`,
+  rename(Date = `Date of Monitoring`, Station = `Sample ID`, `DO (mg/l)` = `DO  mg/l`,
          `Chl-a red (ug/l)` = `Chla Red (ug/l)`, `Chl-a blue (ug/l)` = `Chl a  blue (ug/l)`,
          `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
-  pivot_longer(cols = !c(Date, Site), names_to = "Parameter", values_to = "Value")
+  pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
 
 ws = process_chars(bind_rows(wslab, wsfield)) |>
   filter(!is.na(Value)) |>
@@ -67,15 +59,15 @@ ns_tmp = ns_raw |>
   select(!c("Timestamp", "Time", "Data recorded by:", "Data entered by:", "Measurements completed and samples collected?",
             "Sea State", "Wind Direction", "Wind Speed", "Cloud Cover (%) 0 - 100", "Surface Sample Time",
             "Bottom Sample Time", "Notes (if applicable)")) |>
-  rename(Date = `Date of Monitoring`, Site = `Site ID`, `Bottom Chl-a Fluorescence (µg/L)` = `Bottom Chl-a  Fluorescence (µg/L)`,
+  rename(Date = `Date of Monitoring`, Station = `Site ID`, `Bottom Chl-a Fluorescence (µg/L)` = `Bottom Chl-a  Fluorescence (µg/L)`,
          `Enterococci (MPN/100ml)` = `Enterococci MPN/100ml (be sure to convert)`) |>
-  pivot_longer(cols = !c(Date, Site), names_to = "ParameterRaw", values_to = "Value") |>
+  pivot_longer(cols = !c(Date, Station), names_to = "ParameterRaw", values_to = "Value") |>
   mutate(Date = mdy(Date),
          SampleLevel = case_when(
            grepl("Surface", ParameterRaw) ~ "Surface",
            grepl("Bottom", ParameterRaw) ~ "Bottom",
            .default = "N/A"),
-         Site = ifelse(Site == "Fulladosa  Ramp", "Fulladosa Ramp", Site),
+         Station = ifelse(Station == "Fulladosa  Ramp", "Fulladosa Ramp", Station),
          Parameter = gsub("Bottom |Bottom -|Bottom - |Surface |Surface -|Surface - ", "", ParameterRaw),
          Parameter = gsub("µ|μ", "u", Parameter)) |>
   process_chars() |>
@@ -83,17 +75,20 @@ ns_tmp = ns_raw |>
 
 kdpar = ns_tmp |>
   filter(grepl("Apogee", Parameter)) |>
-  pivot_wider(id_cols = c("Date", "Site"), names_from = c("SampleLevel", "Parameter"), values_from = "Value") |>
+  pivot_wider(id_cols = c("Date", "Station"), names_from = c("SampleLevel", "Parameter"), values_from = "Value") |>
   mutate(Value = calc_kdpar(`Surface_Lower Apogee sensor (Channel B)`,
                             `Surface_Upper Apogee sensor (Channel A)`,
                             `Bottom_Lower Apogee (Channel B)`,
                             `Bottom_Upper Apogee (Channel A)`),
          Parameter = "Normalized KdPAR",
          SampleLevel = "N/A") |>
-  select(Date, Site, SampleLevel, Parameter, Value)
+  select(Date, Station, SampleLevel, Parameter, Value)
 
-ns = bind_rows(kdpar, ns_tmp) |>
-  filter(!is.na(Value))
+ns = bind_rows(kdpar, ns_tmp)|> 
+  filter(!is.na(Value)) |>
+  left_join(ns_grps) |> 
+  mutate(Station = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station)) |> 
+  filter(!is.na(TrtGroup))
 
 
 
