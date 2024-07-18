@@ -17,11 +17,13 @@ points <- readRDS(file.path("data", "Cul_wqpoints.rds")) |>
   rename(Station = Site.ID) |>
   arrange(Location, Station)
 
-ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv"))
-ns_grp_colors = c("Negative Reference" = "#e41a1c", 
+ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
+  mutate(Station2 = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station))
+
+ns_grp_colors = c("LBSP Restoration" = "#377eb8", 
                   "Positive Reference" = "#4daf4a",
-                  "LBSP Restoration" = "#377eb8",
-                  "LBSP Control" = "#ffff33") # alternatively, "#ff7f00"
+                  "LBSP Control" = "#ff7f00",         # alternatively, "#ffff33""
+                  "Negative Reference" = "#e41a1c") 
 
 process_chars = function(data){
   data |>
@@ -52,6 +54,8 @@ wsfield = wsfield_raw |>
 ws = process_chars(bind_rows(wslab, wsfield)) |>
   filter(!is.na(Value)) |>
   mutate(Date = mdy(Date))
+
+ws_stations = sort(unique(ws$Station))
 
 ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
@@ -87,9 +91,12 @@ kdpar = ns_tmp |>
 ns = bind_rows(kdpar, ns_tmp)|> 
   filter(!is.na(Value)) |>
   left_join(ns_grps) |> 
-  mutate(Station = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station)) |> 
-  filter(!is.na(TrtGroup))
+  filter(!is.na(Group)) |> 
+  select(Date, Group, Station = Station2, SampleLevel, Parameter, Value) |> 
+  mutate(Group = factor(Group, levels = names(ns_grp_colors)))
 
+ns_stations = lapply(names(ns_grp_colors), function(x) sort(ns_grps$Station2[ns_grps$Group == x])) |> 
+  setNames(names(ns_grp_colors))
 
 
 # # For Bernardo Vargas-Angel
