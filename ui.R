@@ -17,8 +17,9 @@ page_sidebar(
   ),
   navset_card_underline(
     id = "panel",
+    title = "All data are provisional and subject to revision",
     nav_panel("Time Series Plot", plotlyOutput("tsPlot")),
-    nav_panel("Box Plot", p("Coming soon...")),
+    nav_panel("Box Plot", plotlyOutput("boxPlot")),
     nav_panel("Tile Plot", p("Coming soon...")),
     nav_panel("Map", leafletOutput("map"))
   )

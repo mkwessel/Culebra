@@ -66,6 +66,24 @@ shinyServer(function(input, output, session) {
     ggplotly(p)
   })
   
+  output$boxPlot <- renderPlotly({
+    if (input$environment == "Watershed"){
+      p = ggplot(datSub3(), aes(x = Station, y = Value)) +
+        geom_boxplot(alpha = 0.3, fill = "grey50")
+    } else {
+      p = ggplot(datSub3(), aes(x = Group, y = Value, fill = Group, col = Group)) +
+        geom_boxplot(alpha = 0.3) +
+        scale_color_manual(values = ns_grp_colors) +
+        scale_fill_manual(values = ns_grp_colors)
+    }
+    
+    p = p + 
+      labs(x = "", y = input$parameter) +
+      theme_bw()
+    
+    ggplotly(p)
+  })
+  
   datBubble <- reactive({
     left_join(datSub3(), points, by = join_by(Station)) |> 
       group_by(Station, Latitude, Longitude, Parameter) |>
