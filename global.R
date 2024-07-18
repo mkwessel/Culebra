@@ -17,14 +17,6 @@ points <- readRDS(file.path("data", "Cul_wqpoints.rds")) |>
   rename(Station = Site.ID) |>
   arrange(Location, Station)
 
-ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
-  mutate(Station2 = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station))
-
-ns_grp_colors = c("LBSP Restoration" = "#377eb8", 
-                  "Positive Reference" = "#4daf4a",
-                  "LBSP Control" = "#ff7f00",         # alternatively, "#ffff33""
-                  "Negative Reference" = "#e41a1c") 
-
 process_chars = function(data){
   data |>
     mutate(Chars = gsub('\\d|\\.', "", Value),                   # assign chars as any non digit using regex
@@ -56,6 +48,16 @@ ws = process_chars(bind_rows(wslab, wsfield)) |>
   mutate(Date = mdy(Date))
 
 ws_stations = sort(unique(ws$Station))
+
+ns_grp_colors = c("LBSP Restoration" = "#377eb8", 
+                  "Positive Reference" = "#4daf4a",
+                  "LBSP Control" = "#ff7f00",         # alternatively, "#ffff33""
+                  "Negative Reference" = "#e41a1c") 
+
+ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
+  mutate(Station2 = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station),
+         Group = factor(Group, levels = names(ns_grp_colors))) |> 
+  arrange(Group, Station2)
 
 ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
@@ -93,7 +95,7 @@ ns = bind_rows(kdpar, ns_tmp)|>
   left_join(ns_grps) |> 
   filter(!is.na(Group)) |> 
   select(Date, Group, Station = Station2, SampleLevel, Parameter, Value) |> 
-  mutate(Group = factor(Group, levels = names(ns_grp_colors)))
+  arrange(Date, Group, Station)
 
 ns_stations = lapply(names(ns_grp_colors), function(x) sort(ns_grps$Station2[ns_grps$Group == x])) |> 
   setNames(names(ns_grp_colors))
