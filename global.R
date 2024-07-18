@@ -45,7 +45,8 @@ wsfield = wsfield_raw |>
 
 ws = process_chars(bind_rows(wslab, wsfield)) |>
   filter(!is.na(Value)) |>
-  mutate(Date = mdy(Date))
+  mutate(Date = mdy(Date)) |> 
+  select(-Chars)
 
 ws_stations = sort(unique(ws$Station))
 

@@ -46,7 +46,7 @@ shinyServer(function(input, output, session) {
     parms = sort(unique(datSub2()$Parameter))
     freezeReactiveValue(input, "parameter")
     updateSelectInput(session, 'parameter', choices = parms)
-  
+    
     freezeReactiveValue(input, "date_range")
     updateSliderTextInput(session, inputId = "date_range", choices = dateLab(),
                           selected = dateLab()[dateSeq() %in% c(minDate(), maxDate())])
@@ -89,7 +89,7 @@ shinyServer(function(input, output, session) {
       geom_line() +
       labs(x = "", y = input$parameter) +
       theme_bw()
-
+    
     ggplotly(p)
   })
   
@@ -126,7 +126,10 @@ shinyServer(function(input, output, session) {
     leaflet(options = leafletOptions(attributionControl = FALSE)) |>
       addTiles() |>
       addProviderTiles(providers$Esri.WorldImagery) |>
-      setView(lat=18.313, lng=-65.273, zoom=13)
+      setView(lat=18.313, lng=-65.273, zoom=13) |>
+      addCircleMarkers(data = datBubble(), lng = ~Longitude, lat = ~Latitude, label = ~Station, popup = ~Popup,
+                       fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) |>
+      addLegend("bottomright", pal = mypalette(), values = datBubble()$MedValue, title = paste("Median<br>", input$parameter))  
   })
   
   observe({
@@ -137,5 +140,27 @@ shinyServer(function(input, output, session) {
                        fillColor = ~mypalette()(MedValue), fillOpacity = 0.7, color = "black", stroke = FALSE) |>
       addLegend("bottomright", pal = mypalette(), values = datBubble()$MedValue, title = paste("Median<br>", input$parameter))  
   })
+  
+  output$table <- DT::renderDataTable({
+    datSub3()
+  }, options = list(searching = TRUE, bPaginate = TRUE, info = TRUE, scrollX = TRUE))
+  
+  output$downloadFilteredData <- downloadHandler(
+    filename = function() {
+      paste0("CulebraWQ-FilteredData-", Sys.Date(), ".csv")
+    },
+    content = function(file) {
+      write.csv(datSub3(), file, row.names = FALSE)
+    }
+  )
+  
+  output$downloadAllData <- downloadHandler(
+    filename = function() {
+      paste0("CulebraWQ-AllData-", Sys.Date(), ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(list("Nearshore" = ns, "Watershed" = ws), file)
+    }
+  )
   
 })

@@ -15,7 +15,10 @@ page_sidebar(
                      selectInput(inputId = "stat", "Statistic", choices = c("Minimum", "Median", "Mean", "Maximum"),
                                  selected = "Median")),
     sliderTextInput(inputId = "date_range", label = "Date Range", choices = c("Jan 2023", "May 2024"), 
-                    selected = c("Jan 2023", "May 2024"))
+                    selected = c("Jan 2023", "May 2024")),
+    conditionalPanel(condition = 'input.panel == "Table"',
+                     downloadButton("downloadFilteredData", "Download Filtered Data"),
+                     downloadButton("downloadAllData", "Download All Data"))
   ),
   navset_card_underline(
     id = "panel",
@@ -23,7 +26,8 @@ page_sidebar(
     nav_panel("Time Series Plot", plotlyOutput("tsPlot")),
     nav_panel("Box Plot", plotlyOutput("boxPlot")),
     nav_panel("Tile Plot", p("Coming soon...")),
-    nav_panel("Map", leafletOutput("map"))
+    nav_panel("Map", leafletOutput("map")),
+    nav_panel("Table", DT::dataTableOutput("table")),
   )
   # layout_columns(
   # 
