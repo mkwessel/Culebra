@@ -24,15 +24,42 @@ shinyServer(function(input, output, session) {
     filter(datSub1(), Station %in% input$stations)
   })
   
+  minDate <- reactive({
+    req(datSub2())
+    floor_date(min(datSub2()$Date, na.rm = TRUE), unit = "month")
+  })
+  
+  maxDate <- reactive({
+    req(datSub2())
+    ceiling_date(max(datSub2()$Date, na.rm = TRUE), unit = "month")
+  })
+  
+  dateSeq <- reactive({
+    seq(from = minDate(), to = maxDate(), by = "1 month")
+  })
+  
+  dateLab <- reactive({
+    format(dateSeq(), "%b %Y")
+  })
+  
   observe({
     parms = sort(unique(datSub2()$Parameter))
     freezeReactiveValue(input, "parameter")
     updateSelectInput(session, 'parameter', choices = parms)
+  
+    freezeReactiveValue(input, "date_range")
+    updateSliderTextInput(session, inputId = "date_range", choices = dateLab(),
+                          selected = dateLab()[dateSeq() %in% c(minDate(), maxDate())])
+  })
+  
+  selDates <- reactive({
+    c(dateSeq()[dateLab() == input$date_range[1]],
+      dateSeq()[dateLab() == input$date_range[2]])
   })
   
   datSub3 <- reactive({
     req(input$parameter)
-    filter(datSub2(), Parameter == input$parameter)
+    filter(datSub2(), Parameter == input$parameter & Date >= selDates()[1] & Date <= selDates()[2])
   })
   
   output$table <- DT::renderDataTable({

@@ -13,7 +13,9 @@ page_sidebar(
     selectInput(inputId = 'parameter', label = 'Parameter', choices = NULL),
     conditionalPanel(condition = 'input.panel == "Tile Plot" | input.panel == "Map"',
                      selectInput(inputId = "stat", "Statistic", choices = c("Minimum", "Median", "Mean", "Maximum"),
-                                 selected = "Median"))
+                                 selected = "Median")),
+    sliderTextInput(inputId = "date_range", label = "Date Range", choices = c("Jan 2023", "May 2024"), 
+                    selected = c("Jan 2023", "May 2024"))
   ),
   navset_card_underline(
     id = "panel",
