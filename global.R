@@ -5,17 +5,20 @@ library(tidyr)
 library(ggplot2)
 library(lubridate)
 library(leaflet)
+library(leaflegend)
 library(plotly)
 library(bslib)
 library(googlesheets4)
+library(sf)
 
 gs4_auth(token = gargle::secret_read_rds(
   ".secrets/gs4-token.rds",
   key = "GARGLE_KEY"))
 
-points <- readRDS(file.path("data", "Cul_wqpoints.rds")) |>
-  rename(Station = Site.ID) |>
-  arrange(Location, Station)
+drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
+  st_transform(crs = 4326)
+
+station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
 
 process_chars = function(data){
   data |>
@@ -48,6 +51,11 @@ ws = process_chars(bind_rows(wslab, wsfield)) |>
   mutate(Date = mdy(Date)) |> 
   select(-Chars)
 
+ws_colors = c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", 
+              "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a") |> 
+  setNames(c("AeropuertoY", "Bridge", "Coronel Pond", "Old Man Plaza", "P3_out", 
+             "P4_out", "P5_out", "Plant", "Stream", "Turtle Stream"))
+
 ws_stations = sort(unique(ws$Station))
 
 ns_grp_colors = c("LBSP Restoration" = "#377eb8", 
@@ -56,9 +64,9 @@ ns_grp_colors = c("LBSP Restoration" = "#377eb8",
                   "Negative Reference" = "#e41a1c") 
 
 ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
-  mutate(Station2 = ifelse(grepl("Puerto Manglar", Station), "Puerto Manglar", Station),
-         Group = factor(Group, levels = names(ns_grp_colors))) |> 
-  arrange(Group, Station2)
+  mutate(Group = factor(Group, levels = names(ns_grp_colors)),
+         GroupStation = paste0(Group, "\n", Station)) |> 
+  arrange(Group, Station)
 
 ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
@@ -95,12 +103,12 @@ ns = bind_rows(kdpar, ns_tmp)|>
   filter(!is.na(Value)) |>
   left_join(ns_grps) |> 
   filter(!is.na(Group)) |> 
-  select(Date, Group, Station = Station2, SampleLevel, Parameter, Value) |> 
-  arrange(Date, Group, Station)
+  select(Date, Group, Station, GroupStation, SampleLevel, Parameter, Value) |> 
+  arrange(Date, Group, Station) |> 
+  mutate(GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
 
-ns_stations = lapply(names(ns_grp_colors), function(x) sort(ns_grps$Station2[ns_grps$Group == x])) |> 
+ns_stations = lapply(names(ns_grp_colors), function(x) sort(ns_grps$Station[ns_grps$Group == x])) |> 
   setNames(names(ns_grp_colors))
-
 
 # # For Bernardo Vargas-Angel
 # 
