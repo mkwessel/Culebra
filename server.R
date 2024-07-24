@@ -142,20 +142,20 @@ shinyServer(function(input, output, session) {
     }
     summarise(ds, Value = statFN()(Value, na.rm = TRUE)) |> 
       group_by(Parameter) |> 
-      mutate(PropMax = Value/max(Value, na.rm = TRUE))
+      mutate(Percentile = percentile(Value))
   })
   
   output$tilePlot <- renderPlotly({
     if (input$environment == "Watershed"){
-      p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = PropMax))
+      p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
     } else {
-      p = ggplot(tileSumm(), aes(y = GroupStation, x = Parameter, fill = PropMax))
+      p = ggplot(tileSumm(), aes(y = GroupStation, x = Parameter, fill = Percentile, label = Value))
     }
     p = p +
       geom_tile() +
-      scale_fill_viridis_c() +
+      scale_fill_gradient2(mid = "#f7f7f7", low = scales::muted("blue"), high = scales::muted("red"), midpoint = 50) +
       scale_y_discrete(limits = rev) +
-      labs(x = "", y = "", fill = "") +
+      labs(x = "", y = "") +
       theme_bw() +
       theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 0.5))
     
