@@ -11,6 +11,11 @@ library(bslib)
 library(googlesheets4)
 library(sf)
 
+percentile <- function(x){
+  rank_x = rank(x)
+  rank_x/max(rank_x) * 100
+}
+
 gs4_auth(token = gargle::secret_read_rds(
   ".secrets/gs4-token.rds",
   key = "GARGLE_KEY"))
