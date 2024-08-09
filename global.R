@@ -1,3 +1,7 @@
+
+# Packages ----------------------------------------------------
+
+options(dplyr.summarise.inform = FALSE)
 library(shinyWidgets)
 library(shiny) 
 library(dplyr)
@@ -11,19 +15,12 @@ library(bslib)
 library(googlesheets4)
 library(sf)
 
+# Functions ---------------------------------------------------------------
+
 percentile <- function(x){
   rank_x = rank(x)
   rank_x/max(rank_x) * 100
 }
-
-gs4_auth(token = gargle::secret_read_rds(
-  ".secrets/gs4-token.rds",
-  key = "GARGLE_KEY"))
-
-drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
-  st_transform(crs = 4326)
-
-station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
 
 process_chars = function(data){
   data |>
@@ -34,6 +31,24 @@ process_chars = function(data){
 calc_kdpar <- function(surf_lwr, surf_upr, bot_lwr, bot_upr){
   abs(log((surf_lwr/surf_upr)/(bot_lwr/bot_upr)))
 }
+
+# Auth --------------------------------------------------------------------
+
+gs4_auth(token = gargle::secret_read_rds(
+  ".secrets/gs4-token.rds",
+  key = "GARGLE_KEY"))
+
+# Drainages ---------------------------------------------------------------
+
+drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
+  st_transform(crs = 4326)
+
+# Water Quality -----------------------------------------------------------
+
+station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
+
+
+## Watershed ---------------------------------------------------------------
 
 wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg", col_types = "c")
 
@@ -51,27 +66,33 @@ wsfield = wsfield_raw |>
          `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
   pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
 
+# only including 5 stations; ordered roughly west to east
+ws_stations = c("Old Man Plaza", "AeropuertoY", "Coronel Pond", "Bridge", "Turtle Stream")
+
 ws = process_chars(bind_rows(wslab, wsfield)) |>
-  filter(!is.na(Value)) |>
-  mutate(Date = mdy(Date)) |> 
+  filter(!is.na(Value) & !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
+  mutate(Date = mdy(Date),
+         Station = ifelse(Station == "Stream", "Turtle Stream", Station),
+         Station = factor(Station, levels = ws_stations)) |> 
   select(-Chars)
 
-ws_colors = c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", 
-              "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a") |> 
-  setNames(c("AeropuertoY", "Bridge", "Coronel Pond", "Old Man Plaza", "P3_out", 
-             "P4_out", "P5_out", "Plant", "Stream", "Turtle Stream"))
+ws_colors = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854") |> 
+  setNames(ws_stations)
 
 ws_stations = sort(unique(ws$Station))
 
-ns_grp_colors = c("LBSP Restoration" = "#377eb8", 
-                  "Positive Reference" = "#4daf4a",
+
+## Nearshore ---------------------------------------------------------------
+
+ns_grp_colors = c("LBSP Restoration" = "#377eb8",
+                  "Negative Reference" = "#e41a1c",
                   "LBSP Control" = "#ff7f00",         # alternatively, "#ffff33""
-                  "Negative Reference" = "#e41a1c") 
+                  "Positive Reference" = "#4daf4a") 
 
 ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
+  arrange(Order) |> 
   mutate(Group = factor(Group, levels = names(ns_grp_colors)),
-         GroupStation = paste0(Group, "\n", Station)) |> 
-  arrange(Group, Station)
+         GroupStation = paste0(Group, "\n", Station))
 
 ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
@@ -110,11 +131,13 @@ ns = bind_rows(kdpar, ns_tmp)|>
   filter(!is.na(Group)) |> 
   select(Date, Group, Station, GroupStation, SampleLevel, Parameter, Value) |> 
   arrange(Date, Group, Station) |> 
-  mutate(GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+  mutate(Station = factor(Station, levels = ns_grps$Station),
+         GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
 
-ns_stations = lapply(names(ns_grp_colors), function(x) sort(ns_grps$Station[ns_grps$Group == x])) |> 
+ns_stations = lapply(names(ns_grp_colors), function(x) ns_grps$Station[ns_grps$Group == x]) |> 
   setNames(names(ns_grp_colors))
 
+# Misc --------------------------------------------------------------------
 # # For Bernardo Vargas-Angel
 # 
 # wslab_bva = wslab_raw |>
