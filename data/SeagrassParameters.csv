@@ -1,0 +1,17 @@
+Code,Type,Parameter
+EPI,Index,Epiphytes
+TOT,Index,Total
+TSG,Index,Total Seagrass
+TMA,Index,Total Macroalgae
+TCA,Index,Total Coraline Algae
+COR,Index,Coral
+SPO,Index,Sponge
+SED.INDEX,Index,Sediment
+SED.BB,Index,Sediment
+TT.BB,Index,Thalassia
+TT.DEN,Density,Thalassia
+SF.BB,Index,Syringodium
+SF.DEN,Density,Syringodium
+HW.BB,Index,Halodule
+HW.DEN,Density,Halodule
+HS.BB,Index,Halophila
