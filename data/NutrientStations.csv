@@ -1,0 +1,35 @@
+LabID,Station
+Aeropuerto: AP,Aeropuerto
+AeropuertoY: APT,AeropuertoY
+Airport: AP,Aeropuerto
+Airport: APT,AeropuertoY
+Bridge: BRG,Bridge
+Cabra: CA,Cabra
+Casa Azul: CAZ,Casa Azul
+Casita Azul: CAZ,Casa Azul
+Cementerio: CM,Cementerio
+Coronel Pond: COP,Coronel Pond
+Coronel: CO,Coronel
+Field Blank FDB,NA
+Fulladosa  Ramp: FDR,Fulladosa Ramp
+Fulladosa Bay: FDB,Fulladosa Bay
+Fulladosa Point: FDP,Fulladosa Point
+Fulladosa Ramp: FDR,Fulladosa Ramp
+Little Cabra: LC,Little Cabra
+Mosquito: MQ,Mosquito
+Old Man Plaza: OMP,Old Man Plaza
+P3_out: P3O,P3_out
+P4_out: P4O,P4_out
+Plant effluent: PLE,Plant
+Plant: PLE,Plant
+Pond 4 effluent: 4EF,NA
+Pond_3 outfall: P3O,NA
+Pond_4 outfall: P4O,NA
+Pond_4 Outfall: P4O,NA
+Pond_5 Outfall: P5O,NA
+Puerto Manglar Control: PMC,Puerto Manglar Control
+Puerto Manglar Reference: PMR,Puerto Manglar Reference
+Puerto Manglar Treatment: PMT,Puerto Manglar Treatment
+Turtle Crossing: TUX,Turtle Stream
+Turtle stream: TUX,Turtle Stream
+Turtle Stream: TUX,Turtle Stream
