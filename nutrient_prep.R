@@ -12,4 +12,4 @@ nut = left_join(read_xlsx(file.path("data", nut_path), sheet = "Dissolved"),
   left_join(nut_stn) |> 
   filter(!is.na(Value) & !is.na(Station)) |> 
   select(-LabID)
-write.csv(nut, "NutrientsProcessed.csv", row.names = FALSE)
+write.csv(nut, file.path("data", "NutrientsProcessed.csv"), row.names = FALSE)
