@@ -8,55 +8,72 @@ shinyServer(function(input, output, session) {
     fn[[input$stat]]
   })
   
-  # Filter ------------------------------------------------------------------
-  
-  datSub1 <- reactive({
-    if (input$environment == "Watershed"){
-      ws
+  observe({
+    input$panel
+    if (input$dataset == "Seagrass"){
+      nav_hide("panel", target = "Time Series Plot")
     } else {
-      filter(ns, SampleLevel == input$level & Group %in% input$group)
+      nav_show("panel", target = "Time Series Plot")
     }
   })
   
+  # Filter ------------------------------------------------------------------
+  
+  datSub1 <- reactive({
+    out = NULL
+    if (input$dataset == "Seagrass") out = sg[sg[["Year"]] == input$sg_year,]
+    if (input$dataset == "Water Quality" & input$environment == "Watershed") out = ws
+    if (input$dataset == "Nutrients" & input$environment == "Watershed") out = nut_ws
+    if (input$dataset == "Water Quality" & input$environment == "Nearshore"){
+      out = ns[ns[["SampleLevel"]] == input$level & ns[["Group"]] %in% input$group,]
+    }
+    if (input$dataset == "Nutrients" & input$environment == "Nearshore"){
+      out = nut_ns[nut_ns[["Group"]] %in% input$group,]
+    }
+    out
+  })
+  
   observe({
+    req(datSub1())
     params = sort(unique(datSub1()$Parameter))
     if (is.null(rv$last_param) || input$parameter != rv$last_param) rv$last_param = input$parameter
     sel = if (rv$last_param %in% params) rv$last_param else params[1]
     updateSelectInput(session, 'parameter', choices = params, selected = sel)
     
-    if (input$environment == "Watershed"){
-      stns = ws_stations
-      sel = ws_stations
-    } else {
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
       stns = lapply(input$group, function(x) sort(ns_grps$Station[ns_grps$Group == x])) |> 
         setNames(input$group)
       sel = unlist(stns)
+    } else {
+      stns = ws_stations
+      sel = ws_stations
     }
     freezeReactiveValue(input, "stations")
     updatePickerInput(session, "stations", choices = stns, selected = sel)
   })
   
   datSub2 <- reactive({
-    filter(datSub1(), Station %in% input$stations)
+    dfx = datSub1()
+    dfx[dfx[["Station"]] %in% input$stations,]
   })
   
   minDate <- reactive({
-    req(datSub2())
-    floor_date(min(datSub2()$Date, na.rm = TRUE), unit = "month")
+    req(datSub2(), input$dataset != "Seagrass")
+    floor_date(min(datSub2()[["Date"]], na.rm = TRUE), unit = "month")
   })
   
   maxDate <- reactive({
-    req(datSub2())
-    ceiling_date(max(datSub2()$Date, na.rm = TRUE), unit = "month")
+    req(datSub2(), input$dataset != "Seagrass")
+    ceiling_date(max(datSub2()[["Date"]], na.rm = TRUE), unit = "month")
   })
   
   dateSeq <- reactive({
-    req(nrow(datSub2()) > 0)
+    req(nrow(datSub2()) > 0, input$dataset != "Seagrass")
     seq(from = minDate(), to = maxDate(), by = "1 month")
   })
   
   dateLab <- reactive({
-    req(nrow(datSub2()) > 0)
+    req(nrow(datSub2()) > 0, input$dataset != "Seagrass")
     format(dateSeq(), "%b %Y")
   })
   
@@ -67,23 +84,27 @@ shinyServer(function(input, output, session) {
   })
   
   selDates <- reactive({
-    req(input$date_range)
+    req(input$date_range, input$dataset != "Seagrass")
     c(dateSeq()[dateLab() == input$date_range[1]],
       dateSeq()[dateLab() == input$date_range[2]])
   })
   
   datSub3 <- reactive({
-    filter(datSub2(), Date >= selDates()[1] & Date <= selDates()[2])
+    req(input$dataset != "Seagrass")
+    dfx = datSub2()
+    dfx[dfx[["Date"]] >= selDates()[1] & dfx[["Date"]] <= selDates()[2],]
   })
   
   datSub4 <- reactive({
     req(input$parameter)
-    filter(datSub3(), Parameter == input$parameter)
+    dfx = if (input$dataset == "Seagrass") datSub2() else datSub3()
+    dfx[dfx[["Parameter"]] == input$parameter,]
   })
   
   # Time Series Plot --------------------------------------------------------
   
   output$tsPlot <- renderPlotly({
+    req(input$dataset != "Seagrass")
     if (input$environment == "Watershed"){
       p = ggplot(datSub4(), aes(x = Date, y = Value, color = Station)) +
         scale_color_manual(values = ws_colors)
@@ -103,14 +124,14 @@ shinyServer(function(input, output, session) {
   # Box Plot ----------------------------------------------------------------
   
   output$boxPlot <- renderPlotly({
-    if (input$environment == "Watershed"){
-      p = ggplot(datSub4(), aes(x = Station, y = Value, fill = Station, col = Station)) +
-        scale_color_manual(values = ws_colors) +
-        scale_fill_manual(values = ws_colors)
-    } else {
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
       p = ggplot(datSub4(), aes(x = Group, y = Value, fill = Group, col = Group)) +
         scale_color_manual(values = ns_grp_colors) +
         scale_fill_manual(values = ns_grp_colors)
+    } else {
+      p = ggplot(datSub4(), aes(x = Station, y = Value, fill = Station, col = Station)) +
+        scale_color_manual(values = ws_colors) +
+        scale_fill_manual(values = ws_colors)
     }
     
     p = p + 
@@ -121,24 +142,43 @@ shinyServer(function(input, output, session) {
     ggplotly(p)
   })
   
-  # Tile Plot ---------------------------------------------------------------
+  # Bar Plot ----------------------------------------------------------------
   
-  datSub3Summ <- reactive({
-    # includes all parameters
-    if (input$environment == "Watershed") {
-      ds = group_by(datSub3(), Station, Parameter) 
+  barSumm <- reactive({
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore") {
+      ds = group_by(datSub4(), Group, GroupStation) 
     } else {
-      ds = group_by(datSub3(), Group, Station, Parameter) 
+      ds = group_by(datSub4(), Station)
     }
     summarise(ds, Value = statFN()(Value, na.rm = TRUE))
   })
   
-  tileSumm <- reactive({
-    # includes all parameters
-    if (input$environment == "Watershed") {
-      ds = group_by(datSub3(), Station, Parameter) 
+  output$barPlot <- renderPlotly({
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
+      p = ggplot(barSumm(), aes(y = GroupStation, x = Value, fill = Group)) +
+        scale_fill_manual(values = ns_grp_colors)
     } else {
-      ds = group_by(datSub3(), Group, Station, GroupStation, Parameter) 
+      p = ggplot(barSumm(), aes(y = Station, x = Value, fill = Station)) +
+        scale_fill_manual(values = ws_colors)
+    }
+    p = p +
+      geom_col() +
+      scale_y_discrete(limits = rev) +
+      labs(x = input$parameter, y = "") +
+      theme_bw() 
+    
+    ggplotly(p)
+  })
+  
+  # Tile Plot ---------------------------------------------------------------
+  
+  tileSumm <- reactive({
+    dfx = if (input$dataset == "Seagrass") datSub2() else datSub3()
+    # includes all parameters
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore") {
+      ds = group_by(dfx, Group, Station, GroupStation, Parameter) 
+    } else {
+      ds = group_by(dfx, Station, Parameter)
     }
     summarise(ds, Value = statFN()(Value, na.rm = TRUE)) |> 
       group_by(Parameter) |> 
@@ -146,10 +186,10 @@ shinyServer(function(input, output, session) {
   })
   
   output$tilePlot <- renderPlotly({
-    if (input$environment == "Watershed"){
-      p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
-    } else {
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
       p = ggplot(tileSumm(), aes(y = GroupStation, x = Parameter, fill = Percentile, label = Value))
+    } else {
+      p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
     }
     p = p +
       geom_tile() +
@@ -165,13 +205,13 @@ shinyServer(function(input, output, session) {
   # Map ---------------------------------------------------------------------
   
   mapData <- reactive({
-    if (input$environment == "Watershed") {
-      ds = group_by(datSub4(), Station, Parameter) 
-    } else {
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore") {
       ds = datSub4() |> 
         left_join(data.frame(Group = names(ns_grp_colors),
                              Color = unname(ns_grp_colors))) |> 
         group_by(Group, Station, Parameter, Color) 
+    } else {
+      ds = group_by(datSub4(), Station, Parameter) 
     }
     summarise(ds, Value = statFN()(Value, na.rm = TRUE)) |>
       mutate(Popup = paste(Parameter, "<br>", Value)) |> 
@@ -218,14 +258,7 @@ shinyServer(function(input, output, session) {
       clearControls() |>
       addPolygons(data = drainages, label = ~Name, color = polyColor(), weight = 1, fillOpacity = 0.05)
     
-    if (input$environment == "Watershed"){
-      leafletProxy("map")|>
-        addCircleMarkers(data = mapData(), lng = ~Longitude, lat = ~Latitude, label = ~Station, popup = ~Popup,
-                         fillColor = ~wsPalette()(Value), fillOpacity = 0.9, stroke = FALSE) |> 
-        addLegend("bottomright", pal = wsPalette(), values = mapData()$Value, 
-                  title = paste(input$stat, "<br>", input$parameter))
-    }
-    if (input$environment == "Nearshore"){
+    if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
       md = mapData()
       leafletProxy("map")|>
         addMarkers(data = md, icon = nsSymbols(), lng = ~Longitude, lat = ~Latitude, label = ~Station, popup = ~Popup) |>
@@ -235,32 +268,41 @@ shinyServer(function(input, output, session) {
                       breaks = 4) |> 
         addLegend(title = "Treatment Group", position = "bottomright",
                   colors = ns_grp_colors, labels = names(ns_grp_colors))
+    } else {
+      leafletProxy("map")|>
+        addCircleMarkers(data = mapData(), lng = ~Longitude, lat = ~Latitude, label = ~Station, popup = ~Popup,
+                         fillColor = ~wsPalette()(Value), fillOpacity = 0.9, stroke = FALSE) |> 
+        addLegend("bottomright", pal = wsPalette(), values = mapData()$Value, 
+                  title = paste(input$stat, "<br>", input$parameter))
     }
-    
-    
   })
   
   # Table/Download -------------------------------------------------------------------
   
   output$table <- DT::renderDataTable({
-    if (input$environment == "Watershed") datSub3() else select(datSub3(), -GroupStation)
+    if (input$environment == "Watershed") datSub4() else select(datSub4(), -GroupStation)
   }, options = list(searching = TRUE, bPaginate = TRUE, info = TRUE, scrollX = TRUE))
   
   output$downloadFilteredData <- downloadHandler(
     filename = function() {
-      paste0("CulebraWQ-FilteredData-", Sys.Date(), ".csv")
+      paste0("Culebra-FilteredData-", input$dataset, "-", Sys.Date(), ".csv")
     },
     content = function(file) {
-      write.csv(datSub3(), file, row.names = FALSE)
+      write.csv(datSub4(), file, row.names = FALSE)
     }
   )
   
   output$downloadAllData <- downloadHandler(
     filename = function() {
-      paste0("CulebraWQ-AllData-", Sys.Date(), ".xlsx")
+      paste0("Culebra-AllData-", input$dataset, "-", Sys.Date(), ".xlsx")
     },
     content = function(file) {
-      writexl::write_xlsx(list("Nearshore" = select(ns, -GroupStation), "Watershed" = ws), file)
+      if (input$dataset == "Water Quality"){
+        writexl::write_xlsx(list("Nearshore" = select(ns, -GroupStation), "Watershed" = ws), file)
+      } else {
+        writexl::write_xlsx(list("Nearshore" = select(nut_ns, -GroupStation), "Watershed" = nut_ws), file)
+      }
+      
     }
   )
   

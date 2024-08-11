@@ -47,7 +47,6 @@ drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |>
 
 station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
 
-
 ## Watershed ---------------------------------------------------------------
 
 wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg", col_types = "c")
@@ -80,7 +79,6 @@ ws_colors = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854") |>
   setNames(ws_stations)
 
 ws_stations = sort(unique(ws$Station))
-
 
 ## Nearshore ---------------------------------------------------------------
 
@@ -136,6 +134,38 @@ ns = bind_rows(kdpar, ns_tmp)|>
 
 ns_stations = lapply(names(ns_grp_colors), function(x) ns_grps$Station[ns_grps$Group == x]) |> 
   setNames(names(ns_grp_colors))
+
+# Seagrass ----------------------------------------------------------------
+
+sg_years = c(2014, 2022)
+sg = read.csv(file.path("data", "SeagrassProcessed.csv")) |>
+  left_join(ns_grps) |> 
+  filter(!is.na(Group)) |> 
+  select(Year, Group, Station, GroupStation, Parameter, Value) |> 
+  arrange(Year, Group, Station) |> 
+  mutate(Station = factor(Station, levels = ns_grps$Station),
+         GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+
+# Nutrients ---------------------------------------------------------------
+
+nut = read.csv(file.path("data", "NutrientsProcessed.csv")) |> 
+  left_join(select(station_locations, Station, Environment)) |> 
+  mutate(Date = ymd(Date))
+
+nut_ws = nut |> 
+  filter(Environment == "Watershed" & 
+           !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
+  select(Date, Station, Environment, Parameter, Value) |> 
+  mutate(Station = factor(Station, levels = ws_stations))
+
+nut_ns = nut |> 
+  filter(Environment == "Nearshore") |> 
+  left_join(ns_grps) |> 
+  filter(!is.na(Group)) |> 
+  select(Date, Group, Station, GroupStation, Parameter, Value) |> 
+  arrange(Date, Group, Station) |> 
+  mutate(Station = factor(Station, levels = ns_grps$Station),
+         GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
 
 # Misc --------------------------------------------------------------------
 # # For Bernardo Vargas-Angel
