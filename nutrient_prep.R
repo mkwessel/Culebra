@@ -11,5 +11,7 @@ nut = left_join(read_xlsx(file.path("data", nut_path), sheet = "Dissolved"),
   pivot_longer(cols = !c(Date, LabID), names_to = "Parameter", values_to = "Value") |> 
   left_join(nut_stn) |> 
   filter(!is.na(Value) & !is.na(Station)) |> 
-  select(-LabID)
+  group_by(Date, Station, Parameter) |> 
+  # multiple observations for each date/station; for now, taking max value for each date/station
+  summarise(Value = max(Value, na.rm = TRUE))
 write.csv(nut, file.path("data", "NutrientsProcessed.csv"), row.names = FALSE)
