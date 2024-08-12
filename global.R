@@ -15,6 +15,10 @@ library(bslib)
 library(googlesheets4)
 library(sf)
 
+default_params = c("Water Quality" = "Temperature (C)",
+                   "Nutrients" = "Nitrate (mg/L)",
+                   "Seagrass" = "Thalassia Density")
+
 # Functions ---------------------------------------------------------------
 
 percentile <- function(x){
@@ -78,13 +82,11 @@ ws = process_chars(bind_rows(wslab, wsfield)) |>
 ws_colors = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854") |> 
   setNames(ws_stations)
 
-ws_stations = sort(unique(ws$Station))
-
 ## Nearshore ---------------------------------------------------------------
 
-ns_grp_colors = c("LBSP Restoration" = "#377eb8",
+ns_grp_colors = c("Restoration" = "#377eb8",
                   "Negative Reference" = "#e41a1c",
-                  "LBSP Control" = "#ff7f00",         # alternatively, "#ffff33""
+                  "Control" = "#ff7f00",             # alternatively, "#ffff33""
                   "Positive Reference" = "#4daf4a") 
 
 ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |> 
@@ -155,14 +157,14 @@ nut = read.csv(file.path("data", "NutrientsProcessed.csv")) |>
 nut_ws = nut |> 
   filter(Environment == "Watershed" & 
            !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
-  select(Date, Station, Environment, Parameter, Value) |> 
+  select(Date, Station, SampleLevel, Parameter, Value) |> 
   mutate(Station = factor(Station, levels = ws_stations))
 
 nut_ns = nut |> 
   filter(Environment == "Nearshore") |> 
   left_join(ns_grps) |> 
   filter(!is.na(Group)) |> 
-  select(Date, Group, Station, GroupStation, Parameter, Value) |> 
+  select(Date, Group, Station, GroupStation, SampleLevel, Parameter, Value) |> 
   arrange(Date, Group, Station) |> 
   mutate(Station = factor(Station, levels = ns_grps$Station),
          GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))

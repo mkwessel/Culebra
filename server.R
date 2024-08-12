@@ -11,6 +11,7 @@ shinyServer(function(input, output, session) {
   observe({
     input$panel
     if (input$dataset == "Seagrass"){
+      if (input$panel == "Time Series Plot") nav_select("panel", "Box Plot")
       nav_hide("panel", target = "Time Series Plot")
     } else {
       nav_show("panel", target = "Time Series Plot")
@@ -28,7 +29,7 @@ shinyServer(function(input, output, session) {
       out = ns[ns[["SampleLevel"]] == input$level & ns[["Group"]] %in% input$group,]
     }
     if (input$dataset == "Nutrients" & input$environment == "Nearshore"){
-      out = nut_ns[nut_ns[["Group"]] %in% input$group,]
+      out = nut_ns[nut_ns[["SampleLevel"]] == input$level & nut_ns[["Group"]] %in% input$group,]
     }
     out
   })
@@ -37,7 +38,12 @@ shinyServer(function(input, output, session) {
     req(datSub1())
     params = sort(unique(datSub1()$Parameter))
     if (is.null(rv$last_param) || input$parameter != rv$last_param) rv$last_param = input$parameter
-    sel = if (rv$last_param %in% params) rv$last_param else params[1]
+    if (input$dataset == "Water Quality" & input$level == "N/A") {
+      dp = "Normalized KdPAR" 
+    } else {
+      dp = default_params[[input$dataset]]
+    } 
+    sel = if (rv$last_param %in% params) rv$last_param else dp
     updateSelectInput(session, 'parameter', choices = params, selected = sel)
     
     if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
@@ -137,6 +143,8 @@ shinyServer(function(input, output, session) {
     p = p + 
       geom_boxplot(alpha = 0.3) +
       labs(x = "", y = input$parameter) +
+      scale_x_discrete(limits = rev) +
+      coord_flip() +
       theme_bw()
     
     ggplotly(p)
@@ -146,7 +154,7 @@ shinyServer(function(input, output, session) {
   
   barSumm <- reactive({
     if (input$dataset == "Seagrass" | input$environment == "Nearshore") {
-      ds = group_by(datSub4(), Group, GroupStation) 
+      ds = group_by(datSub4(), Station, Group, GroupStation) 
     } else {
       ds = group_by(datSub4(), Station)
     }
@@ -155,7 +163,7 @@ shinyServer(function(input, output, session) {
   
   output$barPlot <- renderPlotly({
     if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
-      p = ggplot(barSumm(), aes(y = GroupStation, x = Value, fill = Group)) +
+      p = ggplot(barSumm(), aes(y = Station, x = Value, fill = Group)) +
         scale_fill_manual(values = ns_grp_colors)
     } else {
       p = ggplot(barSumm(), aes(y = Station, x = Value, fill = Station)) +
@@ -186,10 +194,10 @@ shinyServer(function(input, output, session) {
   })
   
   output$tilePlot <- renderPlotly({
+    p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
     if (input$dataset == "Seagrass" | input$environment == "Nearshore"){
-      p = ggplot(tileSumm(), aes(y = GroupStation, x = Parameter, fill = Percentile, label = Value))
-    } else {
-      p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
+      p = p +
+        facet_wrap(~ Group, ncol = 1, scales = "free_y")
     }
     p = p +
       geom_tile() +

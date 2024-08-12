@@ -1,18 +1,18 @@
 
 page_sidebar(
-  title = "Culebra Dashboard",
-  window_title = "Culebra",
+  title = "NOAA Culebra LBSP Dashboard",
+  window_title = "Culebra LBSP",
   sidebar = sidebar(
-    width = 300,
+    width = 320,
     selectInput(inputId = 'dataset', label = "Dataset", 
                 choices = c("Water Quality", "Nutrients", "Seagrass"), 
                 selected = "Water Quality"),
     conditionalPanel(condition = 'input.dataset != "Seagrass"',
                      selectInput(inputId = 'environment', label = "Environment", 
-                                 choices = c("Nearshore", "Watershed"), selected = "Nearshore"),
-                     conditionalPanel(condition = 'input.dataset == "Water Quality" & input.environment == "Nearshore"',
-                                      selectInput(inputId = 'level', label = 'Sample Level', 
-                                                  choices = c("Surface", "Bottom", "N/A")))),
+                                 choices = c("Nearshore", "Watershed"), selected = "Nearshore")),
+    conditionalPanel(condition = 'input.dataset != "Seagrass" & input.environment == "Nearshore"',
+                     selectInput(inputId = 'level', label = 'Sample Level', 
+                                 choices = c("Surface", "Bottom", "N/A"))),
     conditionalPanel(condition = 'input.panel != "Tile Plot"',
                      selectInput(inputId = 'parameter', label = 'Parameter', choices = NULL)),
     conditionalPanel(condition = 'input.dataset == "Seagrass" | input.environment == "Nearshore"',
@@ -29,9 +29,8 @@ page_sidebar(
     conditionalPanel(condition = 'input.panel == "Bar Plot" | input.panel == "Tile Plot" | input.panel == "Map"',
                      selectInput(inputId = "stat", "Statistic", choices = c("Minimum", "Median", "Maximum"),
                                  selected = "Median")),
-    conditionalPanel(condition = 'input.panel == "Table"',
-                     downloadButton("downloadFilteredData", "Download Filtered Data"),
-                     downloadButton("downloadAllData", "Download All Data"))
+    downloadButton("downloadFilteredData", "Download Filtered Data"),
+    downloadButton("downloadAllData", "Download All Data")
   ),
   navset_card_underline(
     id = "panel",
