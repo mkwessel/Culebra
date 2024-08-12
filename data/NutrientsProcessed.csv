@@ -1,853 +1,1443 @@
-"Date","Station","Parameter","Value"
-2023-05-01,"Bridge","Ammonium (mg/L)",0.13
-2023-05-01,"Bridge","Hydrogen Phosphate (mg/L)",3.96
-2023-05-01,"Bridge","Nitrate (mg/L)",0.07
-2023-05-01,"Bridge","Nitrate + Nitrite (mg/L)",0.08
-2023-05-01,"Bridge","Nitrite (mg/L)",0.01
-2023-05-01,"Bridge","Silicon Oxide (mg/L)",38.35
-2023-05-01,"Bridge","Total Nitrogen (mg/L)",1.85
-2023-05-01,"Bridge","Total Phosphorus (mg/L)",3.85
-2023-05-01,"Coronel Pond","Ammonium (mg/L)",1.37
-2023-05-01,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.38
-2023-05-01,"Coronel Pond","Nitrate (mg/L)",0.15
-2023-05-01,"Coronel Pond","Nitrate + Nitrite (mg/L)",0.19
-2023-05-01,"Coronel Pond","Nitrite (mg/L)",0.04
-2023-05-01,"Coronel Pond","Silicon Oxide (mg/L)",5.65
-2023-05-01,"Coronel Pond","Total Nitrogen (mg/L)",2.27
-2023-05-01,"Coronel Pond","Total Phosphorus (mg/L)",0.93
-2023-05-01,"Old Man Plaza","Ammonium (mg/L)",0.17
-2023-05-01,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.27
-2023-05-01,"Old Man Plaza","Nitrate (mg/L)",0.21
-2023-05-01,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.27
-2023-05-01,"Old Man Plaza","Nitrite (mg/L)",0.06
-2023-05-01,"Old Man Plaza","Silicon Oxide (mg/L)",19.23
-2023-05-01,"Old Man Plaza","Total Nitrogen (mg/L)",0.64
-2023-05-01,"Old Man Plaza","Total Phosphorus (mg/L)",0.39
-2023-05-01,"Plant","Ammonium (mg/L)",0.1
-2023-05-01,"Plant","Hydrogen Phosphate (mg/L)",18.24
-2023-05-01,"Plant","Nitrate (mg/L)",0.06
-2023-05-01,"Plant","Nitrate + Nitrite (mg/L)",0.07
-2023-05-01,"Plant","Nitrite (mg/L)",0.01
-2023-05-01,"Plant","Silicon Oxide (mg/L)",22.88
-2023-05-01,"Plant","Total Nitrogen (mg/L)",28.21
-2023-05-01,"Plant","Total Phosphorus (mg/L)",19.09
-2023-05-01,"Turtle Stream","Ammonium (mg/L)",0.07
-2023-05-01,"Turtle Stream","Hydrogen Phosphate (mg/L)",2.07
-2023-05-01,"Turtle Stream","Nitrate (mg/L)",0.02
-2023-05-01,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.02
-2023-05-01,"Turtle Stream","Nitrite (mg/L)",0
-2023-05-01,"Turtle Stream","Silicon Oxide (mg/L)",26.41
-2023-05-01,"Turtle Stream","Total Nitrogen (mg/L)",0.83
-2023-05-01,"Turtle Stream","Total Phosphorus (mg/L)",2
-2023-05-03,"Aeropuerto","Ammonium (mg/L)",0
-2023-05-03,"Aeropuerto","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-05-03,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Aeropuerto","Nitrite (mg/L)",0
-2023-05-03,"Aeropuerto","Silicon Oxide (mg/L)",0.32
-2023-05-03,"Aeropuerto","Total Nitrogen (mg/L)",0.19
-2023-05-03,"Aeropuerto","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Cabra","Ammonium (mg/L)",0
-2023-05-03,"Cabra","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Cabra","Nitrate (mg/L)",0.01
-2023-05-03,"Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Cabra","Nitrite (mg/L)",0
-2023-05-03,"Cabra","Silicon Oxide (mg/L)",0.32
-2023-05-03,"Cabra","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Cabra","Total Phosphorus (mg/L)",0.03
-2023-05-03,"Casa Azul","Ammonium (mg/L)",0
-2023-05-03,"Casa Azul","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Casa Azul","Nitrate (mg/L)",0.01
-2023-05-03,"Casa Azul","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Casa Azul","Nitrite (mg/L)",0
-2023-05-03,"Casa Azul","Silicon Oxide (mg/L)",0.27
-2023-05-03,"Casa Azul","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Casa Azul","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Cementerio","Ammonium (mg/L)",0
-2023-05-03,"Cementerio","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Cementerio","Nitrate (mg/L)",0.01
-2023-05-03,"Cementerio","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Cementerio","Nitrite (mg/L)",0
-2023-05-03,"Cementerio","Silicon Oxide (mg/L)",0.28
-2023-05-03,"Cementerio","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Cementerio","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Coronel","Ammonium (mg/L)",0
-2023-05-03,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-05-03,"Coronel","Nitrate (mg/L)",0.01
-2023-05-03,"Coronel","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Coronel","Nitrite (mg/L)",0
-2023-05-03,"Coronel","Silicon Oxide (mg/L)",0.36
-2023-05-03,"Coronel","Total Nitrogen (mg/L)",0.06
-2023-05-03,"Coronel","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-05-03,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Fulladosa Bay","Nitrate (mg/L)",0.01
-2023-05-03,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-05-03,"Fulladosa Bay","Silicon Oxide (mg/L)",0.26
-2023-05-03,"Fulladosa Bay","Total Nitrogen (mg/L)",0.06
-2023-05-03,"Fulladosa Bay","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Fulladosa Point","Ammonium (mg/L)",0
-2023-05-03,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Fulladosa Point","Nitrate (mg/L)",0.01
-2023-05-03,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Fulladosa Point","Nitrite (mg/L)",0
-2023-05-03,"Fulladosa Point","Silicon Oxide (mg/L)",0.25
-2023-05-03,"Fulladosa Point","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Fulladosa Point","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Fulladosa Ramp","Ammonium (mg/L)",0
-2023-05-03,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Fulladosa Ramp","Nitrate (mg/L)",0.01
-2023-05-03,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-05-03,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.25
-2023-05-03,"Fulladosa Ramp","Total Nitrogen (mg/L)",0.06
-2023-05-03,"Fulladosa Ramp","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Little Cabra","Ammonium (mg/L)",0
-2023-05-03,"Little Cabra","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Little Cabra","Nitrate (mg/L)",0.01
-2023-05-03,"Little Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Little Cabra","Nitrite (mg/L)",0
-2023-05-03,"Little Cabra","Silicon Oxide (mg/L)",0.28
-2023-05-03,"Little Cabra","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Little Cabra","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Mosquito","Ammonium (mg/L)",0
-2023-05-03,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-05-03,"Mosquito","Nitrate (mg/L)",0.01
-2023-05-03,"Mosquito","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Mosquito","Nitrite (mg/L)",0
-2023-05-03,"Mosquito","Silicon Oxide (mg/L)",0.17
-2023-05-03,"Mosquito","Total Nitrogen (mg/L)",0.04
-2023-05-03,"Mosquito","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Puerto Manglar Control","Ammonium (mg/L)",0
-2023-05-03,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Control","Nitrate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-05-03,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.18
-2023-05-03,"Puerto Manglar Control","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Puerto Manglar Control","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Puerto Manglar Reference","Ammonium (mg/L)",0
-2023-05-03,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Reference","Nitrate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-05-03,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.21
-2023-05-03,"Puerto Manglar Reference","Total Nitrogen (mg/L)",0.05
-2023-05-03,"Puerto Manglar Reference","Total Phosphorus (mg/L)",0.02
-2023-05-03,"Puerto Manglar Treatment","Ammonium (mg/L)",0
-2023-05-03,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Treatment","Nitrate (mg/L)",0.01
-2023-05-03,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0.01
-2023-05-03,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-05-03,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.17
-2023-05-03,"Puerto Manglar Treatment","Total Nitrogen (mg/L)",0.06
-2023-05-03,"Puerto Manglar Treatment","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Aeropuerto","Ammonium (mg/L)",0
-2023-06-05,"Aeropuerto","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-06-05,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Aeropuerto","Nitrite (mg/L)",0
-2023-06-05,"Aeropuerto","Silicon Oxide (mg/L)",0.18
-2023-06-05,"Aeropuerto","Total Nitrogen (mg/L)",0.18
-2023-06-05,"Aeropuerto","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Cabra","Ammonium (mg/L)",0.01
-2023-06-05,"Cabra","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Cabra","Nitrate (mg/L)",0.01
-2023-06-05,"Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Cabra","Nitrite (mg/L)",0
-2023-06-05,"Cabra","Silicon Oxide (mg/L)",0.2
-2023-06-05,"Cabra","Total Nitrogen (mg/L)",0.08
-2023-06-05,"Cabra","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Casa Azul","Ammonium (mg/L)",0
-2023-06-05,"Casa Azul","Hydrogen Phosphate (mg/L)",0.01
-2023-06-05,"Casa Azul","Nitrate (mg/L)",0.01
-2023-06-05,"Casa Azul","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Casa Azul","Nitrite (mg/L)",0
-2023-06-05,"Casa Azul","Silicon Oxide (mg/L)",0.14
-2023-06-05,"Casa Azul","Total Nitrogen (mg/L)",0.07
-2023-06-05,"Casa Azul","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Cementerio","Ammonium (mg/L)",0
-2023-06-05,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Cementerio","Nitrate (mg/L)",0.01
-2023-06-05,"Cementerio","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Cementerio","Nitrite (mg/L)",0
-2023-06-05,"Cementerio","Silicon Oxide (mg/L)",0.15
-2023-06-05,"Cementerio","Total Nitrogen (mg/L)",0.06
-2023-06-05,"Cementerio","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Coronel","Ammonium (mg/L)",0
-2023-06-05,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Coronel","Nitrate (mg/L)",0.01
-2023-06-05,"Coronel","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Coronel","Nitrite (mg/L)",0
-2023-06-05,"Coronel","Silicon Oxide (mg/L)",0.25
-2023-06-05,"Coronel","Total Nitrogen (mg/L)",0.07
-2023-06-05,"Coronel","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-06-05,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Fulladosa Bay","Nitrate (mg/L)",0.01
-2023-06-05,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-06-05,"Fulladosa Bay","Silicon Oxide (mg/L)",0.17
-2023-06-05,"Fulladosa Bay","Total Nitrogen (mg/L)",0.07
-2023-06-05,"Fulladosa Bay","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Fulladosa Point","Ammonium (mg/L)",0
-2023-06-05,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Fulladosa Point","Nitrate (mg/L)",0.01
-2023-06-05,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Fulladosa Point","Nitrite (mg/L)",0
-2023-06-05,"Fulladosa Point","Silicon Oxide (mg/L)",0.14
-2023-06-05,"Fulladosa Point","Total Nitrogen (mg/L)",0.06
-2023-06-05,"Fulladosa Point","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Fulladosa Ramp","Ammonium (mg/L)",0
-2023-06-05,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Fulladosa Ramp","Nitrate (mg/L)",0.23
-2023-06-05,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0.23
-2023-06-05,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-06-05,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.37
-2023-06-05,"Fulladosa Ramp","Total Nitrogen (mg/L)",0.33
-2023-06-05,"Fulladosa Ramp","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Little Cabra","Ammonium (mg/L)",0
-2023-06-05,"Little Cabra","Hydrogen Phosphate (mg/L)",0.01
-2023-06-05,"Little Cabra","Nitrate (mg/L)",0.01
-2023-06-05,"Little Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Little Cabra","Nitrite (mg/L)",0
-2023-06-05,"Little Cabra","Silicon Oxide (mg/L)",0.15
-2023-06-05,"Little Cabra","Total Nitrogen (mg/L)",0.06
-2023-06-05,"Little Cabra","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Mosquito","Ammonium (mg/L)",0
-2023-06-05,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Mosquito","Nitrate (mg/L)",0.01
-2023-06-05,"Mosquito","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Mosquito","Nitrite (mg/L)",0
-2023-06-05,"Mosquito","Silicon Oxide (mg/L)",0.15
-2023-06-05,"Mosquito","Total Nitrogen (mg/L)",0.05
-2023-06-05,"Mosquito","Total Phosphorus (mg/L)",0.03
-2023-06-05,"Puerto Manglar Control","Ammonium (mg/L)",0
-2023-06-05,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0.01
-2023-06-05,"Puerto Manglar Control","Nitrate (mg/L)",0.01
-2023-06-05,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-06-05,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.16
-2023-06-05,"Puerto Manglar Control","Total Nitrogen (mg/L)",0.08
-2023-06-05,"Puerto Manglar Control","Total Phosphorus (mg/L)",0.01
-2023-06-05,"Puerto Manglar Reference","Ammonium (mg/L)",0
-2023-06-05,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0.01
-2023-06-05,"Puerto Manglar Reference","Nitrate (mg/L)",0.01
-2023-06-05,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-06-05,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.15
-2023-06-05,"Puerto Manglar Reference","Total Nitrogen (mg/L)",0.06
-2023-06-05,"Puerto Manglar Reference","Total Phosphorus (mg/L)",0.02
-2023-06-05,"Puerto Manglar Treatment","Ammonium (mg/L)",0
-2023-06-05,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-06-05,"Puerto Manglar Treatment","Nitrate (mg/L)",0.01
-2023-06-05,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0.01
-2023-06-05,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-06-05,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.18
-2023-06-05,"Puerto Manglar Treatment","Total Nitrogen (mg/L)",0.19
-2023-06-05,"Puerto Manglar Treatment","Total Phosphorus (mg/L)",0
-2023-06-06,"Bridge","Ammonium (mg/L)",0.62
-2023-06-06,"Bridge","Hydrogen Phosphate (mg/L)",2.81
-2023-06-06,"Bridge","Nitrate (mg/L)",0.01
-2023-06-06,"Bridge","Nitrate + Nitrite (mg/L)",0.01
-2023-06-06,"Bridge","Nitrite (mg/L)",0
-2023-06-06,"Bridge","Silicon Oxide (mg/L)",20.17
-2023-06-06,"Bridge","Total Nitrogen (mg/L)",2.03
-2023-06-06,"Bridge","Total Phosphorus (mg/L)",2.81
-2023-06-06,"Old Man Plaza","Ammonium (mg/L)",0.03
-2023-06-06,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.06
-2023-06-06,"Old Man Plaza","Nitrate (mg/L)",0.25
-2023-06-06,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.25
-2023-06-06,"Old Man Plaza","Nitrite (mg/L)",0
-2023-06-06,"Old Man Plaza","Silicon Oxide (mg/L)",29.07
-2023-06-06,"Old Man Plaza","Total Nitrogen (mg/L)",0.35
-2023-06-06,"Old Man Plaza","Total Phosphorus (mg/L)",0.01
-2023-06-06,"P3_out","Ammonium (mg/L)",0.05
-2023-06-06,"P3_out","Hydrogen Phosphate (mg/L)",4.43
-2023-06-06,"P3_out","Nitrate (mg/L)",4.57
-2023-06-06,"P3_out","Nitrate + Nitrite (mg/L)",4.76
-2023-06-06,"P3_out","Nitrite (mg/L)",0.19
-2023-06-06,"P3_out","Silicon Oxide (mg/L)",26.42
-2023-06-06,"P3_out","Total Nitrogen (mg/L)",7.49
-2023-06-06,"P3_out","Total Phosphorus (mg/L)",4.02
-2023-06-06,"P4_out","Ammonium (mg/L)",0.05
-2023-06-06,"P4_out","Hydrogen Phosphate (mg/L)",2.84
-2023-06-06,"P4_out","Nitrate (mg/L)",0
-2023-06-06,"P4_out","Nitrate + Nitrite (mg/L)",0.01
-2023-06-06,"P4_out","Nitrite (mg/L)",0.01
-2023-06-06,"P4_out","Silicon Oxide (mg/L)",24.04
-2023-06-06,"P4_out","Total Nitrogen (mg/L)",4.27
-2023-06-06,"P4_out","Total Phosphorus (mg/L)",2.53
-2023-06-06,"Plant","Ammonium (mg/L)",0.17
-2023-06-06,"Plant","Hydrogen Phosphate (mg/L)",9.17
-2023-06-06,"Plant","Nitrate (mg/L)",25.63
-2023-06-06,"Plant","Nitrate + Nitrite (mg/L)",25.64
-2023-06-06,"Plant","Nitrite (mg/L)",0.01
-2023-06-06,"Plant","Silicon Oxide (mg/L)",1.94
-2023-06-06,"Turtle Stream","Ammonium (mg/L)",0.04
-2023-06-06,"Turtle Stream","Hydrogen Phosphate (mg/L)",1.79
-2023-06-06,"Turtle Stream","Nitrate (mg/L)",0.04
-2023-06-06,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.04
-2023-06-06,"Turtle Stream","Nitrite (mg/L)",0
-2023-06-06,"Turtle Stream","Silicon Oxide (mg/L)",38.49
-2023-06-06,"Turtle Stream","Total Nitrogen (mg/L)",1.35
-2023-06-06,"Turtle Stream","Total Phosphorus (mg/L)",1.94
-2023-07-10,"Aeropuerto","Ammonium (mg/L)",0.01
-2023-07-10,"Aeropuerto","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-07-10,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Aeropuerto","Nitrite (mg/L)",0
-2023-07-10,"Aeropuerto","Silicon Oxide (mg/L)",0.25
-2023-07-10,"AeropuertoY","Ammonium (mg/L)",0
-2023-07-10,"AeropuertoY","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"AeropuertoY","Nitrate (mg/L)",0.01
-2023-07-10,"AeropuertoY","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"AeropuertoY","Nitrite (mg/L)",0
-2023-07-10,"AeropuertoY","Silicon Oxide (mg/L)",0.04
-2023-07-10,"Cabra","Ammonium (mg/L)",0
-2023-07-10,"Cabra","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"Cabra","Nitrate (mg/L)",0.01
-2023-07-10,"Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Cabra","Nitrite (mg/L)",0
-2023-07-10,"Cabra","Silicon Oxide (mg/L)",0.34
-2023-07-10,"Casa Azul","Ammonium (mg/L)",0.01
-2023-07-10,"Casa Azul","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Casa Azul","Nitrate (mg/L)",0.01
-2023-07-10,"Casa Azul","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Casa Azul","Nitrite (mg/L)",0
-2023-07-10,"Casa Azul","Silicon Oxide (mg/L)",0.24
-2023-07-10,"Cementerio","Ammonium (mg/L)",0
-2023-07-10,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Cementerio","Nitrate (mg/L)",0.01
-2023-07-10,"Cementerio","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Cementerio","Nitrite (mg/L)",0
-2023-07-10,"Cementerio","Silicon Oxide (mg/L)",0.38
-2023-07-10,"Coronel","Ammonium (mg/L)",0.01
-2023-07-10,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Coronel","Nitrate (mg/L)",0.03
-2023-07-10,"Coronel","Nitrate + Nitrite (mg/L)",0.04
-2023-07-10,"Coronel","Nitrite (mg/L)",0.01
-2023-07-10,"Coronel","Silicon Oxide (mg/L)",0.84
-2023-07-10,"Fulladosa Bay","Ammonium (mg/L)",0.01
-2023-07-10,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"Fulladosa Bay","Nitrate (mg/L)",0.01
-2023-07-10,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-07-10,"Fulladosa Bay","Silicon Oxide (mg/L)",0.31
-2023-07-10,"Fulladosa Point","Ammonium (mg/L)",0
-2023-07-10,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"Fulladosa Point","Nitrate (mg/L)",0.01
-2023-07-10,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Fulladosa Point","Nitrite (mg/L)",0
-2023-07-10,"Fulladosa Point","Silicon Oxide (mg/L)",0.28
-2023-07-10,"Fulladosa Ramp","Ammonium (mg/L)",0
-2023-07-10,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Fulladosa Ramp","Nitrate (mg/L)",0.01
-2023-07-10,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-07-10,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.32
-2023-07-10,"Little Cabra","Ammonium (mg/L)",0.01
-2023-07-10,"Little Cabra","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Little Cabra","Nitrate (mg/L)",0.01
-2023-07-10,"Little Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Little Cabra","Nitrite (mg/L)",0
-2023-07-10,"Little Cabra","Silicon Oxide (mg/L)",0.27
-2023-07-10,"Mosquito","Ammonium (mg/L)",0
-2023-07-10,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Mosquito","Nitrate (mg/L)",0.01
-2023-07-10,"Mosquito","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Mosquito","Nitrite (mg/L)",0
-2023-07-10,"Mosquito","Silicon Oxide (mg/L)",0.16
-2023-07-10,"Puerto Manglar Control","Ammonium (mg/L)",0
-2023-07-10,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0.01
-2023-07-10,"Puerto Manglar Control","Nitrate (mg/L)",0.04
-2023-07-10,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.05
-2023-07-10,"Puerto Manglar Control","Nitrite (mg/L)",0.01
-2023-07-10,"Puerto Manglar Control","Silicon Oxide (mg/L)",1.01
-2023-07-10,"Puerto Manglar Reference","Ammonium (mg/L)",0.01
-2023-07-10,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Puerto Manglar Reference","Nitrate (mg/L)",0.01
-2023-07-10,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-07-10,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.17
-2023-07-10,"Puerto Manglar Treatment","Ammonium (mg/L)",0.01
-2023-07-10,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-07-10,"Puerto Manglar Treatment","Nitrate (mg/L)",0.01
-2023-07-10,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0.01
-2023-07-10,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-07-10,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.26
-2023-07-11,"AeropuertoY","Ammonium (mg/L)",0.03
-2023-07-11,"AeropuertoY","Hydrogen Phosphate (mg/L)",0.05
-2023-07-11,"AeropuertoY","Nitrate (mg/L)",0.01
-2023-07-11,"AeropuertoY","Nitrate + Nitrite (mg/L)",0.01
-2023-07-11,"AeropuertoY","Nitrite (mg/L)",0
-2023-07-11,"AeropuertoY","Silicon Oxide (mg/L)",19.57
-2023-07-11,"Bridge","Ammonium (mg/L)",0.14
-2023-07-11,"Bridge","Hydrogen Phosphate (mg/L)",3.2
-2023-07-11,"Bridge","Nitrate (mg/L)",0.16
-2023-07-11,"Bridge","Nitrate + Nitrite (mg/L)",0.19
-2023-07-11,"Bridge","Nitrite (mg/L)",0.03
-2023-07-11,"Bridge","Silicon Oxide (mg/L)",16.05
-2023-07-11,"Coronel Pond","Ammonium (mg/L)",0.76
-2023-07-11,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.14
-2023-07-11,"Coronel Pond","Nitrate (mg/L)",1
-2023-07-11,"Coronel Pond","Nitrate + Nitrite (mg/L)",1.06
-2023-07-11,"Coronel Pond","Nitrite (mg/L)",0.06
-2023-07-11,"Coronel Pond","Silicon Oxide (mg/L)",2.74
-2023-07-11,"Old Man Plaza","Ammonium (mg/L)",0.03
-2023-07-11,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.05
-2023-07-11,"Old Man Plaza","Nitrate (mg/L)",0.46
-2023-07-11,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.47
-2023-07-11,"Old Man Plaza","Nitrite (mg/L)",0.01
-2023-07-11,"Old Man Plaza","Silicon Oxide (mg/L)",7.58
-2023-07-11,"P3_out","Ammonium (mg/L)",6.38
-2023-07-11,"P3_out","Hydrogen Phosphate (mg/L)",6.09
-2023-07-11,"P3_out","Nitrate (mg/L)",2.75
-2023-07-11,"P3_out","Nitrate + Nitrite (mg/L)",3.45
-2023-07-11,"P3_out","Nitrite (mg/L)",0.7
-2023-07-11,"P3_out","Silicon Oxide (mg/L)",8.74
-2023-07-11,"P4_out","Ammonium (mg/L)",0.06
-2023-07-11,"P4_out","Hydrogen Phosphate (mg/L)",2.88
-2023-07-11,"P4_out","Nitrate (mg/L)",0.44
-2023-07-11,"P4_out","Nitrate + Nitrite (mg/L)",0.66
-2023-07-11,"P4_out","Nitrite (mg/L)",0.22
-2023-07-11,"P4_out","Silicon Oxide (mg/L)",17.66
-2023-07-11,"Plant","Ammonium (mg/L)",0.44
-2023-07-11,"Plant","Hydrogen Phosphate (mg/L)",0.28
-2023-07-11,"Plant","Nitrate (mg/L)",0.23
-2023-07-11,"Plant","Nitrate + Nitrite (mg/L)",0.26
-2023-07-11,"Plant","Nitrite (mg/L)",0.03
-2023-07-11,"Plant","Silicon Oxide (mg/L)",8.92
-2023-07-11,"Turtle Stream","Ammonium (mg/L)",0.03
-2023-07-11,"Turtle Stream","Hydrogen Phosphate (mg/L)",2.03
-2023-07-11,"Turtle Stream","Nitrate (mg/L)",0
-2023-07-11,"Turtle Stream","Nitrate + Nitrite (mg/L)",0
-2023-07-11,"Turtle Stream","Nitrite (mg/L)",0
-2023-07-11,"Turtle Stream","Silicon Oxide (mg/L)",9.75
-2023-08-08,"Aeropuerto","Ammonium (mg/L)",0
-2023-08-08,"Aeropuerto","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-08-08,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Aeropuerto","Nitrite (mg/L)",0
-2023-08-08,"Aeropuerto","Silicon Oxide (mg/L)",0.31
-2023-08-08,"Cabra","Ammonium (mg/L)",0
-2023-08-08,"Cabra","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Cabra","Nitrate (mg/L)",0.01
-2023-08-08,"Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Cabra","Nitrite (mg/L)",0
-2023-08-08,"Cabra","Silicon Oxide (mg/L)",0.3
-2023-08-08,"Casa Azul","Ammonium (mg/L)",0.01
-2023-08-08,"Casa Azul","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Casa Azul","Nitrate (mg/L)",0.01
-2023-08-08,"Casa Azul","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Casa Azul","Nitrite (mg/L)",0
-2023-08-08,"Casa Azul","Silicon Oxide (mg/L)",0.28
-2023-08-08,"Cementerio","Ammonium (mg/L)",0
-2023-08-08,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Cementerio","Nitrate (mg/L)",0.01
-2023-08-08,"Cementerio","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Cementerio","Nitrite (mg/L)",0
-2023-08-08,"Cementerio","Silicon Oxide (mg/L)",0.28
-2023-08-08,"Coronel","Ammonium (mg/L)",0
-2023-08-08,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Coronel","Nitrate (mg/L)",0.01
-2023-08-08,"Coronel","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Coronel","Nitrite (mg/L)",0
-2023-08-08,"Coronel","Silicon Oxide (mg/L)",0.26
-2023-08-08,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-08-08,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Fulladosa Bay","Nitrate (mg/L)",0.01
-2023-08-08,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-08-08,"Fulladosa Bay","Silicon Oxide (mg/L)",0.26
-2023-08-08,"Fulladosa Point","Ammonium (mg/L)",0
-2023-08-08,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Fulladosa Point","Nitrate (mg/L)",0.01
-2023-08-08,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Fulladosa Point","Nitrite (mg/L)",0
-2023-08-08,"Fulladosa Point","Silicon Oxide (mg/L)",0.27
-2023-08-08,"Fulladosa Ramp","Ammonium (mg/L)",0
-2023-08-08,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Fulladosa Ramp","Nitrate (mg/L)",0.01
-2023-08-08,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-08-08,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.27
-2023-08-08,"Little Cabra","Ammonium (mg/L)",0
-2023-08-08,"Little Cabra","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Little Cabra","Nitrate (mg/L)",0.01
-2023-08-08,"Little Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Little Cabra","Nitrite (mg/L)",0
-2023-08-08,"Little Cabra","Silicon Oxide (mg/L)",0.26
-2023-08-08,"Mosquito","Ammonium (mg/L)",0
-2023-08-08,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Mosquito","Nitrate (mg/L)",0.01
-2023-08-08,"Mosquito","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Mosquito","Nitrite (mg/L)",0
-2023-08-08,"Mosquito","Silicon Oxide (mg/L)",0.16
-2023-08-08,"Puerto Manglar Control","Ammonium (mg/L)",0.01
-2023-08-08,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Puerto Manglar Control","Nitrate (mg/L)",0.01
-2023-08-08,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-08-08,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.23
-2023-08-08,"Puerto Manglar Reference","Ammonium (mg/L)",0.01
-2023-08-08,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Puerto Manglar Reference","Nitrate (mg/L)",0
-2023-08-08,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0
-2023-08-08,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-08-08,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.2
-2023-08-08,"Puerto Manglar Treatment","Ammonium (mg/L)",0.01
-2023-08-08,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-08-08,"Puerto Manglar Treatment","Nitrate (mg/L)",0.01
-2023-08-08,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0.01
-2023-08-08,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-08-08,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.19
-2023-08-09,"AeropuertoY","Ammonium (mg/L)",0.04
-2023-08-09,"AeropuertoY","Hydrogen Phosphate (mg/L)",0.05
-2023-08-09,"AeropuertoY","Nitrate (mg/L)",0.01
-2023-08-09,"AeropuertoY","Nitrate + Nitrite (mg/L)",0.01
-2023-08-09,"AeropuertoY","Nitrite (mg/L)",0
-2023-08-09,"AeropuertoY","Silicon Oxide (mg/L)",20.51
-2023-08-09,"Bridge","Ammonium (mg/L)",1.22
-2023-08-09,"Bridge","Hydrogen Phosphate (mg/L)",2.08
-2023-08-09,"Bridge","Nitrate (mg/L)",0.05
-2023-08-09,"Bridge","Nitrate + Nitrite (mg/L)",0.07
-2023-08-09,"Bridge","Nitrite (mg/L)",0.02
-2023-08-09,"Bridge","Silicon Oxide (mg/L)",32.56
-2023-08-09,"Coronel Pond","Ammonium (mg/L)",1.07
-2023-08-09,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.35
-2023-08-09,"Coronel Pond","Nitrate (mg/L)",0.12
-2023-08-09,"Coronel Pond","Nitrate + Nitrite (mg/L)",0.18
-2023-08-09,"Coronel Pond","Nitrite (mg/L)",0.06
-2023-08-09,"Coronel Pond","Silicon Oxide (mg/L)",29.26
-2023-08-09,"Old Man Plaza","Ammonium (mg/L)",0.03
-2023-08-09,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.02
-2023-08-09,"Old Man Plaza","Nitrate (mg/L)",0.01
-2023-08-09,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.01
-2023-08-09,"Old Man Plaza","Nitrite (mg/L)",0
-2023-08-09,"Old Man Plaza","Silicon Oxide (mg/L)",18.84
-2023-08-09,"Plant","Ammonium (mg/L)",0.21
-2023-08-09,"Plant","Hydrogen Phosphate (mg/L)",5.37
-2023-08-09,"Plant","Nitrate (mg/L)",7.57
-2023-08-09,"Plant","Nitrate + Nitrite (mg/L)",7.61
-2023-08-09,"Plant","Nitrite (mg/L)",0.04
-2023-08-09,"Plant","Silicon Oxide (mg/L)",17.31
-2023-08-09,"Turtle Stream","Ammonium (mg/L)",0.18
-2023-08-09,"Turtle Stream","Hydrogen Phosphate (mg/L)",0.92
-2023-08-09,"Turtle Stream","Nitrate (mg/L)",0.07
-2023-08-09,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.08
-2023-08-09,"Turtle Stream","Nitrite (mg/L)",0.01
-2023-08-09,"Turtle Stream","Silicon Oxide (mg/L)",34.63
-2023-09-18,"Aeropuerto","Ammonium (mg/L)",0.01
-2023-09-18,"Aeropuerto","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-09-18,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Aeropuerto","Nitrite (mg/L)",0
-2023-09-18,"Aeropuerto","Silicon Oxide (mg/L)",0.31
-2023-09-18,"Cabra","Ammonium (mg/L)",0
-2023-09-18,"Cabra","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Cabra","Nitrate (mg/L)",0
-2023-09-18,"Cabra","Nitrate + Nitrite (mg/L)",0
-2023-09-18,"Cabra","Nitrite (mg/L)",0
-2023-09-18,"Cabra","Silicon Oxide (mg/L)",0.3
-2023-09-18,"Casa Azul","Ammonium (mg/L)",0
-2023-09-18,"Casa Azul","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Casa Azul","Nitrate (mg/L)",0.01
-2023-09-18,"Casa Azul","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Casa Azul","Nitrite (mg/L)",0
-2023-09-18,"Casa Azul","Silicon Oxide (mg/L)",0.31
-2023-09-18,"Cementerio","Ammonium (mg/L)",0
-2023-09-18,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Cementerio","Nitrate (mg/L)",0.01
-2023-09-18,"Cementerio","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Cementerio","Nitrite (mg/L)",0
-2023-09-18,"Cementerio","Silicon Oxide (mg/L)",0.31
-2023-09-18,"Coronel","Ammonium (mg/L)",0
-2023-09-18,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Coronel","Nitrate (mg/L)",0.01
-2023-09-18,"Coronel","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Coronel","Nitrite (mg/L)",0
-2023-09-18,"Coronel","Silicon Oxide (mg/L)",0.31
-2023-09-18,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-09-18,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Fulladosa Bay","Nitrate (mg/L)",0
-2023-09-18,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0
-2023-09-18,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-09-18,"Fulladosa Bay","Silicon Oxide (mg/L)",0.26
-2023-09-18,"Fulladosa Point","Ammonium (mg/L)",0
-2023-09-18,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Fulladosa Point","Nitrate (mg/L)",0.01
-2023-09-18,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Fulladosa Point","Nitrite (mg/L)",0
-2023-09-18,"Fulladosa Point","Silicon Oxide (mg/L)",0.27
-2023-09-18,"Fulladosa Ramp","Ammonium (mg/L)",0.01
-2023-09-18,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Fulladosa Ramp","Nitrate (mg/L)",0.01
-2023-09-18,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-09-18,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.35
-2023-09-18,"Little Cabra","Ammonium (mg/L)",0
-2023-09-18,"Little Cabra","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Little Cabra","Nitrate (mg/L)",0.01
-2023-09-18,"Little Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Little Cabra","Nitrite (mg/L)",0
-2023-09-18,"Little Cabra","Silicon Oxide (mg/L)",0.28
-2023-09-18,"Mosquito","Ammonium (mg/L)",0
-2023-09-18,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Mosquito","Nitrate (mg/L)",0.01
-2023-09-18,"Mosquito","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Mosquito","Nitrite (mg/L)",0
-2023-09-18,"Mosquito","Silicon Oxide (mg/L)",0.27
-2023-09-18,"Puerto Manglar Control","Ammonium (mg/L)",0.01
-2023-09-18,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Puerto Manglar Control","Nitrate (mg/L)",0.01
-2023-09-18,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-09-18,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.19
-2023-09-18,"Puerto Manglar Reference","Ammonium (mg/L)",0.01
-2023-09-18,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Puerto Manglar Reference","Nitrate (mg/L)",0.01
-2023-09-18,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-09-18,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.23
-2023-09-18,"Puerto Manglar Treatment","Ammonium (mg/L)",0.01
-2023-09-18,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-09-18,"Puerto Manglar Treatment","Nitrate (mg/L)",0.01
-2023-09-18,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0.01
-2023-09-18,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-09-18,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.24
-2023-09-19,"Bridge","Ammonium (mg/L)",0.04
-2023-09-19,"Bridge","Hydrogen Phosphate (mg/L)",2.93
-2023-09-19,"Bridge","Nitrate (mg/L)",0.07
-2023-09-19,"Bridge","Nitrate + Nitrite (mg/L)",0.08
-2023-09-19,"Bridge","Nitrite (mg/L)",0.01
-2023-09-19,"Bridge","Silicon Oxide (mg/L)",17.06
-2023-09-19,"Coronel Pond","Ammonium (mg/L)",0.91
-2023-09-19,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.25
-2023-09-19,"Coronel Pond","Nitrate (mg/L)",0.08
-2023-09-19,"Coronel Pond","Nitrate + Nitrite (mg/L)",0.08
-2023-09-19,"Coronel Pond","Nitrite (mg/L)",0.02
-2023-09-19,"Coronel Pond","Silicon Oxide (mg/L)",17.06
-2023-09-19,"Old Man Plaza","Ammonium (mg/L)",0.07
-2023-09-19,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.38
-2023-09-19,"Old Man Plaza","Nitrate (mg/L)",0.01
-2023-09-19,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.02
-2023-09-19,"Old Man Plaza","Nitrite (mg/L)",0.01
-2023-09-19,"Old Man Plaza","Silicon Oxide (mg/L)",28.52
-2023-09-19,"Turtle Stream","Ammonium (mg/L)",0.09
-2023-09-19,"Turtle Stream","Hydrogen Phosphate (mg/L)",2.14
-2023-09-19,"Turtle Stream","Nitrate (mg/L)",0.03
-2023-09-19,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.04
-2023-09-19,"Turtle Stream","Nitrite (mg/L)",0.01
-2023-09-19,"Turtle Stream","Silicon Oxide (mg/L)",56.24
-2023-11-07,"Aeropuerto","Ammonium (mg/L)",0.08
-2023-11-07,"Aeropuerto","Hydrogen Phosphate (mg/L)",0.09
-2023-11-07,"Aeropuerto","Nitrate (mg/L)",0.05
-2023-11-07,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.06
-2023-11-07,"Aeropuerto","Nitrite (mg/L)",0.01
-2023-11-07,"Aeropuerto","Silicon Oxide (mg/L)",22.56
-2023-11-07,"Bridge","Ammonium (mg/L)",0.03
-2023-11-07,"Bridge","Hydrogen Phosphate (mg/L)",1.07
-2023-11-07,"Bridge","Nitrate (mg/L)",0.25
-2023-11-07,"Bridge","Nitrate + Nitrite (mg/L)",0.25
-2023-11-07,"Bridge","Nitrite (mg/L)",0
-2023-11-07,"Bridge","Silicon Oxide (mg/L)",29.42
-2023-11-07,"Cabra","Ammonium (mg/L)",0
-2023-11-07,"Cabra","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Cabra","Nitrate (mg/L)",0
-2023-11-07,"Cabra","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Cabra","Nitrite (mg/L)",0
-2023-11-07,"Cabra","Silicon Oxide (mg/L)",0.34
-2023-11-07,"Casa Azul","Ammonium (mg/L)",0.01
-2023-11-07,"Casa Azul","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Casa Azul","Nitrate (mg/L)",0
-2023-11-07,"Casa Azul","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Casa Azul","Nitrite (mg/L)",0
-2023-11-07,"Casa Azul","Silicon Oxide (mg/L)",0.47
-2023-11-07,"Cementerio","Ammonium (mg/L)",0
-2023-11-07,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Cementerio","Nitrate (mg/L)",0
-2023-11-07,"Cementerio","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Cementerio","Nitrite (mg/L)",0
-2023-11-07,"Cementerio","Silicon Oxide (mg/L)",0.35
-2023-11-07,"Coronel","Ammonium (mg/L)",0
-2023-11-07,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Coronel","Nitrate (mg/L)",0
-2023-11-07,"Coronel","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Coronel","Nitrite (mg/L)",0
-2023-11-07,"Coronel","Silicon Oxide (mg/L)",0.54
-2023-11-07,"Coronel Pond","Ammonium (mg/L)",0.38
-2023-11-07,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.16
-2023-11-07,"Coronel Pond","Nitrate (mg/L)",0.01
-2023-11-07,"Coronel Pond","Nitrate + Nitrite (mg/L)",0.02
-2023-11-07,"Coronel Pond","Nitrite (mg/L)",0.01
-2023-11-07,"Coronel Pond","Silicon Oxide (mg/L)",2.77
-2023-11-07,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-11-07,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Fulladosa Bay","Nitrate (mg/L)",0
-2023-11-07,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Bay","Silicon Oxide (mg/L)",0.24
-2023-11-07,"Fulladosa Point","Ammonium (mg/L)",0
-2023-11-07,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Fulladosa Point","Nitrate (mg/L)",0
-2023-11-07,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Point","Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Point","Silicon Oxide (mg/L)",0.25
-2023-11-07,"Fulladosa Ramp","Ammonium (mg/L)",0.02
-2023-11-07,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0.01
-2023-11-07,"Fulladosa Ramp","Nitrate (mg/L)",0
-2023-11-07,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-11-07,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.46
-2023-11-07,"Little Cabra","Ammonium (mg/L)",0
-2023-11-07,"Little Cabra","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Little Cabra","Nitrate (mg/L)",0.02
-2023-11-07,"Little Cabra","Nitrate + Nitrite (mg/L)",0.02
-2023-11-07,"Little Cabra","Nitrite (mg/L)",0
-2023-11-07,"Little Cabra","Silicon Oxide (mg/L)",0.39
-2023-11-07,"Mosquito","Ammonium (mg/L)",0
-2023-11-07,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Mosquito","Nitrate (mg/L)",0
-2023-11-07,"Mosquito","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Mosquito","Nitrite (mg/L)",0
-2023-11-07,"Mosquito","Silicon Oxide (mg/L)",0.24
-2023-11-07,"Old Man Plaza","Ammonium (mg/L)",0.11
-2023-11-07,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.12
-2023-11-07,"Old Man Plaza","Nitrate (mg/L)",0.18
-2023-11-07,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.26
-2023-11-07,"Old Man Plaza","Nitrite (mg/L)",0.08
-2023-11-07,"Old Man Plaza","Silicon Oxide (mg/L)",11.56
-2023-11-07,"Puerto Manglar Control","Ammonium (mg/L)",0
-2023-11-07,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0.01
-2023-11-07,"Puerto Manglar Control","Nitrate (mg/L)",0
-2023-11-07,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.19
-2023-11-07,"Puerto Manglar Reference","Ammonium (mg/L)",0
-2023-11-07,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Puerto Manglar Reference","Nitrate (mg/L)",0
-2023-11-07,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.16
-2023-11-07,"Puerto Manglar Treatment","Ammonium (mg/L)",0
-2023-11-07,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-11-07,"Puerto Manglar Treatment","Nitrate (mg/L)",0
-2023-11-07,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-11-07,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.14
-2023-11-07,"Turtle Stream","Ammonium (mg/L)",0.05
-2023-11-07,"Turtle Stream","Hydrogen Phosphate (mg/L)",0.23
-2023-11-07,"Turtle Stream","Nitrate (mg/L)",0.06
-2023-11-07,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.06
-2023-11-07,"Turtle Stream","Nitrite (mg/L)",0
-2023-11-07,"Turtle Stream","Silicon Oxide (mg/L)",3.82
-2023-12-11,"Aeropuerto","Ammonium (mg/L)",0
-2023-12-11,"Aeropuerto","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Aeropuerto","Nitrate (mg/L)",0
-2023-12-11,"Aeropuerto","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Aeropuerto","Nitrite (mg/L)",0
-2023-12-11,"Aeropuerto","Silicon Oxide (mg/L)",0.38
-2023-12-11,"Cabra","Ammonium (mg/L)",0
-2023-12-11,"Cabra","Hydrogen Phosphate (mg/L)",0.01
-2023-12-11,"Cabra","Nitrate (mg/L)",0.01
-2023-12-11,"Cabra","Nitrate + Nitrite (mg/L)",0.01
-2023-12-11,"Cabra","Nitrite (mg/L)",0
-2023-12-11,"Cabra","Silicon Oxide (mg/L)",0.49
-2023-12-11,"Casa Azul","Ammonium (mg/L)",0
-2023-12-11,"Casa Azul","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Casa Azul","Nitrate (mg/L)",0
-2023-12-11,"Casa Azul","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Casa Azul","Nitrite (mg/L)",0
-2023-12-11,"Casa Azul","Silicon Oxide (mg/L)",0.34
-2023-12-11,"Cementerio","Ammonium (mg/L)",0
-2023-12-11,"Cementerio","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Cementerio","Nitrate (mg/L)",0
-2023-12-11,"Cementerio","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Cementerio","Nitrite (mg/L)",0
-2023-12-11,"Cementerio","Silicon Oxide (mg/L)",0.4
-2023-12-11,"Coronel","Ammonium (mg/L)",0.01
-2023-12-11,"Coronel","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Coronel","Nitrate (mg/L)",0
-2023-12-11,"Coronel","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Coronel","Nitrite (mg/L)",0
-2023-12-11,"Coronel","Silicon Oxide (mg/L)",0.46
-2023-12-11,"Fulladosa Bay","Ammonium (mg/L)",0
-2023-12-11,"Fulladosa Bay","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Fulladosa Bay","Nitrate (mg/L)",0
-2023-12-11,"Fulladosa Bay","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Bay","Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Bay","Silicon Oxide (mg/L)",0.38
-2023-12-11,"Fulladosa Point","Ammonium (mg/L)",0
-2023-12-11,"Fulladosa Point","Hydrogen Phosphate (mg/L)",0.01
-2023-12-11,"Fulladosa Point","Nitrate (mg/L)",0
-2023-12-11,"Fulladosa Point","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Point","Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Point","Silicon Oxide (mg/L)",0.32
-2023-12-11,"Fulladosa Ramp","Ammonium (mg/L)",0
-2023-12-11,"Fulladosa Ramp","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Fulladosa Ramp","Nitrate (mg/L)",0
-2023-12-11,"Fulladosa Ramp","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Ramp","Nitrite (mg/L)",0
-2023-12-11,"Fulladosa Ramp","Silicon Oxide (mg/L)",0.33
-2023-12-11,"Little Cabra","Ammonium (mg/L)",0
-2023-12-11,"Little Cabra","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Little Cabra","Nitrate (mg/L)",0
-2023-12-11,"Little Cabra","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Little Cabra","Nitrite (mg/L)",0
-2023-12-11,"Little Cabra","Silicon Oxide (mg/L)",0.39
-2023-12-11,"Mosquito","Ammonium (mg/L)",0
-2023-12-11,"Mosquito","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Mosquito","Nitrate (mg/L)",0
-2023-12-11,"Mosquito","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Mosquito","Nitrite (mg/L)",0
-2023-12-11,"Mosquito","Silicon Oxide (mg/L)",0.27
-2023-12-11,"Puerto Manglar Control","Ammonium (mg/L)",0.01
-2023-12-11,"Puerto Manglar Control","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Puerto Manglar Control","Nitrate (mg/L)",0.25
-2023-12-11,"Puerto Manglar Control","Nitrate + Nitrite (mg/L)",0.25
-2023-12-11,"Puerto Manglar Control","Nitrite (mg/L)",0
-2023-12-11,"Puerto Manglar Control","Silicon Oxide (mg/L)",0.71
-2023-12-11,"Puerto Manglar Reference","Ammonium (mg/L)",0.01
-2023-12-11,"Puerto Manglar Reference","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Puerto Manglar Reference","Nitrate (mg/L)",0
-2023-12-11,"Puerto Manglar Reference","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Puerto Manglar Reference","Nitrite (mg/L)",0
-2023-12-11,"Puerto Manglar Reference","Silicon Oxide (mg/L)",0.27
-2023-12-11,"Puerto Manglar Treatment","Ammonium (mg/L)",0.01
-2023-12-11,"Puerto Manglar Treatment","Hydrogen Phosphate (mg/L)",0
-2023-12-11,"Puerto Manglar Treatment","Nitrate (mg/L)",0
-2023-12-11,"Puerto Manglar Treatment","Nitrate + Nitrite (mg/L)",0
-2023-12-11,"Puerto Manglar Treatment","Nitrite (mg/L)",0
-2023-12-11,"Puerto Manglar Treatment","Silicon Oxide (mg/L)",0.29
-2023-12-12,"Aeropuerto","Ammonium (mg/L)",0.05
-2023-12-12,"Aeropuerto","Hydrogen Phosphate (mg/L)",0.18
-2023-12-12,"Aeropuerto","Nitrate (mg/L)",0.01
-2023-12-12,"Aeropuerto","Nitrate + Nitrite (mg/L)",0.01
-2023-12-12,"Aeropuerto","Nitrite (mg/L)",0
-2023-12-12,"Aeropuerto","Silicon Oxide (mg/L)",7.28
-2023-12-12,"Bridge","Ammonium (mg/L)",0.03
-2023-12-12,"Bridge","Hydrogen Phosphate (mg/L)",2.96
-2023-12-12,"Bridge","Nitrate (mg/L)",0.25
-2023-12-12,"Bridge","Nitrate + Nitrite (mg/L)",0.25
-2023-12-12,"Bridge","Nitrite (mg/L)",0
-2023-12-12,"Bridge","Silicon Oxide (mg/L)",27.7
-2023-12-12,"Coronel Pond","Ammonium (mg/L)",0.05
-2023-12-12,"Coronel Pond","Hydrogen Phosphate (mg/L)",0.08
-2023-12-12,"Coronel Pond","Nitrate (mg/L)",0.15
-2023-12-12,"Coronel Pond","Nitrate + Nitrite (mg/L)",0.16
-2023-12-12,"Coronel Pond","Nitrite (mg/L)",0.01
-2023-12-12,"Coronel Pond","Silicon Oxide (mg/L)",6.64
-2023-12-12,"Old Man Plaza","Ammonium (mg/L)",0.09
-2023-12-12,"Old Man Plaza","Hydrogen Phosphate (mg/L)",0.08
-2023-12-12,"Old Man Plaza","Nitrate (mg/L)",0.83
-2023-12-12,"Old Man Plaza","Nitrate + Nitrite (mg/L)",0.89
-2023-12-12,"Old Man Plaza","Nitrite (mg/L)",0.06
-2023-12-12,"Old Man Plaza","Silicon Oxide (mg/L)",6.75
-2023-12-12,"Turtle Stream","Ammonium (mg/L)",0.05
-2023-12-12,"Turtle Stream","Hydrogen Phosphate (mg/L)",1.28
-2023-12-12,"Turtle Stream","Nitrate (mg/L)",0.21
-2023-12-12,"Turtle Stream","Nitrate + Nitrite (mg/L)",0.21
-2023-12-12,"Turtle Stream","Nitrite (mg/L)",0
-2023-12-12,"Turtle Stream","Silicon Oxide (mg/L)",9.13
+"Date","Station","SampleLevel","Parameter","Value"
+2023-05-01,"Bridge","Surface","Ammonium (mg/L)",0.13
+2023-05-01,"Bridge","Surface","Hydrogen Phosphate (mg/L)",3.96
+2023-05-01,"Bridge","Surface","Nitrate (mg/L)",0.07
+2023-05-01,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.08
+2023-05-01,"Bridge","Surface","Nitrite (mg/L)",0.01
+2023-05-01,"Bridge","Surface","Silicon Oxide (mg/L)",38.35
+2023-05-01,"Bridge","Surface","Total Nitrogen (mg/L)",1.85
+2023-05-01,"Bridge","Surface","Total Phosphorus (mg/L)",3.85
+2023-05-01,"Coronel Pond","Surface","Ammonium (mg/L)",1.37
+2023-05-01,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.38
+2023-05-01,"Coronel Pond","Surface","Nitrate (mg/L)",0.15
+2023-05-01,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",0.19
+2023-05-01,"Coronel Pond","Surface","Nitrite (mg/L)",0.04
+2023-05-01,"Coronel Pond","Surface","Silicon Oxide (mg/L)",5.65
+2023-05-01,"Coronel Pond","Surface","Total Nitrogen (mg/L)",2.27
+2023-05-01,"Coronel Pond","Surface","Total Phosphorus (mg/L)",0.93
+2023-05-01,"Old Man Plaza","Surface","Ammonium (mg/L)",0.17
+2023-05-01,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.27
+2023-05-01,"Old Man Plaza","Surface","Nitrate (mg/L)",0.21
+2023-05-01,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.27
+2023-05-01,"Old Man Plaza","Surface","Nitrite (mg/L)",0.06
+2023-05-01,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",19.23
+2023-05-01,"Old Man Plaza","Surface","Total Nitrogen (mg/L)",0.64
+2023-05-01,"Old Man Plaza","Surface","Total Phosphorus (mg/L)",0.39
+2023-05-01,"Plant","Surface","Ammonium (mg/L)",0.1
+2023-05-01,"Plant","Surface","Hydrogen Phosphate (mg/L)",18.24
+2023-05-01,"Plant","Surface","Nitrate (mg/L)",0.06
+2023-05-01,"Plant","Surface","Nitrate + Nitrite (mg/L)",0.07
+2023-05-01,"Plant","Surface","Nitrite (mg/L)",0.01
+2023-05-01,"Plant","Surface","Silicon Oxide (mg/L)",22.88
+2023-05-01,"Plant","Surface","Total Nitrogen (mg/L)",28.21
+2023-05-01,"Plant","Surface","Total Phosphorus (mg/L)",19.09
+2023-05-01,"Turtle Stream","Surface","Ammonium (mg/L)",0.07
+2023-05-01,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",2.07
+2023-05-01,"Turtle Stream","Surface","Nitrate (mg/L)",0.02
+2023-05-01,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.02
+2023-05-01,"Turtle Stream","Surface","Nitrite (mg/L)",0
+2023-05-01,"Turtle Stream","Surface","Silicon Oxide (mg/L)",26.41
+2023-05-01,"Turtle Stream","Surface","Total Nitrogen (mg/L)",0.83
+2023-05-01,"Turtle Stream","Surface","Total Phosphorus (mg/L)",2
+2023-05-03,"Aeropuerto","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Aeropuerto","Bottom","Nitrate (mg/L)",0
+2023-05-03,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-05-03,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.32
+2023-05-03,"Aeropuerto","Bottom","Total Nitrogen (mg/L)",0.19
+2023-05-03,"Aeropuerto","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Aeropuerto","Surface","Ammonium (mg/L)",0
+2023-05-03,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Aeropuerto","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-05-03,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.32
+2023-05-03,"Aeropuerto","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Aeropuerto","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Cabra","Bottom","Silicon Oxide (mg/L)",0.32
+2023-05-03,"Cabra","Bottom","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Cabra","Bottom","Total Phosphorus (mg/L)",0.03
+2023-05-03,"Cabra","Surface","Ammonium (mg/L)",0
+2023-05-03,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Cabra","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Cabra","Surface","Nitrite (mg/L)",0
+2023-05-03,"Cabra","Surface","Silicon Oxide (mg/L)",0.32
+2023-05-03,"Cabra","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Cabra","Surface","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Casa Azul","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Casa Azul","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.26
+2023-05-03,"Casa Azul","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Casa Azul","Bottom","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Casa Azul","Surface","Ammonium (mg/L)",0
+2023-05-03,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Casa Azul","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-05-03,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.27
+2023-05-03,"Casa Azul","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Casa Azul","Surface","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Cementerio","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.27
+2023-05-03,"Cementerio","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Cementerio","Bottom","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-05-03,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Cementerio","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-05-03,"Cementerio","Surface","Silicon Oxide (mg/L)",0.28
+2023-05-03,"Cementerio","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Cementerio","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Coronel","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Coronel","Bottom","Silicon Oxide (mg/L)",0.36
+2023-05-03,"Coronel","Bottom","Total Nitrogen (mg/L)",0.06
+2023-05-03,"Coronel","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Coronel","Surface","Ammonium (mg/L)",0
+2023-05-03,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Coronel","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Coronel","Surface","Nitrite (mg/L)",0
+2023-05-03,"Coronel","Surface","Silicon Oxide (mg/L)",0.34
+2023-05-03,"Coronel","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Coronel","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.26
+2023-05-03,"Fulladosa Bay","Bottom","Total Nitrogen (mg/L)",0.06
+2023-05-03,"Fulladosa Bay","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.26
+2023-05-03,"Fulladosa Bay","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Fulladosa Bay","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.24
+2023-05-03,"Fulladosa Point","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Fulladosa Point","Bottom","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.25
+2023-05-03,"Fulladosa Point","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Fulladosa Point","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.25
+2023-05-03,"Fulladosa Ramp","Bottom","Total Nitrogen (mg/L)",0.06
+2023-05-03,"Fulladosa Ramp","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-05-03,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-05-03,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.25
+2023-05-03,"Fulladosa Ramp","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Fulladosa Ramp","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Little Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.28
+2023-05-03,"Little Cabra","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Little Cabra","Bottom","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-05-03,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Little Cabra","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-05-03,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.28
+2023-05-03,"Little Cabra","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Little Cabra","Surface","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Mosquito","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.17
+2023-05-03,"Mosquito","Bottom","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Mosquito","Bottom","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-05-03,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Mosquito","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-05-03,"Mosquito","Surface","Silicon Oxide (mg/L)",0.16
+2023-05-03,"Mosquito","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Mosquito","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.17
+2023-05-03,"Puerto Manglar Control","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Puerto Manglar Control","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.18
+2023-05-03,"Puerto Manglar Control","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Puerto Manglar Control","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.21
+2023-05-03,"Puerto Manglar Reference","Bottom","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Puerto Manglar Reference","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.16
+2023-05-03,"Puerto Manglar Reference","Surface","Total Nitrogen (mg/L)",0.04
+2023-05-03,"Puerto Manglar Reference","Surface","Total Phosphorus (mg/L)",0.02
+2023-05-03,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-05-03,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.17
+2023-05-03,"Puerto Manglar Treatment","Bottom","Total Nitrogen (mg/L)",0.06
+2023-05-03,"Puerto Manglar Treatment","Bottom","Total Phosphorus (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-05-03,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-05-03,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-05-03,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.17
+2023-05-03,"Puerto Manglar Treatment","Surface","Total Nitrogen (mg/L)",0.05
+2023-05-03,"Puerto Manglar Treatment","Surface","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Aeropuerto","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Aeropuerto","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.16
+2023-06-05,"Aeropuerto","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Aeropuerto","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Aeropuerto","Surface","Ammonium (mg/L)",0
+2023-06-05,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Aeropuerto","Surface","Nitrate (mg/L)",0
+2023-06-05,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0
+2023-06-05,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-06-05,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.18
+2023-06-05,"Aeropuerto","Surface","Total Nitrogen (mg/L)",0.18
+2023-06-05,"Aeropuerto","Surface","Total Phosphorus (mg/L)",0
+2023-06-05,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Cabra","Bottom","Silicon Oxide (mg/L)",0.2
+2023-06-05,"Cabra","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Cabra","Bottom","Total Phosphorus (mg/L)",0
+2023-06-05,"Cabra","Surface","Ammonium (mg/L)",0.01
+2023-06-05,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Cabra","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Cabra","Surface","Nitrite (mg/L)",0
+2023-06-05,"Cabra","Surface","Silicon Oxide (mg/L)",0.2
+2023-06-05,"Cabra","Surface","Total Nitrogen (mg/L)",0.08
+2023-06-05,"Cabra","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Casa Azul","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Casa Azul","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.13
+2023-06-05,"Casa Azul","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Casa Azul","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Casa Azul","Surface","Ammonium (mg/L)",0
+2023-06-05,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-06-05,"Casa Azul","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-06-05,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.14
+2023-06-05,"Casa Azul","Surface","Total Nitrogen (mg/L)",0.07
+2023-06-05,"Casa Azul","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Cementerio","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Cementerio","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Cementerio","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-06-05,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Cementerio","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-06-05,"Cementerio","Surface","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Cementerio","Surface","Total Nitrogen (mg/L)",0.05
+2023-06-05,"Cementerio","Surface","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Coronel","Bottom","Nitrate (mg/L)",0
+2023-06-05,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-06-05,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Coronel","Bottom","Silicon Oxide (mg/L)",0.22
+2023-06-05,"Coronel","Bottom","Total Nitrogen (mg/L)",0.07
+2023-06-05,"Coronel","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Coronel","Surface","Ammonium (mg/L)",0
+2023-06-05,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Coronel","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Coronel","Surface","Nitrite (mg/L)",0
+2023-06-05,"Coronel","Surface","Silicon Oxide (mg/L)",0.25
+2023-06-05,"Coronel","Surface","Total Nitrogen (mg/L)",0.07
+2023-06-05,"Coronel","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Fulladosa Bay","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Fulladosa Bay","Bottom","Total Phosphorus (mg/L)",0
+2023-06-05,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Bay","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.17
+2023-06-05,"Fulladosa Bay","Surface","Total Nitrogen (mg/L)",0.07
+2023-06-05,"Fulladosa Bay","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Point","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.12
+2023-06-05,"Fulladosa Point","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Fulladosa Point","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Point","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.14
+2023-06-05,"Fulladosa Point","Surface","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Fulladosa Point","Surface","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.12
+2023-06-05,"Fulladosa Ramp","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Fulladosa Ramp","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-06-05,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.12
+2023-06-05,"Fulladosa Ramp","Surface","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Fulladosa Ramp","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Little Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Little Cabra","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Little Cabra","Bottom","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-06-05,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-06-05,"Little Cabra","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-06-05,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Little Cabra","Surface","Total Nitrogen (mg/L)",0.05
+2023-06-05,"Little Cabra","Surface","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Mosquito","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.14
+2023-06-05,"Mosquito","Bottom","Total Nitrogen (mg/L)",0.05
+2023-06-05,"Mosquito","Bottom","Total Phosphorus (mg/L)",0
+2023-06-05,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-06-05,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Mosquito","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-06-05,"Mosquito","Surface","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Mosquito","Surface","Total Nitrogen (mg/L)",0.04
+2023-06-05,"Mosquito","Surface","Total Phosphorus (mg/L)",0.03
+2023-06-05,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.16
+2023-06-05,"Puerto Manglar Control","Bottom","Total Nitrogen (mg/L)",0.08
+2023-06-05,"Puerto Manglar Control","Bottom","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Puerto Manglar Control","Surface","Total Nitrogen (mg/L)",0.07
+2023-06-05,"Puerto Manglar Control","Surface","Total Phosphorus (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Puerto Manglar Reference","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Puerto Manglar Reference","Bottom","Total Phosphorus (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.15
+2023-06-05,"Puerto Manglar Reference","Surface","Total Nitrogen (mg/L)",0.05
+2023-06-05,"Puerto Manglar Reference","Surface","Total Phosphorus (mg/L)",0.02
+2023-06-05,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.18
+2023-06-05,"Puerto Manglar Treatment","Bottom","Total Nitrogen (mg/L)",0.06
+2023-06-05,"Puerto Manglar Treatment","Bottom","Total Phosphorus (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0.01
+2023-06-05,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-05,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-06-05,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.17
+2023-06-05,"Puerto Manglar Treatment","Surface","Total Nitrogen (mg/L)",0.19
+2023-06-05,"Puerto Manglar Treatment","Surface","Total Phosphorus (mg/L)",0
+2023-06-06,"Bridge","Surface","Ammonium (mg/L)",0.62
+2023-06-06,"Bridge","Surface","Hydrogen Phosphate (mg/L)",2.81
+2023-06-06,"Bridge","Surface","Nitrate (mg/L)",0.01
+2023-06-06,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-06,"Bridge","Surface","Nitrite (mg/L)",0
+2023-06-06,"Bridge","Surface","Silicon Oxide (mg/L)",20.17
+2023-06-06,"Bridge","Surface","Total Nitrogen (mg/L)",2.03
+2023-06-06,"Bridge","Surface","Total Phosphorus (mg/L)",2.81
+2023-06-06,"Old Man Plaza","Surface","Ammonium (mg/L)",0.03
+2023-06-06,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.06
+2023-06-06,"Old Man Plaza","Surface","Nitrate (mg/L)",0.01
+2023-06-06,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-06,"Old Man Plaza","Surface","Nitrite (mg/L)",0
+2023-06-06,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",29.07
+2023-06-06,"P3_out","Surface","Ammonium (mg/L)",0.05
+2023-06-06,"P3_out","Surface","Hydrogen Phosphate (mg/L)",4.43
+2023-06-06,"P3_out","Surface","Nitrate (mg/L)",4.57
+2023-06-06,"P3_out","Surface","Nitrate + Nitrite (mg/L)",4.76
+2023-06-06,"P3_out","Surface","Nitrite (mg/L)",0.19
+2023-06-06,"P3_out","Surface","Silicon Oxide (mg/L)",26.42
+2023-06-06,"P3_out","Surface","Total Nitrogen (mg/L)",7.49
+2023-06-06,"P3_out","Surface","Total Phosphorus (mg/L)",4.02
+2023-06-06,"P4_out","Surface","Ammonium (mg/L)",0.05
+2023-06-06,"P4_out","Surface","Hydrogen Phosphate (mg/L)",2.84
+2023-06-06,"P4_out","Surface","Nitrate (mg/L)",0
+2023-06-06,"P4_out","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-06-06,"P4_out","Surface","Nitrite (mg/L)",0.01
+2023-06-06,"P4_out","Surface","Silicon Oxide (mg/L)",24.04
+2023-06-06,"P4_out","Surface","Total Nitrogen (mg/L)",4.27
+2023-06-06,"P4_out","Surface","Total Phosphorus (mg/L)",2.53
+2023-06-06,"Plant","Surface","Ammonium (mg/L)",0.17
+2023-06-06,"Plant","Surface","Hydrogen Phosphate (mg/L)",9.17
+2023-06-06,"Plant","Surface","Nitrate (mg/L)",25.63
+2023-06-06,"Plant","Surface","Nitrate + Nitrite (mg/L)",25.64
+2023-06-06,"Plant","Surface","Nitrite (mg/L)",0.01
+2023-06-06,"Plant","Surface","Silicon Oxide (mg/L)",1.94
+2023-06-06,"Turtle Stream","Surface","Ammonium (mg/L)",0.04
+2023-06-06,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",1.79
+2023-06-06,"Turtle Stream","Surface","Nitrate (mg/L)",0.04
+2023-06-06,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.04
+2023-06-06,"Turtle Stream","Surface","Nitrite (mg/L)",0
+2023-06-06,"Turtle Stream","Surface","Silicon Oxide (mg/L)",38.49
+2023-06-06,"Turtle Stream","Surface","Total Nitrogen (mg/L)",1.35
+2023-06-06,"Turtle Stream","Surface","Total Phosphorus (mg/L)",1.94
+2023-07-10,"Aeropuerto","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Aeropuerto","Bottom","Nitrate (mg/L)",0
+2023-07-10,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-07-10,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.15
+2023-07-10,"Aeropuerto","Surface","Ammonium (mg/L)",0.01
+2023-07-10,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Aeropuerto","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-07-10,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.25
+2023-07-10,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Cabra","Bottom","Silicon Oxide (mg/L)",0.34
+2023-07-10,"Cabra","Surface","Ammonium (mg/L)",0
+2023-07-10,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Cabra","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Cabra","Surface","Nitrite (mg/L)",0
+2023-07-10,"Cabra","Surface","Silicon Oxide (mg/L)",0.27
+2023-07-10,"Casa Azul","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Casa Azul","Bottom","Nitrate (mg/L)",0
+2023-07-10,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-07-10,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.24
+2023-07-10,"Casa Azul","Surface","Ammonium (mg/L)",0.01
+2023-07-10,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Casa Azul","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-07-10,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.24
+2023-07-10,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Cementerio","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.38
+2023-07-10,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-07-10,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Cementerio","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-07-10,"Cementerio","Surface","Silicon Oxide (mg/L)",0.38
+2023-07-10,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Coronel","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Coronel","Bottom","Silicon Oxide (mg/L)",0.31
+2023-07-10,"Coronel","Surface","Ammonium (mg/L)",0.01
+2023-07-10,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Coronel","Surface","Nitrate (mg/L)",0.03
+2023-07-10,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0.04
+2023-07-10,"Coronel","Surface","Nitrite (mg/L)",0.01
+2023-07-10,"Coronel","Surface","Silicon Oxide (mg/L)",0.84
+2023-07-10,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.31
+2023-07-10,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-07-10,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Fulladosa Bay","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.31
+2023-07-10,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Fulladosa Point","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.2
+2023-07-10,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-07-10,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Fulladosa Point","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.28
+2023-07-10,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.32
+2023-07-10,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-07-10,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.29
+2023-07-10,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Little Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.27
+2023-07-10,"Little Cabra","Surface","Ammonium (mg/L)",0.01
+2023-07-10,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Little Cabra","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-07-10,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.26
+2023-07-10,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Mosquito","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.12
+2023-07-10,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-07-10,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Mosquito","Surface","Nitrate (mg/L)",0
+2023-07-10,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0
+2023-07-10,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-07-10,"Mosquito","Surface","Silicon Oxide (mg/L)",0.16
+2023-07-10,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0.02
+2023-07-10,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0.02
+2023-07-10,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.32
+2023-07-10,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0
+2023-07-10,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0.04
+2023-07-10,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0.05
+2023-07-10,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0.01
+2023-07-10,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",1.01
+2023-07-10,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0
+2023-07-10,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.17
+2023-07-10,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0.01
+2023-07-10,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-07-10,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.17
+2023-07-10,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0.01
+2023-07-10,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-07-10,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.16
+2023-07-10,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-07-10,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-07-10,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0.01
+2023-07-10,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-10,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-07-10,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.26
+2023-07-11,"AeropuertoY","Surface","Ammonium (mg/L)",0.03
+2023-07-11,"AeropuertoY","Surface","Hydrogen Phosphate (mg/L)",0.05
+2023-07-11,"AeropuertoY","Surface","Nitrate (mg/L)",0.01
+2023-07-11,"AeropuertoY","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-07-11,"AeropuertoY","Surface","Nitrite (mg/L)",0
+2023-07-11,"AeropuertoY","Surface","Silicon Oxide (mg/L)",19.57
+2023-07-11,"Bridge","Surface","Ammonium (mg/L)",0.14
+2023-07-11,"Bridge","Surface","Hydrogen Phosphate (mg/L)",3.2
+2023-07-11,"Bridge","Surface","Nitrate (mg/L)",0.16
+2023-07-11,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.19
+2023-07-11,"Bridge","Surface","Nitrite (mg/L)",0.03
+2023-07-11,"Bridge","Surface","Silicon Oxide (mg/L)",16.05
+2023-07-11,"Coronel Pond","Surface","Ammonium (mg/L)",0.76
+2023-07-11,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.14
+2023-07-11,"Coronel Pond","Surface","Nitrate (mg/L)",1
+2023-07-11,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",1.06
+2023-07-11,"Coronel Pond","Surface","Nitrite (mg/L)",0.06
+2023-07-11,"Coronel Pond","Surface","Silicon Oxide (mg/L)",2.74
+2023-07-11,"Old Man Plaza","Surface","Ammonium (mg/L)",0.03
+2023-07-11,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.05
+2023-07-11,"Old Man Plaza","Surface","Nitrate (mg/L)",0.46
+2023-07-11,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.47
+2023-07-11,"Old Man Plaza","Surface","Nitrite (mg/L)",0.01
+2023-07-11,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",7.58
+2023-07-11,"P3_out","Surface","Ammonium (mg/L)",6.38
+2023-07-11,"P3_out","Surface","Hydrogen Phosphate (mg/L)",6.09
+2023-07-11,"P3_out","Surface","Nitrate (mg/L)",2.75
+2023-07-11,"P3_out","Surface","Nitrate + Nitrite (mg/L)",3.45
+2023-07-11,"P3_out","Surface","Nitrite (mg/L)",0.7
+2023-07-11,"P3_out","Surface","Silicon Oxide (mg/L)",8.74
+2023-07-11,"P4_out","Surface","Ammonium (mg/L)",0.06
+2023-07-11,"P4_out","Surface","Hydrogen Phosphate (mg/L)",2.88
+2023-07-11,"P4_out","Surface","Nitrate (mg/L)",0.44
+2023-07-11,"P4_out","Surface","Nitrate + Nitrite (mg/L)",0.66
+2023-07-11,"P4_out","Surface","Nitrite (mg/L)",0.22
+2023-07-11,"P4_out","Surface","Silicon Oxide (mg/L)",17.66
+2023-07-11,"Plant","Surface","Ammonium (mg/L)",0.44
+2023-07-11,"Plant","Surface","Hydrogen Phosphate (mg/L)",0.28
+2023-07-11,"Plant","Surface","Nitrate (mg/L)",0.23
+2023-07-11,"Plant","Surface","Nitrate + Nitrite (mg/L)",0.26
+2023-07-11,"Plant","Surface","Nitrite (mg/L)",0.03
+2023-07-11,"Plant","Surface","Silicon Oxide (mg/L)",8.92
+2023-07-11,"Turtle Stream","Surface","Ammonium (mg/L)",0.03
+2023-07-11,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",2.03
+2023-07-11,"Turtle Stream","Surface","Nitrate (mg/L)",0
+2023-07-11,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0
+2023-07-11,"Turtle Stream","Surface","Nitrite (mg/L)",0
+2023-07-11,"Turtle Stream","Surface","Silicon Oxide (mg/L)",9.75
+2023-08-08,"Aeropuerto","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Aeropuerto","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.31
+2023-08-08,"Aeropuerto","Surface","Ammonium (mg/L)",0
+2023-08-08,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Aeropuerto","Surface","Nitrate (mg/L)",0
+2023-08-08,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-08-08,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.3
+2023-08-08,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Cabra","Bottom","Nitrate (mg/L)",0
+2023-08-08,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Cabra","Bottom","Silicon Oxide (mg/L)",0.29
+2023-08-08,"Cabra","Surface","Ammonium (mg/L)",0
+2023-08-08,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Cabra","Surface","Nitrate (mg/L)",0.01
+2023-08-08,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Cabra","Surface","Nitrite (mg/L)",0
+2023-08-08,"Cabra","Surface","Silicon Oxide (mg/L)",0.3
+2023-08-08,"Casa Azul","Bottom","Ammonium (mg/L)",0.01
+2023-08-08,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Casa Azul","Bottom","Nitrate (mg/L)",0
+2023-08-08,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.28
+2023-08-08,"Casa Azul","Surface","Ammonium (mg/L)",0
+2023-08-08,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Casa Azul","Surface","Nitrate (mg/L)",0
+2023-08-08,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-08-08,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.27
+2023-08-08,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Cementerio","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.27
+2023-08-08,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-08-08,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Cementerio","Surface","Nitrate (mg/L)",0
+2023-08-08,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-08-08,"Cementerio","Surface","Silicon Oxide (mg/L)",0.28
+2023-08-08,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Coronel","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Coronel","Bottom","Silicon Oxide (mg/L)",0.25
+2023-08-08,"Coronel","Surface","Ammonium (mg/L)",0
+2023-08-08,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Coronel","Surface","Nitrate (mg/L)",0
+2023-08-08,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Coronel","Surface","Nitrite (mg/L)",0
+2023-08-08,"Coronel","Surface","Silicon Oxide (mg/L)",0.26
+2023-08-08,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.26
+2023-08-08,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Bay","Surface","Nitrate (mg/L)",0
+2023-08-08,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.25
+2023-08-08,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Point","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.27
+2023-08-08,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Point","Surface","Nitrate (mg/L)",0
+2023-08-08,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.24
+2023-08-08,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.27
+2023-08-08,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0.01
+2023-08-08,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-08-08,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.26
+2023-08-08,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Little Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.25
+2023-08-08,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-08-08,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Little Cabra","Surface","Nitrate (mg/L)",0
+2023-08-08,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-08-08,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.26
+2023-08-08,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-08-08,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Mosquito","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.16
+2023-08-08,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-08-08,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Mosquito","Surface","Nitrate (mg/L)",0
+2023-08-08,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-08-08,"Mosquito","Surface","Silicon Oxide (mg/L)",0.16
+2023-08-08,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0.01
+2023-08-08,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.22
+2023-08-08,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.23
+2023-08-08,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0.01
+2023-08-08,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.18
+2023-08-08,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.2
+2023-08-08,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0.01
+2023-08-08,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0.01
+2023-08-08,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.19
+2023-08-08,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-08-08,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-08-08,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0.01
+2023-08-08,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-08-08,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-08-08,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.19
+2023-08-09,"AeropuertoY","Surface","Ammonium (mg/L)",0.04
+2023-08-09,"AeropuertoY","Surface","Hydrogen Phosphate (mg/L)",0.05
+2023-08-09,"AeropuertoY","Surface","Nitrate (mg/L)",0.01
+2023-08-09,"AeropuertoY","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-08-09,"AeropuertoY","Surface","Nitrite (mg/L)",0
+2023-08-09,"AeropuertoY","Surface","Silicon Oxide (mg/L)",20.51
+2023-08-09,"Bridge","Surface","Ammonium (mg/L)",1.22
+2023-08-09,"Bridge","Surface","Hydrogen Phosphate (mg/L)",2.08
+2023-08-09,"Bridge","Surface","Nitrate (mg/L)",0.05
+2023-08-09,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.07
+2023-08-09,"Bridge","Surface","Nitrite (mg/L)",0.02
+2023-08-09,"Bridge","Surface","Silicon Oxide (mg/L)",32.56
+2023-08-09,"Coronel Pond","Surface","Ammonium (mg/L)",1.07
+2023-08-09,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.35
+2023-08-09,"Coronel Pond","Surface","Nitrate (mg/L)",0.12
+2023-08-09,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",0.18
+2023-08-09,"Coronel Pond","Surface","Nitrite (mg/L)",0.06
+2023-08-09,"Coronel Pond","Surface","Silicon Oxide (mg/L)",29.26
+2023-08-09,"Old Man Plaza","Surface","Ammonium (mg/L)",0.03
+2023-08-09,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.02
+2023-08-09,"Old Man Plaza","Surface","Nitrate (mg/L)",0.01
+2023-08-09,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-08-09,"Old Man Plaza","Surface","Nitrite (mg/L)",0
+2023-08-09,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",18.84
+2023-08-09,"Plant","Surface","Ammonium (mg/L)",0.21
+2023-08-09,"Plant","Surface","Hydrogen Phosphate (mg/L)",5.37
+2023-08-09,"Plant","Surface","Nitrate (mg/L)",7.57
+2023-08-09,"Plant","Surface","Nitrate + Nitrite (mg/L)",7.61
+2023-08-09,"Plant","Surface","Nitrite (mg/L)",0.04
+2023-08-09,"Plant","Surface","Silicon Oxide (mg/L)",17.31
+2023-08-09,"Turtle Stream","Surface","Ammonium (mg/L)",0.18
+2023-08-09,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",0.92
+2023-08-09,"Turtle Stream","Surface","Nitrate (mg/L)",0.07
+2023-08-09,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.08
+2023-08-09,"Turtle Stream","Surface","Nitrite (mg/L)",0.01
+2023-08-09,"Turtle Stream","Surface","Silicon Oxide (mg/L)",34.63
+2023-09-18,"Aeropuerto","Bottom","Ammonium (mg/L)",0.01
+2023-09-18,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Aeropuerto","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Aeropuerto","Surface","Ammonium (mg/L)",0
+2023-09-18,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Aeropuerto","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-09-18,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.3
+2023-09-18,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Cabra","Bottom","Nitrate (mg/L)",0
+2023-09-18,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Cabra","Bottom","Silicon Oxide (mg/L)",0.3
+2023-09-18,"Cabra","Surface","Ammonium (mg/L)",0
+2023-09-18,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Cabra","Surface","Nitrate (mg/L)",0
+2023-09-18,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Cabra","Surface","Nitrite (mg/L)",0
+2023-09-18,"Cabra","Surface","Silicon Oxide (mg/L)",0.25
+2023-09-18,"Casa Azul","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Casa Azul","Bottom","Nitrate (mg/L)",0
+2023-09-18,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.3
+2023-09-18,"Casa Azul","Surface","Ammonium (mg/L)",0
+2023-09-18,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Casa Azul","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-09-18,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Cementerio","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-09-18,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Cementerio","Surface","Nitrate (mg/L)",0
+2023-09-18,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-09-18,"Cementerio","Surface","Silicon Oxide (mg/L)",0.3
+2023-09-18,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Coronel","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Coronel","Bottom","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Coronel","Surface","Ammonium (mg/L)",0
+2023-09-18,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Coronel","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Coronel","Surface","Nitrite (mg/L)",0
+2023-09-18,"Coronel","Surface","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0
+2023-09-18,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.26
+2023-09-18,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-09-18,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Bay","Surface","Nitrate (mg/L)",0
+2023-09-18,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.25
+2023-09-18,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Point","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.27
+2023-09-18,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-09-18,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Point","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.25
+2023-09-18,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0.01
+2023-09-18,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.35
+2023-09-18,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-09-18,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.31
+2023-09-18,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Little Cabra","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.28
+2023-09-18,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-09-18,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Little Cabra","Surface","Nitrate (mg/L)",0
+2023-09-18,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-09-18,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.28
+2023-09-18,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-09-18,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Mosquito","Bottom","Nitrate (mg/L)",0
+2023-09-18,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-09-18,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.21
+2023-09-18,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-09-18,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Mosquito","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-09-18,"Mosquito","Surface","Silicon Oxide (mg/L)",0.27
+2023-09-18,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.19
+2023-09-18,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.19
+2023-09-18,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.22
+2023-09-18,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.23
+2023-09-18,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.24
+2023-09-18,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-09-18,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-09-18,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-09-18,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.24
+2023-09-19,"Bridge","Surface","Ammonium (mg/L)",0.04
+2023-09-19,"Bridge","Surface","Hydrogen Phosphate (mg/L)",2.93
+2023-09-19,"Bridge","Surface","Nitrate (mg/L)",0.07
+2023-09-19,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.08
+2023-09-19,"Bridge","Surface","Nitrite (mg/L)",0.01
+2023-09-19,"Bridge","Surface","Silicon Oxide (mg/L)",17.06
+2023-09-19,"Coronel Pond","Surface","Ammonium (mg/L)",0.91
+2023-09-19,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.25
+2023-09-19,"Coronel Pond","Surface","Nitrate (mg/L)",0.03
+2023-09-19,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",0.05
+2023-09-19,"Coronel Pond","Surface","Nitrite (mg/L)",0.02
+2023-09-19,"Coronel Pond","Surface","Silicon Oxide (mg/L)",17.06
+2023-09-19,"Old Man Plaza","Surface","Ammonium (mg/L)",0.07
+2023-09-19,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.38
+2023-09-19,"Old Man Plaza","Surface","Nitrate (mg/L)",0.01
+2023-09-19,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.02
+2023-09-19,"Old Man Plaza","Surface","Nitrite (mg/L)",0.01
+2023-09-19,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",28.52
+2023-09-19,"Turtle Stream","Surface","Ammonium (mg/L)",0.09
+2023-09-19,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",2.14
+2023-09-19,"Turtle Stream","Surface","Nitrate (mg/L)",0.03
+2023-09-19,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.04
+2023-09-19,"Turtle Stream","Surface","Nitrite (mg/L)",0.01
+2023-09-19,"Turtle Stream","Surface","Silicon Oxide (mg/L)",56.24
+2023-11-07,"Aeropuerto","Bottom","Ammonium (mg/L)",0.01
+2023-11-07,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Aeropuerto","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.28
+2023-11-07,"Aeropuerto","Surface","Ammonium (mg/L)",0.08
+2023-11-07,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0.09
+2023-11-07,"Aeropuerto","Surface","Nitrate (mg/L)",0.05
+2023-11-07,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0.06
+2023-11-07,"Aeropuerto","Surface","Nitrite (mg/L)",0.01
+2023-11-07,"Aeropuerto","Surface","Silicon Oxide (mg/L)",22.56
+2023-11-07,"Bridge","Surface","Ammonium (mg/L)",0.03
+2023-11-07,"Bridge","Surface","Hydrogen Phosphate (mg/L)",1.07
+2023-11-07,"Bridge","Surface","Nitrate (mg/L)",0.25
+2023-11-07,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.25
+2023-11-07,"Bridge","Surface","Nitrite (mg/L)",0
+2023-11-07,"Bridge","Surface","Silicon Oxide (mg/L)",29.42
+2023-11-07,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Cabra","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Cabra","Bottom","Silicon Oxide (mg/L)",0.33
+2023-11-07,"Cabra","Surface","Ammonium (mg/L)",0
+2023-11-07,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Cabra","Surface","Nitrate (mg/L)",0
+2023-11-07,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Cabra","Surface","Nitrite (mg/L)",0
+2023-11-07,"Cabra","Surface","Silicon Oxide (mg/L)",0.34
+2023-11-07,"Casa Azul","Bottom","Ammonium (mg/L)",0.01
+2023-11-07,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Casa Azul","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.24
+2023-11-07,"Casa Azul","Surface","Ammonium (mg/L)",0.01
+2023-11-07,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Casa Azul","Surface","Nitrate (mg/L)",0
+2023-11-07,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-11-07,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.47
+2023-11-07,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Cementerio","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.27
+2023-11-07,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-11-07,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Cementerio","Surface","Nitrate (mg/L)",0
+2023-11-07,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-11-07,"Cementerio","Surface","Silicon Oxide (mg/L)",0.35
+2023-11-07,"Coronel","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Coronel","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Coronel","Bottom","Silicon Oxide (mg/L)",0.47
+2023-11-07,"Coronel","Surface","Ammonium (mg/L)",0
+2023-11-07,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Coronel","Surface","Nitrate (mg/L)",0
+2023-11-07,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Coronel","Surface","Nitrite (mg/L)",0
+2023-11-07,"Coronel","Surface","Silicon Oxide (mg/L)",0.54
+2023-11-07,"Coronel Pond","Surface","Ammonium (mg/L)",0.38
+2023-11-07,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.16
+2023-11-07,"Coronel Pond","Surface","Nitrate (mg/L)",0.01
+2023-11-07,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",0.02
+2023-11-07,"Coronel Pond","Surface","Nitrite (mg/L)",0.01
+2023-11-07,"Coronel Pond","Surface","Silicon Oxide (mg/L)",2.77
+2023-11-07,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.18
+2023-11-07,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-11-07,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Fulladosa Bay","Surface","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.24
+2023-11-07,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Fulladosa Point","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.19
+2023-11-07,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-11-07,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Fulladosa Point","Surface","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.25
+2023-11-07,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0.02
+2023-11-07,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.33
+2023-11-07,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0.02
+2023-11-07,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-11-07,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-11-07,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.46
+2023-11-07,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Little Cabra","Bottom","Nitrate (mg/L)",0.02
+2023-11-07,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0.02
+2023-11-07,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.31
+2023-11-07,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-11-07,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Little Cabra","Surface","Nitrate (mg/L)",0
+2023-11-07,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-11-07,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.39
+2023-11-07,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Mosquito","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.24
+2023-11-07,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-11-07,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Mosquito","Surface","Nitrate (mg/L)",0
+2023-11-07,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-11-07,"Mosquito","Surface","Silicon Oxide (mg/L)",0.24
+2023-11-07,"Old Man Plaza","Surface","Ammonium (mg/L)",0.11
+2023-11-07,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.12
+2023-11-07,"Old Man Plaza","Surface","Nitrate (mg/L)",0.18
+2023-11-07,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.26
+2023-11-07,"Old Man Plaza","Surface","Nitrite (mg/L)",0.08
+2023-11-07,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",11.56
+2023-11-07,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.19
+2023-11-07,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-11-07,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.16
+2023-11-07,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.16
+2023-11-07,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.16
+2023-11-07,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.14
+2023-11-07,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-11-07,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.07
+2023-11-07,"Turtle Stream","Surface","Ammonium (mg/L)",0.05
+2023-11-07,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",0.23
+2023-11-07,"Turtle Stream","Surface","Nitrate (mg/L)",0.06
+2023-11-07,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.06
+2023-11-07,"Turtle Stream","Surface","Nitrite (mg/L)",0
+2023-11-07,"Turtle Stream","Surface","Silicon Oxide (mg/L)",3.82
+2023-12-11,"Aeropuerto","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Aeropuerto","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Aeropuerto","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Aeropuerto","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Aeropuerto","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Aeropuerto","Bottom","Silicon Oxide (mg/L)",0.38
+2023-12-11,"Aeropuerto","Surface","Ammonium (mg/L)",0
+2023-12-11,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Aeropuerto","Surface","Nitrate (mg/L)",0
+2023-12-11,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-12-11,"Aeropuerto","Surface","Silicon Oxide (mg/L)",0.32
+2023-12-11,"Cabra","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Cabra","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Cabra","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Cabra","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Cabra","Bottom","Silicon Oxide (mg/L)",0.37
+2023-12-11,"Cabra","Surface","Ammonium (mg/L)",0
+2023-12-11,"Cabra","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-12-11,"Cabra","Surface","Nitrate (mg/L)",0.01
+2023-12-11,"Cabra","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-12-11,"Cabra","Surface","Nitrite (mg/L)",0
+2023-12-11,"Cabra","Surface","Silicon Oxide (mg/L)",0.49
+2023-12-11,"Casa Azul","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Casa Azul","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Casa Azul","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Casa Azul","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Casa Azul","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Casa Azul","Bottom","Silicon Oxide (mg/L)",0.33
+2023-12-11,"Casa Azul","Surface","Ammonium (mg/L)",0
+2023-12-11,"Casa Azul","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Casa Azul","Surface","Nitrate (mg/L)",0
+2023-12-11,"Casa Azul","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Casa Azul","Surface","Nitrite (mg/L)",0
+2023-12-11,"Casa Azul","Surface","Silicon Oxide (mg/L)",0.34
+2023-12-11,"Cementerio","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Cementerio","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Cementerio","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Cementerio","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Cementerio","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Cementerio","Bottom","Silicon Oxide (mg/L)",0.4
+2023-12-11,"Cementerio","Surface","Ammonium (mg/L)",0
+2023-12-11,"Cementerio","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Cementerio","Surface","Nitrate (mg/L)",0
+2023-12-11,"Cementerio","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Cementerio","Surface","Nitrite (mg/L)",0
+2023-12-11,"Cementerio","Surface","Silicon Oxide (mg/L)",0.3
+2023-12-11,"Coronel","Bottom","Ammonium (mg/L)",0.01
+2023-12-11,"Coronel","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Coronel","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Coronel","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Coronel","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Coronel","Bottom","Silicon Oxide (mg/L)",0.37
+2023-12-11,"Coronel","Surface","Ammonium (mg/L)",0
+2023-12-11,"Coronel","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Coronel","Surface","Nitrate (mg/L)",0
+2023-12-11,"Coronel","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Coronel","Surface","Nitrite (mg/L)",0
+2023-12-11,"Coronel","Surface","Silicon Oxide (mg/L)",0.46
+2023-12-11,"Fulladosa Bay","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Bay","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Fulladosa Bay","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Bay","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Bay","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Bay","Bottom","Silicon Oxide (mg/L)",0.32
+2023-12-11,"Fulladosa Bay","Surface","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Bay","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Fulladosa Bay","Surface","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Bay","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Bay","Surface","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Bay","Surface","Silicon Oxide (mg/L)",0.38
+2023-12-11,"Fulladosa Point","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Point","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Fulladosa Point","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Point","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Point","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Point","Bottom","Silicon Oxide (mg/L)",0.32
+2023-12-11,"Fulladosa Point","Surface","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Point","Surface","Hydrogen Phosphate (mg/L)",0.01
+2023-12-11,"Fulladosa Point","Surface","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Point","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Point","Surface","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Point","Surface","Silicon Oxide (mg/L)",0.32
+2023-12-11,"Fulladosa Ramp","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Bottom","Silicon Oxide (mg/L)",0.33
+2023-12-11,"Fulladosa Ramp","Surface","Ammonium (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Surface","Nitrate (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Surface","Nitrite (mg/L)",0
+2023-12-11,"Fulladosa Ramp","Surface","Silicon Oxide (mg/L)",0.33
+2023-12-11,"Little Cabra","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Little Cabra","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Little Cabra","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Little Cabra","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Little Cabra","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Little Cabra","Bottom","Silicon Oxide (mg/L)",0.35
+2023-12-11,"Little Cabra","Surface","Ammonium (mg/L)",0
+2023-12-11,"Little Cabra","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Little Cabra","Surface","Nitrate (mg/L)",0
+2023-12-11,"Little Cabra","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Little Cabra","Surface","Nitrite (mg/L)",0
+2023-12-11,"Little Cabra","Surface","Silicon Oxide (mg/L)",0.39
+2023-12-11,"Mosquito","Bottom","Ammonium (mg/L)",0
+2023-12-11,"Mosquito","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Mosquito","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Mosquito","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Mosquito","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Mosquito","Bottom","Silicon Oxide (mg/L)",0.25
+2023-12-11,"Mosquito","Surface","Ammonium (mg/L)",0
+2023-12-11,"Mosquito","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Mosquito","Surface","Nitrate (mg/L)",0
+2023-12-11,"Mosquito","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Mosquito","Surface","Nitrite (mg/L)",0
+2023-12-11,"Mosquito","Surface","Silicon Oxide (mg/L)",0.27
+2023-12-11,"Puerto Manglar Control","Bottom","Ammonium (mg/L)",0.01
+2023-12-11,"Puerto Manglar Control","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Bottom","Silicon Oxide (mg/L)",0.29
+2023-12-11,"Puerto Manglar Control","Surface","Ammonium (mg/L)",0.01
+2023-12-11,"Puerto Manglar Control","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Surface","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Surface","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Control","Surface","Silicon Oxide (mg/L)",0.29
+2023-12-11,"Puerto Manglar Reference","Bottom","Ammonium (mg/L)",0.01
+2023-12-11,"Puerto Manglar Reference","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Bottom","Silicon Oxide (mg/L)",0.2
+2023-12-11,"Puerto Manglar Reference","Surface","Ammonium (mg/L)",0.01
+2023-12-11,"Puerto Manglar Reference","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Surface","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Surface","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Reference","Surface","Silicon Oxide (mg/L)",0.27
+2023-12-11,"Puerto Manglar Treatment","Bottom","Ammonium (mg/L)",0.01
+2023-12-11,"Puerto Manglar Treatment","Bottom","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Bottom","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Bottom","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Bottom","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Bottom","Silicon Oxide (mg/L)",0.29
+2023-12-11,"Puerto Manglar Treatment","Surface","Ammonium (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Surface","Hydrogen Phosphate (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Surface","Nitrate (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Surface","Nitrate + Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Surface","Nitrite (mg/L)",0
+2023-12-11,"Puerto Manglar Treatment","Surface","Silicon Oxide (mg/L)",0.29
+2023-12-12,"Aeropuerto","Surface","Ammonium (mg/L)",0.05
+2023-12-12,"Aeropuerto","Surface","Hydrogen Phosphate (mg/L)",0.18
+2023-12-12,"Aeropuerto","Surface","Nitrate (mg/L)",0.01
+2023-12-12,"Aeropuerto","Surface","Nitrate + Nitrite (mg/L)",0.01
+2023-12-12,"Aeropuerto","Surface","Nitrite (mg/L)",0
+2023-12-12,"Aeropuerto","Surface","Silicon Oxide (mg/L)",7.28
+2023-12-12,"Bridge","Surface","Ammonium (mg/L)",0.03
+2023-12-12,"Bridge","Surface","Hydrogen Phosphate (mg/L)",2.96
+2023-12-12,"Bridge","Surface","Nitrate (mg/L)",0.25
+2023-12-12,"Bridge","Surface","Nitrate + Nitrite (mg/L)",0.25
+2023-12-12,"Bridge","Surface","Nitrite (mg/L)",0
+2023-12-12,"Bridge","Surface","Silicon Oxide (mg/L)",27.7
+2023-12-12,"Coronel Pond","Surface","Ammonium (mg/L)",0.05
+2023-12-12,"Coronel Pond","Surface","Hydrogen Phosphate (mg/L)",0.08
+2023-12-12,"Coronel Pond","Surface","Nitrate (mg/L)",0.15
+2023-12-12,"Coronel Pond","Surface","Nitrate + Nitrite (mg/L)",0.16
+2023-12-12,"Coronel Pond","Surface","Nitrite (mg/L)",0.01
+2023-12-12,"Coronel Pond","Surface","Silicon Oxide (mg/L)",6.64
+2023-12-12,"Old Man Plaza","Surface","Ammonium (mg/L)",0.09
+2023-12-12,"Old Man Plaza","Surface","Hydrogen Phosphate (mg/L)",0.08
+2023-12-12,"Old Man Plaza","Surface","Nitrate (mg/L)",0.83
+2023-12-12,"Old Man Plaza","Surface","Nitrate + Nitrite (mg/L)",0.89
+2023-12-12,"Old Man Plaza","Surface","Nitrite (mg/L)",0.06
+2023-12-12,"Old Man Plaza","Surface","Silicon Oxide (mg/L)",6.75
+2023-12-12,"Turtle Stream","Surface","Ammonium (mg/L)",0.05
+2023-12-12,"Turtle Stream","Surface","Hydrogen Phosphate (mg/L)",1.28
+2023-12-12,"Turtle Stream","Surface","Nitrate (mg/L)",0.18
+2023-12-12,"Turtle Stream","Surface","Nitrate + Nitrite (mg/L)",0.18
+2023-12-12,"Turtle Stream","Surface","Nitrite (mg/L)",0
+2023-12-12,"Turtle Stream","Surface","Silicon Oxide (mg/L)",9.13
