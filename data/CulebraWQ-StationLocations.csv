@@ -1,17 +1,17 @@
 Environment,Latitude,Longitude,Code,Subwatershed,Group,Station
 Nearshore,18.30836898,-65.29799399,AP,Aeropuerto,Negative Reference,Aeropuerto
-Nearshore,18.30593697,-65.28138198,CA,Cabra,LBSP Restoration,Cabra
-Nearshore,18.30060398,-65.28999598,CAZ,Culebra,LBSP Control,Casa Azul
-Nearshore,18.30707699,-65.28544402,CM,Cementerio,LBSP Control,Cementerio
-Nearshore,18.30888103,-65.29028901,CO,Coronel,LBSP Restoration,Coronel
-Nearshore,18.29571499,-65.28734604,FDB,Fulladosa,LBSP Restoration,Fulladosa Bay
-Nearshore,18.29685601,-65.28585196,FDP,Fulladosa,LBSP Control,Fulladosa Point
-Nearshore,18.299572,-65.28829596,FDR,Culebra,LBSP Restoration,Fulladosa Ramp
-Nearshore,18.30209001,-65.28049199,LC,Cabra,LBSP Control,Little Cabra
+Nearshore,18.30593697,-65.28138198,CA,Cabra,Restoration,Cabra
+Nearshore,18.30060398,-65.28999598,CAZ,Culebra,Control,Casa Azul
+Nearshore,18.30707699,-65.28544402,CM,Cementerio,Control,Cementerio
+Nearshore,18.30888103,-65.29028901,CO,Coronel,Restoration,Coronel
+Nearshore,18.29571499,-65.28734604,FDB,Fulladosa,Restoration,Fulladosa Bay
+Nearshore,18.29685601,-65.28585196,FDP,Fulladosa,Control,Fulladosa Point
+Nearshore,18.299572,-65.28829596,FDR,Culebra,Restoration,Fulladosa Ramp
+Nearshore,18.30209001,-65.28049199,LC,Cabra,Control,Little Cabra
 Nearshore,18.29203097,-65.26390303,MQ,Mosquito,Positive Reference,Mosquito
-Nearshore,18.30577402,-65.256665,PMC,Puerto Manglar,LBSP Control,Puerto Manglar Control
+Nearshore,18.30577402,-65.256665,PMC,Puerto Manglar,Control,Puerto Manglar Control
 Nearshore,18.30504798,-65.25106296,PMD,Puerto Manglar,Positive Reference,Puerto Manglar Reference
-Nearshore,18.30575701,-65.25172404,PMT,Puerto Manglar,LBSP Restoration,Puerto Manglar Treatment
+Nearshore,18.30575701,-65.25172404,PMT,Puerto Manglar,Restoration,Puerto Manglar Treatment
 Watershed,18.310753,-65.299732,NA,NA,NA,AeropuertoY
 Watershed,18.312416,-65.280278,NA,NA,NA,Bridge
 Watershed,18.313164,-65.295858,NA,NA,NA,Coronel Pond

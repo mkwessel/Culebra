@@ -1,14 +1,14 @@
 Station,Code,Subwatershed,Group,Order
-Coronel,CO,Coronel,LBSP Restoration,1
-Cabra,CA,Cabra,LBSP Restoration,2
-Fulladosa Ramp,FDR,Culebra,LBSP Restoration,3
-Fulladosa Bay,FDB,Fulladosa,LBSP Restoration,4
-Puerto Manglar Treatment,PMT,Puerto Manglar,LBSP Restoration,5
+Coronel,CO,Coronel,Restoration,1
+Cabra,CA,Cabra,Restoration,2
+Fulladosa Ramp,FDR,Culebra,Restoration,3
+Fulladosa Bay,FDB,Fulladosa,Restoration,4
+Puerto Manglar Treatment,PMT,Puerto Manglar,Restoration,5
 Aeropuerto,AP,Aeropuerto,Negative Reference,6
-Cementerio,CM,Cementerio,LBSP Control,7
-Little Cabra,LC,Cabra,LBSP Control,8
-Casa Azul,CAZ,Culebra,LBSP Control,9
-Fulladosa Point,FDP,Fulladosa,LBSP Control,10
-Puerto Manglar Control,PMC,Puerto Manglar,LBSP Control,11
+Cementerio,CM,Cementerio,Control,7
+Little Cabra,LC,Cabra,Control,8
+Casa Azul,CAZ,Culebra,Control,9
+Fulladosa Point,FDP,Fulladosa,Control,10
+Puerto Manglar Control,PMC,Puerto Manglar,Control,11
 Mosquito,MQ,Mosquito,Positive Reference,12
 Puerto Manglar Reference,PMD,Puerto Manglar,Positive Reference,13
