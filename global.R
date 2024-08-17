@@ -140,7 +140,44 @@ ns_stations = lapply(names(ns_grp_colors), function(x) ns_grps$Station[ns_grps$G
 # Seagrass ----------------------------------------------------------------
 
 sg_years = c(2014, 2022)
-sg = read.csv(file.path("data", "SeagrassProcessed.csv")) |>
+sg_params = read.csv(file.path("data", "SeagrassParameters.csv"))
+sg_url = "https://docs.google.com/spreadsheets/d/1zkGxY3KS0fJNv46btX0j6cbzdzQH6ON2dxa1CVQpm3k"
+
+sg_2014 = read_sheet(sg_url, sheet = "2014TransectData", range = "A:S", col_types = "c", .name_repair = "universal") |>
+  rename(SED.INDEX = SED_INDEX)
+
+sg_2022 = read_sheet(sg_url, sheet = "2022TransectData", range = "A:V", col_types = "c", .name_repair = "universal")
+
+sg = bind_rows(mutate(setNames(sg_2014, toupper(names(sg_2014))), Year = 2014), 
+               mutate(setNames(sg_2022, toupper(names(sg_2022))), Year = 2022)) |> 
+  filter(!(SITE %in% c("Tamarindo", "Terruno")) & !grepl("EOB", TRANSECT)) |>
+  mutate(SITE = case_when(SITE == "Fulladoza.Point" ~ "Fulladosa Point",
+                          SITE == "Fulladoza.Ramp" ~ "Fulladosa Ramp",
+                          SITE == "Fulladoza.Bay" ~ "Fulladosa Bay",
+                          SITE == "Casa.Azul" ~ "Casa Azul",
+                          SITE == "Little.Cabra" ~ "Little Cabra",
+                          SITE == "Aereopuerto" ~ "Aeropuerto",
+                          SITE == "Puerto Manglar_Reference" ~ "Puerto Manglar Reference",
+                          SITE == "Puerto Manglar_1" ~ "Puerto Manglar Treatment",
+                          SITE == "Puerto Manglar_Impaired" ~ "Puerto Manglar Control",
+                          TRUE ~ SITE)) |> 
+  pivot_longer(cols = all_of(sg_params$Code), names_to = "Code", values_to = "Value") |> 
+  left_join(sg_params) |> 
+  mutate(Value = as.numeric(Value),
+         Type2 = ifelse(Parameter != "Epiphytes" & Type == "Index", "%Cover", Type),
+         Parameter2 = ifelse(Parameter == "Epiphytes", Parameter, paste(Parameter, Type2)),
+         Value2 = ifelse(Type2 != "%Cover", Value,
+                         case_when(Value == 0.1 ~ 1,
+                                   Value == 0.5 ~ 2.5,
+                                   Value == 1 ~ 5,
+                                   Value == 2 ~ 15,
+                                   Value == 3 ~ 37.5,
+                                   Value == 4 ~ 62.5,
+                                   Value == 5 ~ 87.5,
+                                   TRUE ~ NA_real_))) |> 
+  select(Year, Station = SITE, Transect = TRANSECT, Parameter = Parameter2, Value = Value2) |>
+  filter(!is.na(Value)) |> 
+  arrange(Year, Station, Parameter) |>
   left_join(ns_grps) |> 
   filter(!is.na(Group)) |> 
   select(Year, Group, Station, GroupStation, Parameter, Value) |> 
@@ -150,9 +187,30 @@ sg = read.csv(file.path("data", "SeagrassProcessed.csv")) |>
 
 # Nutrients ---------------------------------------------------------------
 
-nut = read.csv(file.path("data", "NutrientsProcessed.csv")) |> 
-  left_join(select(station_locations, Station, Environment)) |> 
-  mutate(Date = ymd(Date))
+nut_stn = read.csv(file.path("data", "NutrientStations.csv"))
+nut_url = "https://docs.google.com/spreadsheets/d/1weam_x6m9dIZWfiNO0ylrKlA3Lghr36RJfu8zx7raLw/"
+
+nut_meta = read_sheet(nut_url, sheet = "Inventory") |>
+  mutate(Blank = ifelse(grepl("blank", Comments), "Yes", "No"),
+         SampleLevel = case_when(
+           grepl("surface", Comments) ~ "Surface",
+           grepl("bottom", Comments) ~ "Bottom",
+           .default = "N/A")) |>
+  select(-Type, -Matrix, -Comments, -SDG)
+
+nut = left_join(read_sheet(nut_url, sheet = "Dissolved"),
+                read_sheet(nut_url, sheet = "Total")) |>
+  left_join(nut_meta) |>
+  filter(Blank == "No") |>
+  mutate(`Nitrate + Nitrite (mg/L)` = `Nitrate (mg/L)` + `Nitrite (mg/L)`) |>
+  select(Date = CollectionDate, LabID, SampleLevel, contains("mg/L")) |>
+  pivot_longer(cols = !c(Date, LabID, SampleLevel), names_to = "Parameter", values_to = "Value") |>
+  left_join(nut_stn) |>
+  filter(!is.na(Value) & !is.na(Station)) |>
+  group_by(Date, Station, SampleLevel, Parameter) |>
+  # multiple observations for each date/station; for now, taking max value for each date/station
+  summarise(Value = max(Value, na.rm = TRUE)) |>
+  left_join(select(station_locations, Station, Environment))
 
 nut_ws = nut |> 
   filter(Environment == "Watershed" & 

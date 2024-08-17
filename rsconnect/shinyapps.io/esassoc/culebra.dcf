@@ -5,6 +5,6 @@ account: esassoc
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12277487
-bundleId: 8972436
+bundleId: 8993207
 url: https://esassoc.shinyapps.io/culebra/
 version: 1
