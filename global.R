@@ -15,8 +15,8 @@ library(bslib)
 library(googlesheets4)
 library(sf)
 
-default_params = c("Water Quality" = "Temperature (C)",
-                   "Nutrients" = "Nitrate (mg/L)",
+default_params = c("Routine Water Quality" = "Temperature (C)",
+                   "Special Nutrient Collection" = "Nitrate (mg/L)",
                    "Seagrass" = "Thalassia Density")
 
 # Functions ---------------------------------------------------------------
