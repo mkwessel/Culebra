@@ -51,37 +51,6 @@ drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |>
 
 station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
 
-## Watershed ---------------------------------------------------------------
-
-wslab_raw = read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg", col_types = "c")
-
-wslab = wslab_raw |>
-  select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Time")) |>
-  rename(Date = `Date of Monitoring`, Station = `Sample ID`, `Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
-  pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
-
-wsfield_raw = read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/", col_types = "c")
-
-wsfield = wsfield_raw |>
-  select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Sample Time")) |>
-  rename(Date = `Date of Monitoring`, Station = `Sample ID`, `DO (mg/l)` = `DO  mg/l`,
-         `Chl-a red (ug/l)` = `Chla Red (ug/l)`, `Chl-a blue (ug/l)` = `Chl a  blue (ug/l)`,
-         `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
-  pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
-
-# only including 5 stations; ordered roughly west to east
-ws_stations = c("Old Man Plaza", "AeropuertoY", "Coronel Pond", "Bridge", "Turtle Stream")
-
-ws = process_chars(bind_rows(wslab, wsfield)) |>
-  filter(!is.na(Value) & !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
-  mutate(Date = mdy(Date),
-         Station = ifelse(Station == "Stream", "Turtle Stream", Station),
-         Station = factor(Station, levels = ws_stations)) |> 
-  select(-Chars)
-
-ws_colors = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854") |> 
-  setNames(ws_stations)
-
 ## Nearshore ---------------------------------------------------------------
 
 ns_grp_colors = c("Restoration" = "#377eb8",
@@ -137,92 +106,151 @@ ns = bind_rows(kdpar, ns_tmp)|>
 ns_stations = lapply(names(ns_grp_colors), function(x) ns_grps$Station[ns_grps$Group == x]) |> 
   setNames(names(ns_grp_colors))
 
+## Watershed ---------------------------------------------------------------
+
+get_wslab_raw <- function(){
+  read_sheet("https://docs.google.com/spreadsheets/d/1qWWiaY-w2_Z-NJINq-mnOCpXk_fTmuQxA0sgXArYbgg", col_types = "c")
+}
+
+get_wslab <- function(){
+  get_wslab_raw() |>
+    select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Time")) |>
+    rename(Date = `Date of Monitoring`, Station = `Sample ID`, `Escherichia Coli (100ml)` = `Escherichia  Coli (100ml)`) |>
+    pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
+}
+
+get_wsfield_raw <- function(){
+  read_sheet("https://docs.google.com/spreadsheets/d/1QA9c1yXKe87fepSy2IrKXdG5lwptLW3lu7fKk-ahDsc/", col_types = "c")
+}
+
+get_wsfield <- function(){
+  get_wsfield_raw() |>
+    select(!c("Timestamp", "Samples collected by:", "Data entered by:", "Notes:", "Sample Time")) |>
+    rename(Date = `Date of Monitoring`, Station = `Sample ID`, `DO (mg/l)` = `DO  mg/l`,
+           `Chl-a red (ug/l)` = `Chla Red (ug/l)`, `Chl-a blue (ug/l)` = `Chl a  blue (ug/l)`,
+           `Temperature (C)` = `Temperature (°C)`, `Conductivity (uS/cm)` = `Conductivity (μS/cm)`) |>
+    pivot_longer(cols = !c(Date, Station), names_to = "Parameter", values_to = "Value")
+}
+
+# only including 5 stations; ordered roughly west to east
+ws_stations = c("Old Man Plaza", "AeropuertoY", "Coronel Pond", "Bridge", "Turtle Stream")
+
+prep_ws <- function(ws_stations){
+  process_chars(bind_rows(get_wslab(), get_wsfield())) |>
+    filter(!is.na(Value) & !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
+    mutate(Date = mdy(Date),
+           Station = ifelse(Station == "Stream", "Turtle Stream", Station),
+           Station = factor(Station, levels = ws_stations)) |> 
+    select(-Chars)
+}
+
+ws_colors = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854") |> 
+  setNames(ws_stations)
+
 # Seagrass ----------------------------------------------------------------
 
 sg_years = c(2014, 2022)
 sg_params = read.csv(file.path("data", "SeagrassParameters.csv"))
 sg_url = "https://docs.google.com/spreadsheets/d/1zkGxY3KS0fJNv46btX0j6cbzdzQH6ON2dxa1CVQpm3k"
 
-sg_2014 = read_sheet(sg_url, sheet = "2014TransectData", range = "A:S", col_types = "c", .name_repair = "universal") |>
-  rename(SED.INDEX = SED_INDEX)
+get_sg_2014 <- function(sg_url){
+  read_sheet(sg_url, sheet = "2014TransectData", range = "A:S", col_types = "c", .name_repair = "universal") |>
+    rename(SED.INDEX = SED_INDEX)
+}
 
-sg_2022 = read_sheet(sg_url, sheet = "2022TransectData", range = "A:V", col_types = "c", .name_repair = "universal")
+get_sg_2022 <- function(sg_url){
+  read_sheet(sg_url, sheet = "2022TransectData", range = "A:V", col_types = "c", .name_repair = "universal")
+}
 
-sg = bind_rows(mutate(setNames(sg_2014, toupper(names(sg_2014))), Year = 2014), 
-               mutate(setNames(sg_2022, toupper(names(sg_2022))), Year = 2022)) |> 
-  filter(!(SITE %in% c("Tamarindo", "Terruno")) & !grepl("EOB", TRANSECT)) |>
-  mutate(SITE = case_when(SITE == "Fulladoza.Point" ~ "Fulladosa Point",
-                          SITE == "Fulladoza.Ramp" ~ "Fulladosa Ramp",
-                          SITE == "Fulladoza.Bay" ~ "Fulladosa Bay",
-                          SITE == "Casa.Azul" ~ "Casa Azul",
-                          SITE == "Little.Cabra" ~ "Little Cabra",
-                          SITE == "Aereopuerto" ~ "Aeropuerto",
-                          SITE == "Puerto Manglar_Reference" ~ "Puerto Manglar Reference",
-                          SITE == "Puerto Manglar_1" ~ "Puerto Manglar Treatment",
-                          SITE == "Puerto Manglar_Impaired" ~ "Puerto Manglar Control",
-                          TRUE ~ SITE)) |> 
-  pivot_longer(cols = all_of(sg_params$Code), names_to = "Code", values_to = "Value") |> 
-  left_join(sg_params) |> 
-  mutate(Value = as.numeric(Value),
-         Type2 = ifelse(Parameter != "Epiphytes" & Type == "Index", "%Cover", Type),
-         Parameter2 = ifelse(Parameter == "Epiphytes", Parameter, paste(Parameter, Type2)),
-         Value2 = ifelse(Type2 != "%Cover", Value,
-                         case_when(Value == 0.1 ~ 1,
-                                   Value == 0.5 ~ 2.5,
-                                   Value == 1 ~ 5,
-                                   Value == 2 ~ 15,
-                                   Value == 3 ~ 37.5,
-                                   Value == 4 ~ 62.5,
-                                   Value == 5 ~ 87.5,
-                                   TRUE ~ NA_real_))) |> 
-  select(Year, Station = SITE, Transect = TRANSECT, Parameter = Parameter2, Value = Value2) |>
-  filter(!is.na(Value)) |> 
-  arrange(Year, Station, Parameter) |>
-  left_join(ns_grps) |> 
-  filter(!is.na(Group)) |> 
-  select(Year, Group, Station, GroupStation, Parameter, Value) |> 
-  arrange(Year, Group, Station) |> 
-  mutate(Station = factor(Station, levels = ns_grps$Station),
-         GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+get_sg <- function(sg_url, sg_params, ns_grps){
+  sg_2014 = get_sg_2014(sg_url)
+  sg_2022 = get_sg_2022(sg_url)
+  
+  bind_rows(mutate(setNames(sg_2014, toupper(names(sg_2014))), Year = 2014), 
+            mutate(setNames(sg_2022, toupper(names(sg_2022))), Year = 2022)) |> 
+    filter(!(SITE %in% c("Tamarindo", "Terruno")) & !grepl("EOB", TRANSECT)) |>
+    mutate(SITE = case_when(SITE == "Fulladoza.Point" ~ "Fulladosa Point",
+                            SITE == "Fulladoza.Ramp" ~ "Fulladosa Ramp",
+                            SITE == "Fulladoza.Bay" ~ "Fulladosa Bay",
+                            SITE == "Casa.Azul" ~ "Casa Azul",
+                            SITE == "Little.Cabra" ~ "Little Cabra",
+                            SITE == "Aereopuerto" ~ "Aeropuerto",
+                            SITE == "Puerto Manglar_Reference" ~ "Puerto Manglar Reference",
+                            SITE == "Puerto Manglar_1" ~ "Puerto Manglar Treatment",
+                            SITE == "Puerto Manglar_Impaired" ~ "Puerto Manglar Control",
+                            TRUE ~ SITE)) |> 
+    pivot_longer(cols = all_of(sg_params$Code), names_to = "Code", values_to = "Value") |> 
+    left_join(sg_params) |> 
+    mutate(Value = as.numeric(Value),
+           Type2 = ifelse(Parameter != "Epiphytes" & Type == "Index", "%Cover", Type),
+           Parameter2 = ifelse(Parameter == "Epiphytes", Parameter, paste(Parameter, Type2)),
+           Value2 = ifelse(Type2 != "%Cover", Value,
+                           case_when(Value == 0.1 ~ 1,
+                                     Value == 0.5 ~ 2.5,
+                                     Value == 1 ~ 5,
+                                     Value == 2 ~ 15,
+                                     Value == 3 ~ 37.5,
+                                     Value == 4 ~ 62.5,
+                                     Value == 5 ~ 87.5,
+                                     TRUE ~ NA_real_))) |> 
+    select(Year, Station = SITE, Transect = TRANSECT, Parameter = Parameter2, Value = Value2) |>
+    filter(!is.na(Value)) |> 
+    arrange(Year, Station, Parameter) |>
+    left_join(ns_grps) |> 
+    filter(!is.na(Group)) |> 
+    select(Year, Group, Station, GroupStation, Parameter, Value) |> 
+    arrange(Year, Group, Station) |> 
+    mutate(Station = factor(Station, levels = ns_grps$Station),
+           GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+}
 
 # Nutrients ---------------------------------------------------------------
 
 nut_stn = read.csv(file.path("data", "NutrientStations.csv"))
 nut_url = "https://docs.google.com/spreadsheets/d/1weam_x6m9dIZWfiNO0ylrKlA3Lghr36RJfu8zx7raLw/"
 
-nut_meta = read_sheet(nut_url, sheet = "Inventory") |>
-  mutate(Blank = ifelse(grepl("blank", Comments), "Yes", "No"),
-         SampleLevel = case_when(
-           grepl("surface", Comments) ~ "Surface",
-           grepl("bottom", Comments) ~ "Bottom",
-           .default = "N/A")) |>
-  select(-Type, -Matrix, -Comments, -SDG)
+get_nut_meta <- function(nut_url){
+  read_sheet(nut_url, sheet = "Inventory") |>
+    mutate(Blank = ifelse(grepl("blank", Comments), "Yes", "No"),
+           SampleLevel = case_when(
+             grepl("surface", Comments) ~ "Surface",
+             grepl("bottom", Comments) ~ "Bottom",
+             .default = "N/A")) |>
+    select(-Type, -Matrix, -Comments, -SDG)
+}
 
-nut = left_join(read_sheet(nut_url, sheet = "Dissolved"),
-                read_sheet(nut_url, sheet = "Total")) |>
-  left_join(nut_meta) |>
-  filter(Blank == "No") |>
-  mutate(`Nitrate + Nitrite (mg/L)` = `Nitrate (mg/L)` + `Nitrite (mg/L)`) |>
-  select(Date = CollectionDate, LabID, SampleLevel, contains("mg/L")) |>
-  pivot_longer(cols = !c(Date, LabID, SampleLevel), names_to = "Parameter", values_to = "Value") |>
-  left_join(nut_stn) |>
-  filter(!is.na(Value) & !is.na(Station)) |>
-  group_by(Date, Station, SampleLevel, Parameter) |>
-  # multiple observations for each date/station; for now, taking max value for each date/station
-  summarise(Value = max(Value, na.rm = TRUE)) |>
-  left_join(select(station_locations, Station, Environment))
+get_nut <- function(nut_url){
+  left_join(read_sheet(nut_url, sheet = "Dissolved"),
+            read_sheet(nut_url, sheet = "Total")) |>
+    left_join(get_nut_meta(nut_url)) |>
+    filter(Blank == "No") |>
+    mutate(`Nitrate + Nitrite (mg/L)` = `Nitrate (mg/L)` + `Nitrite (mg/L)`) |>
+    select(Date = CollectionDate, LabID, SampleLevel, contains("mg/L")) |>
+    pivot_longer(cols = !c(Date, LabID, SampleLevel), names_to = "Parameter", values_to = "Value") |>
+    left_join(nut_stn) |>
+    filter(!is.na(Value) & !is.na(Station)) |>
+    group_by(Date, Station, SampleLevel, Parameter) |>
+    # multiple observations for each date/station; for now, taking max value for each date/station
+    summarise(Value = max(Value, na.rm = TRUE)) |>
+    left_join(select(station_locations, Station, Environment))
+}
 
-nut_ws = nut |> 
-  filter(Environment == "Watershed" & 
-           !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
-  select(Date, Station, SampleLevel, Parameter, Value) |> 
-  mutate(Station = factor(Station, levels = ws_stations))
+get_nut_ws <- function(nut, ws_stations){
+  nut |> 
+    filter(Environment == "Watershed" & 
+             !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
+    select(Date, Station, SampleLevel, Parameter, Value) |> 
+    mutate(Station = factor(Station, levels = ws_stations))
+}
 
-nut_ns = nut |> 
-  filter(Environment == "Nearshore") |> 
-  left_join(ns_grps) |> 
-  filter(!is.na(Group)) |> 
-  select(Date, Group, Station, GroupStation, SampleLevel, Parameter, Value) |> 
-  arrange(Date, Group, Station) |> 
-  mutate(Station = factor(Station, levels = ns_grps$Station),
-         GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+get_nut_ns <- function(nut, ns_grps){
+  nut |> 
+    filter(Environment == "Nearshore") |> 
+    left_join(ns_grps) |> 
+    filter(!is.na(Group)) |> 
+    select(Date, Group, Station, GroupStation, SampleLevel, Parameter, Value) |> 
+    arrange(Date, Group, Station) |> 
+    mutate(Station = factor(Station, levels = ns_grps$Station),
+           GroupStation = factor(GroupStation, levels = ns_grps$GroupStation))
+}
+

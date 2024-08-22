@@ -1,11 +1,36 @@
 shinyServer(function(input, output, session) {
   
-  rv <- reactiveValues(last_param = NULL)
-  
   statFN <- reactive({
     fn = c("Minimum" = min, "Median" = median,
            "Mean" = mean, "Maximum" = max)
     fn[[input$stat]]
+  })
+  
+  # Reactive Values ---------------------------------------------------------
+  
+  rv <- reactiveValues(ws = NULL,
+                       sg = NULL,
+                       nut = NULL,
+                       nut_ws = NULL,
+                       nut_ns = NULL,
+                       last_param = NULL)
+  
+  observe({
+    if (input$dataset == "Seagrass"){
+      if (is.null(rv$sg)) rv$sg = get_sg(sg_url, sg_params, ns_grps)
+    } 
+    if (input$dataset == "Routine Water Quality" & input$location == "Watershed"){
+      if (is.null(rv$ws)) rv$ws = prep_ws(ws_stations)
+    }
+    if (input$dataset == "Special Nutrient Collection"){
+      if (is.null(rv$nut)) rv$nut = get_nut(nut_url)
+    }
+    if (input$dataset == "Special Nutrient Collection" & input$location == "Watershed"){
+      if (is.null(rv$nut_ws)) rv$nut_ws = get_nut_ws(nut, ws_stations)
+    }
+    if (input$dataset == "Special Nutrient Collection" & input$location == "Nearshore"){
+      if (is.null(rv$nut_ns)) rv$nut_ns = get_nut_ns(nut, ns_grps)
+    }
   })
   
   observe({
@@ -22,14 +47,14 @@ shinyServer(function(input, output, session) {
   
   datSub1 <- reactive({
     out = NULL
-    if (input$dataset == "Seagrass") out = sg[sg[["Year"]] == input$sg_year,]
-    if (input$dataset == "Routine Water Quality" & input$location == "Watershed") out = ws
-    if (input$dataset == "Special Nutrient Collection" & input$location == "Watershed") out = nut_ws
+    if (input$dataset == "Seagrass") out = rv$sg[rv$sg[["Year"]] == input$sg_year,]
+    if (input$dataset == "Routine Water Quality" & input$location == "Watershed") out = rv$ws
     if (input$dataset == "Routine Water Quality" & input$location == "Nearshore"){
       out = ns[ns[["SampleLevel"]] == input$level & ns[["Group"]] %in% input$group,]
     }
+    if (input$dataset == "Special Nutrient Collection" & input$location == "Watershed") out = rv$nut_ws
     if (input$dataset == "Special Nutrient Collection" & input$location == "Nearshore"){
-      out = nut_ns[nut_ns[["SampleLevel"]] == input$level & nut_ns[["Group"]] %in% input$group,]
+      out = rv$nut_ns[rv$nut_ns[["SampleLevel"]] == input$level & rv$nut_ns[["Group"]] %in% input$group,]
     }
     out
   })
@@ -213,6 +238,7 @@ shinyServer(function(input, output, session) {
   # Map ---------------------------------------------------------------------
   
   mapData <- reactive({
+    req(datSub4())
     if (input$dataset == "Seagrass" | input$location == "Nearshore") {
       ds = datSub4() |> 
         left_join(data.frame(Group = names(ns_grp_colors),
