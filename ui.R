@@ -1,6 +1,6 @@
 
 page_navbar(
-  title = "NOAA Culebra LBSP Dashboard",
+  title = "NOAA Culebra LBSP",
   window_title = "Culebra LBSP",
   id = "nav",
   sidebar = sidebar(
@@ -39,7 +39,41 @@ page_navbar(
     )
   ),
   nav_panel("About",
-            p("Testing...")),
+            card(
+              max_height = "190px",
+              HTML('<p>Welcome to the Culebra Land Based Sources of Pollution (LBSP) Dashboard. 
+              This dashboard displays results of environmental monitoring data 
+              associated with the National Oceanic and Atmospheric Administration’s (NOAA) 
+              efforts to reduce LBSP threats to the island of Culebra and its nearshore environment 
+              (<a href="https://the-culebra-project-horsleywitten.opendata.arcgis.com/">Culebra LBSP Ridge to Reef Monitoring Program</a>). 
+              The dashboard is designed to allow the user to examine specific datasets of interest 
+              (i.e., Water Quality, Nutrients, Seagrass). The user chooses a subset of data for display by selecting Location, 
+              Sample Level, Parameter, Treatment Group, and Station and adjusting the date range 
+              to specific temporal periods of interest. These interactive features allow for 
+              data exploration and quality control checks. The dashboard is continuously updated as new 
+              data are entered into the data portal. We hope you find this dashboard useful in exploring environmental 
+              monitoring data being collected on the island of Culebra.</p>')
+            ),
+            layout_column_wrap(
+              card(
+                p("The display options in the dashboard include:"),
+                HTML('<ul>
+            <li>Time series plots of the raw values of the selected parameter by station.</li>
+            <li>Box plots displaying the distribution of the raw values of the selected parameter by treatment group or station.</li>
+            <li>Bar plots of the summary values of the selected parameter by station.</li>
+            <li>Tile plots that display all parameters on a relative scale across stations based on the summary values.</li>
+            <li>Georeferenced bubble plots of the summary values of the selected parameter at each station.</li>
+            <li>Tables displaying the raw values for the selected subset of data.</li>
+                 </ul>'),
+                p("Hovering the cursor over the plots provides the data value at the location of the cursor. 
+                            All data shown in the plots is available for download via buttons at the bottom of the sidebar.")
+              ),
+              card(HTML('<center><img src="Screenshot.png", alt = "Screenshot of Culebra LBSP Dashboard", 
+                                         width = "665.6", height = "383.5"></center>'))
+            )
+            
+            
+  ), 
   nav_panel("Dashboard",
             navset_card_underline(
               id = "panel",
