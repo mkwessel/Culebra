@@ -33,10 +33,10 @@ shinyServer(function(input, output, session) {
       if (is.null(rv$nut)) rv$nut = get_nut(nut_url)
     }
     if (input$dataset == "Special Nutrient Collection" & input$location == "Watershed"){
-      if (is.null(rv$nut_ws)) rv$nut_ws = get_nut_ws(nut, ws_stations)
+      if (is.null(rv$nut_ws)) rv$nut_ws = get_nut_ws(rv$nut, ws_stations)
     }
     if (input$dataset == "Special Nutrient Collection" & input$location == "Nearshore"){
-      if (is.null(rv$nut_ns)) rv$nut_ns = get_nut_ns(nut, ns_grps)
+      if (is.null(rv$nut_ns)) rv$nut_ns = get_nut_ns(rv$nut, ns_grps)
     }
   })
   
