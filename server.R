@@ -8,6 +8,13 @@ shinyServer(function(input, output, session) {
   
   # Reactive Values ---------------------------------------------------------
   
+  observe({
+    sidebar_toggle(
+      id = "sidebar",
+      open = input$nav == "Dashboard"
+    )
+  })
+  
   rv <- reactiveValues(ws = NULL,
                        sg = NULL,
                        nut = NULL,
