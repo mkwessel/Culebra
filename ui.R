@@ -16,7 +16,7 @@ page_sidebar(
     conditionalPanel(condition = 'input.panel != "Tile Plot"',
                      selectInput(inputId = 'parameter', label = 'Parameter', choices = NULL)),
     conditionalPanel(condition = 'input.dataset == "Seagrass" | input.location == "Nearshore"',
-                     pickerInput(inputId = "group", label = "LBSP Management Level", multiple = TRUE, 
+                     pickerInput(inputId = "group", label = "Treatment Group", multiple = TRUE, 
                                  choices = names(ns_grp_colors), selected = names(ns_grp_colors))),
     pickerInput(inputId = "stations", label = "Stations", multiple = TRUE, choices = ns_stations, 
                 selected = unlist(ns_stations), options = list(`actions-box` = TRUE, size = 8)),
