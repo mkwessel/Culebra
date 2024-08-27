@@ -320,30 +320,51 @@ shinyServer(function(input, output, session) {
   
   # Table/Download -------------------------------------------------------------------
   
+  tableDownload <- reactive({
+    tmp = if (input$dataset == "Seagrass") datSub4() else mutate(datSub4(), Date = as.character(Date))
+    if (input$dataset == "Seagrass" | input$location == "Nearshore") select(tmp, -GroupStation) else tmp
+  })
+  
   output$table <- DT::renderDataTable({
-    if (input$location == "Watershed") datSub4() else select(datSub4(), -GroupStation)
+    tableDownload()
   }, options = list(searching = TRUE, bPaginate = TRUE, info = TRUE, scrollX = TRUE))
+  
+  loc <- reactive({
+    if (input$dataset == "Seagrass") "" else paste0(input$location, "-")
+  })
   
   output$downloadFilteredData <- downloadHandler(
     filename = function() {
-      paste0("Culebra-FilteredData-", input$dataset, "-", Sys.Date(), ".csv")
+      paste0("Culebra-FilteredData-", input$dataset, "-", loc(), Sys.Date(), ".csv")
     },
     content = function(file) {
-      write.csv(datSub4(), file, row.names = FALSE)
+      write.csv(tableDownload(), file, row.names = FALSE)
     }
   )
   
   output$downloadAllData <- downloadHandler(
     filename = function() {
-      paste0("Culebra-AllData-", input$dataset, "-", Sys.Date(), ".xlsx")
+      paste0("Culebra-AllData-", input$dataset, "-", loc(), Sys.Date(), ".xlsx")
     },
     content = function(file) {
-      if (input$dataset == "Routine Water Quality"){
-        writexl::write_xlsx(list("Nearshore" = select(ns, -GroupStation), "Watershed" = ws), file)
-      } else {
-        writexl::write_xlsx(list("Nearshore" = select(nut_ns, -GroupStation), "Watershed" = nut_ws), file)
-      }
-      
+      # previously was saving each dataset with two tabs (nearshore and watershed)
+      # but if watershed hasn't been fetched would need to do that here
+      # converting Date column to text b/c otherwise it will produce a file with UTC time zone, which could lead to confusion
+      if (input$dataset == "Routine Water Quality" & input$location == "Nearshore"){
+        writexl::write_xlsx(mutate(select(ns, -GroupStation), Date = as.character(Date)), file)
+      } 
+      if (input$dataset == "Routine Water Quality" & input$location == "Watershed"){
+        writexl::write_xlsx(mutate(rv$ws, Date = as.character(Date)), file)
+      } 
+      if (input$dataset == "Special Nutrient Collection" & input$location == "Nearshore") {
+        writexl::write_xlsx(mutate(select(rv$nut_ns, -GroupStation), Date = as.character(Date)), file)
+      } 
+      if (input$dataset == "Special Nutrient Collection" & input$location == "Watershed") {
+        writexl::write_xlsx(mutate(rv$nut_ws, Date = as.character(Date)), file)
+      } 
+      if (input$dataset == "Seagrass") {
+        writexl::write_xlsx(select(rv$sg, -GroupStation), file)
+      } 
     }
   )
   

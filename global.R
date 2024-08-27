@@ -237,9 +237,10 @@ get_nut <- function(nut_url){
 
 get_nut_ws <- function(nut, ws_stations){
   nut |> 
+    ungroup() |> 
     filter(Environment == "Watershed" & 
              !(Station %in% c("P3_out", "P4_out", "P5_out", "Plant"))) |>
-    select(Date, Station, SampleLevel, Parameter, Value) |> 
+    select(Date, Station, Parameter, Value) |> 
     mutate(Station = factor(Station, levels = ws_stations))
 }
 

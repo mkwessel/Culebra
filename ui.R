@@ -65,8 +65,10 @@ page_navbar(
             <li>Georeferenced bubble plots of the summary values of the selected parameter at each station.</li>
             <li>Tables displaying the raw values for the selected subset of data.</li>
                  </ul>'),
-                p("Hovering the cursor over the plots provides the data value at the location of the cursor. 
-                            All data shown in the plots is available for download via buttons at the bottom of the sidebar.")
+                p("Hovering the cursor over the plots provides the data value at the location of the cursor. All data shown in 
+                  the plots and tables is available for download via buttons at the bottom of the sidebar. When downloading all data, 
+                  only the dataset and location filters in the dashboard are applied. When downloading filtered data, 
+                  all dashboard filters are applied.")
               ),
               card(HTML('<center><img src="Screenshot.png", alt = "Screenshot of Culebra LBSP Dashboard", 
                                          width = "665.6", height = "383.5"></center>'))
