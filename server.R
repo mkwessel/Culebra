@@ -293,11 +293,12 @@ shinyServer(function(input, output, session) {
   
   observe({
     input$panel # take a dependency on panel changes
+    drain = if (input$dataset == "Seagrass") drainages[["Nearshore"]] else drainages[[input$location]]
     leafletProxy("map")|>
       clearShapes() |>
       clearMarkers() |>
       clearControls() |>
-      addPolygons(data = drainages, label = ~Name, color = polyColor(), weight = 1, fillOpacity = 0.05)
+      addPolygons(data = drain, label = ~Name, color = polyColor(), weight = 1, fillOpacity = 0.05)
     
     if (input$dataset == "Seagrass" | input$location == "Nearshore"){
       md = mapData()

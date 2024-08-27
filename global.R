@@ -42,12 +42,14 @@ gs4_auth(token = gargle::secret_read_rds(
   ".secrets/gs4-token.rds",
   key = "GARGLE_KEY"))
 
-# Drainages ---------------------------------------------------------------
+# Spatial ---------------------------------------------------------------
 
-drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
-  st_transform(crs = 4326)
+# drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
+#   st_transform(crs = 4326)
 
-# Water Quality -----------------------------------------------------------
+drainages = lapply(list("Nearshore" = st_read(file.path("data", "CDA_NearshoreMonitoringSites.shp")),
+                        "Watershed" = st_read(file.path("data", "CDA_WatershedMonitoringSites.shp"))),
+                   function(dfx) st_transform(dfx, crs = 4326))
 
 station_locations <- read.csv(file.path("data", "CulebraWQ-StationLocations.csv"))
 
