@@ -17,7 +17,7 @@ library(sf)
 
 default_params = c("Routine Water Quality" = "Temperature (C)",
                    "Special Nutrient Collection" = "Nitrate (mg/L)",
-                   "Seagrass" = "Thalassia Density")
+                   "Seagrass" = "Thalassia Density (shoots/100 cm2)")
 
 # Functions ---------------------------------------------------------------
 
@@ -186,8 +186,10 @@ get_sg <- function(sg_url, sg_params, ns_grps){
     mutate(Value = as.numeric(Value),
            Type2 = ifelse(Parameter != "Epiphytes" & Type == "Index", "%Cover", Type),
            Parameter2 = ifelse(Parameter == "Epiphytes", Parameter, paste(Parameter, Type2)),
+           Parameter2 = ifelse(grepl("Density", Parameter2), paste(Parameter2, "(shoots/100 cm2)"), Parameter2),
            Value2 = ifelse(Type2 != "%Cover", Value,
-                           case_when(Value == 0.1 ~ 1,
+                           case_when(Value == 0 ~ 0,
+                                     Value == 0.1 ~ 1,
                                      Value == 0.5 ~ 2.5,
                                      Value == 1 ~ 5,
                                      Value == 2 ~ 15,
