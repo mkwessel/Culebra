@@ -226,19 +226,14 @@ shinyServer(function(input, output, session) {
   })
   
   output$tilePlot <- renderPlotly({
-    p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value))
-    if (input$dataset == "Seagrass" | input$location == "Nearshore"){
-      p = p +
-        facet_wrap(~ Group, ncol = 1, scales = "free_y")
-    }
-    p = p +
+    p = ggplot(tileSumm(), aes(y = Station, x = Parameter, fill = Percentile, label = Value)) +
       geom_tile() +
-      scale_fill_gradient2(mid = "#f7f7f7", low = scales::muted("blue"), high = scales::muted("red"), midpoint = 50) +
       scale_y_discrete(limits = rev) +
+      scale_fill_gradient2(mid = "#f7f7f7", low = scales::muted("blue"), high = scales::muted("red"), midpoint = 50) +
       labs(x = "", y = "") +
       theme_bw() +
       theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 0.5))
-    
+
     ggplotly(p)
   })
   
