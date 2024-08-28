@@ -62,7 +62,8 @@ page_navbar(
             <li>Box plots displaying the distribution of the raw values of the selected parameter by treatment group or station.</li>
             <li>Bar plots of the summary values of the selected parameter by station.</li>
             <li>Tile plots that display all parameters on a relative scale across stations based on the summary values.</li>
-            <li>Georeferenced bubble plots of the summary values of the selected parameter at each station.</li>
+            <li>Maps where points represent station locations with the size or color of the point scaled to the summary 
+            values of the selected parameter.</li>
             <li>Tables displaying the raw values for the selected subset of data.</li>
                  </ul>'),
                 p("Hovering the cursor over the plots provides the data value at the location of the cursor. All data shown in 
