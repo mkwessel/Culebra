@@ -182,7 +182,7 @@ get_sg <- function(sg_url, sg_params, ns_grps){
     left_join(sg_params) |> 
     mutate(Value = as.numeric(Value),
            Type2 = ifelse(Parameter != "Epiphytes" & Type == "Index", "%Cover", Type),
-           Parameter2 = ifelse(Parameter == "Epiphytes", Parameter, paste(Parameter, Type2)),
+           Parameter2 = ifelse(Parameter == "Epiphytes", "Epiphyte Load Index", paste(Parameter, Type2)),
            Parameter2 = ifelse(grepl("Density", Parameter2), paste(Parameter2, "(shoots/100 cm2)"), Parameter2),
            Value2 = ifelse(Type2 != "%Cover", Value,
                            case_when(Value == 0 ~ 0,
