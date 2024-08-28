@@ -44,9 +44,6 @@ gs4_auth(token = gargle::secret_read_rds(
 
 # Spatial ---------------------------------------------------------------
 
-# drainages = st_read(file.path("data", "ContributingDrainageAreas.shp")) |> 
-#   st_transform(crs = 4326)
-
 drainages = lapply(list("Nearshore" = st_read(file.path("data", "CDA_NearshoreMonitoringSites.shp")),
                         "Watershed" = st_read(file.path("data", "CDA_WatershedMonitoringSites.shp"))),
                    function(dfx) st_transform(dfx, crs = 4326))
