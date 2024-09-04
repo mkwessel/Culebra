@@ -221,8 +221,8 @@ get_nut_meta <- function(nut_url){
 }
 
 get_nut <- function(nut_url){
-  left_join(read_sheet(nut_url, sheet = "Dissolved"),
-            read_sheet(nut_url, sheet = "Total")) |>
+  left_join(select(read_sheet(nut_url, sheet = "Dissolved"), -Dilution, -Comments),
+            select(read_sheet(nut_url, sheet = "Total"), -Dilution, -Comments)) |>
     left_join(get_nut_meta(nut_url)) |>
     filter(Blank == "No") |>
     mutate(`Nitrate + Nitrite (mg/L)` = `Nitrate (mg/L)` + `Nitrite (mg/L)`) |>
