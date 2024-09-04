@@ -62,6 +62,13 @@ ns_grps = read.csv(file.path("data", "NearshoreTrtGroups.csv")) |>
   mutate(Group = factor(Group, levels = names(ns_grp_colors)),
          GroupStation = paste0(Group, "\n", Station))
 
+lts = c("solid", "dashed", "dotted", "dotdash", "longdash", "twodash")
+ns_grp_lts = lapply(names(ns_grp_colors), function(grp){
+  tmp = filter(ns_grps, Group == grp)
+  setNames(lts[1:nrow(tmp)], tmp$Station)
+}) |> 
+  unlist()
+
 ns_raw = read_sheet("https://docs.google.com/spreadsheets/d/1O3O3QfYCOVuQg-1aztPyQRtN_W9uO2i4yToqhNFGZ1Y/", col_types = "c")
 
 ns_tmp = ns_raw |>

@@ -148,11 +148,12 @@ shinyServer(function(input, output, session) {
         scale_color_manual(values = ws_colors)
     } else {
       p = ggplot(datSub4(), aes(x = Date, y = Value, color = Group, linetype = Station)) +
-        scale_color_manual(values = ns_grp_colors)
+        scale_color_manual(values = ns_grp_colors) +
+        scale_linetype_manual(values = ns_grp_lts)
     }
     p = p + 
       geom_point() +
-      geom_line() +
+      geom_line(alpha = 0.6) +
       labs(x = "", y = input$parameter) +
       theme_bw()
     
