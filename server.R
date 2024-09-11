@@ -272,8 +272,14 @@ shinyServer(function(input, output, session) {
   output$map <- renderLeaflet({
     leaflet(options = leafletOptions(attributionControl = FALSE)) |>
       addTiles() |>
-      addProviderTiles(providers$Esri.WorldTopoMap, group = "Topo") |>
-      addProviderTiles(providers$Esri.WorldImagery, group = "Imagery") |>
+      addProviderTiles(providers$Esri.WorldTopoMap, group = "Topo",
+                       options = providerTileOptions(noWrap = TRUE,
+                                                     maxNativeZoom = 18,
+                                                     maxZoom = 20)) |>
+      addProviderTiles(providers$Esri.WorldImagery, group = "Imagery",
+                       options = providerTileOptions(noWrap = TRUE,
+                                                     maxNativeZoom = 18,
+                                                     maxZoom = 20)) |>
       setView(lat = 18.31, lng = -65.28, zoom = 14) |>
       addLayersControl(baseGroups = c("Topo", "Imagery"),
                        options = layersControlOptions(collapsed = FALSE)) |>
