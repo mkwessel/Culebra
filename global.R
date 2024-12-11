@@ -91,6 +91,9 @@ ns_tmp = ns_raw |>
 
 kdpar = ns_tmp |>
   filter(grepl("Apogee", Parameter)) |>
+  # average across samples from the same group
+  group_by(Date, Station, SampleLevel, Parameter) |> 
+  summarise(Value = mean(Value, na.rm = TRUE)) |> 
   pivot_wider(id_cols = c("Date", "Station"), names_from = c("SampleLevel", "Parameter"), values_from = "Value") |>
   mutate(Value = calc_kdpar(`Surface_Lower Apogee sensor (Channel B)`,
                             `Surface_Upper Apogee sensor (Channel A)`,
