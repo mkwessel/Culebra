@@ -7,14 +7,7 @@ shinyServer(function(input, output, session) {
   })
   
   # Reactive Values ---------------------------------------------------------
-  
-  observe({
-    sidebar_toggle(
-      id = "sidebar",
-      open = input$nav == "Dashboard"
-    )
-  })
-  
+
   rv <- reactiveValues(ws = NULL,
                        sg = NULL,
                        nut = NULL,
@@ -265,8 +258,14 @@ shinyServer(function(input, output, session) {
   
   nsSymbols <- reactive({
     md = mapData()
-    makeSymbolsSize(values = md$Value, shape = 'circle', color = md$Color,
-                    fillColor = md$Color, opacity = 0.7, baseSize = 20)
+    makeSymbolsSize(values = md$Value, 
+                    shape = 'circle', 
+                    color = "black",
+                    weight = 1,
+                    opacity = 1,
+                    fillColor = md$Color,
+                    fillOpacity = 0.8, 
+                    baseSize = 20)
   })
   
   output$map <- renderLeaflet({
@@ -314,8 +313,17 @@ shinyServer(function(input, output, session) {
                   colors = ns_grp_colors, labels = names(ns_grp_colors))
     } else {
       leafletProxy("map")|>
-        addCircleMarkers(data = mapData(), lng = ~Longitude, lat = ~Latitude, label = ~Station, popup = ~Popup,
-                         fillColor = ~wsPalette()(Value), fillOpacity = 0.9, stroke = FALSE) |> 
+        addCircleMarkers(data = mapData(), 
+                         lng = ~Longitude, 
+                         lat = ~Latitude, 
+                         label = ~Station, 
+                         popup = ~Popup,
+                         radius = 6,
+                         color = "black",
+                         weight = 1,
+                         opacity = 1,
+                         fillColor = ~wsPalette()(Value), 
+                         fillOpacity = 0.8) |> 
         addLegend("bottomright", pal = wsPalette(), values = mapData()$Value, 
                   title = paste(input$stat, "<br>", input$parameter))
     }
